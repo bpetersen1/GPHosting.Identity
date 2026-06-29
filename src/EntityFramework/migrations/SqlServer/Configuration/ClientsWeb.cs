@@ -116,7 +116,7 @@ namespace IdentityServerHost.Configuration
                     },
 
                     AllowedGrantTypes = GrantTypes.Hybrid,
-                    RequirePkce = false,
+                    RequirePkce = false, // nosemgrep: gphosting-pkce-disabled -- Hybrid flow sample; migrate to auth_code+PKCE in Phase 8
 
                     RedirectUris = { "https://localhost:44303/signin-oidc" },
                     BackChannelLogoutUri = "https://localhost:44303/logout",

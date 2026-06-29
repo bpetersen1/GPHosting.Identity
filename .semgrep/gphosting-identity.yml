@@ -1,0 +1,265 @@
+rules:
+
+  # -----------------------------------------------------------------------
+  # TIMING ATTACKS
+  # -----------------------------------------------------------------------
+
+  - id: gphosting-secret-timing-attack
+    patterns:
+      - pattern-either:
+          - pattern: $A == $B
+          - pattern: $A != $B
+      - pattern-not: $A == null
+      - pattern-not: $A != null
+      - pattern-not: $A == true
+      - pattern-not: $A == false
+      - pattern-not: $A != true
+      - pattern-not: $A != false
+      - metavariable-regex:
+          metavariable: $A
+          regex: (?i)^(sharedSecret|clientSecret|parsedSecret|hashedSecret|secretValue|secretHash)$
+    message: >
+      Comparing secret/credential values with == or != is vulnerable to timing attacks.
+      An attacker can measure response time differences to brute-force the value one character
+      at a time. Use TimeConstantComparer.IsEqual() instead.
+    languages: [csharp]
+    severity: ERROR
+    metadata:
+      category: security
+      cwe: CWE-208
+      confidence: HIGH
+
+  # -----------------------------------------------------------------------
+  # SECRET STORAGE
+  # -----------------------------------------------------------------------
+
+  - id: gphosting-plaintext-secret-validator-registered
+    pattern-either:
+      - pattern: $SERVICES.$METHOD<ISecretValidator, PlainTextSharedSecretValidator>(...)
+      - pattern: $SERVICES.$METHOD<PlainTextSharedSecretValidator>(...)
+    message: >
+      PlainTextSharedSecretValidator compares secrets in plain text and is marked [Obsolete].
+      Use HashedSharedSecretValidator and store secrets as SHA256 or SHA512 hashes.
+    languages: [csharp]
+    severity: ERROR
+    metadata:
+      category: security
+      cwe: CWE-312
+      confidence: HIGH
+
+  - id: gphosting-unhashed-client-secret
+    patterns:
+      - pattern: new Secret($VALUE)
+      - metavariable-regex:
+          metavariable: $VALUE
+          regex: '^(?!.*\.(Sha256|Sha512)\().*$'
+    message: >
+      Client secret is not hashed. Store secrets as SHA256 or SHA512 hashes:
+        new Secret("your-secret".Sha256())
+      and ensure HashedSharedSecretValidator is registered, not PlainTextSharedSecretValidator.
+    languages: [csharp]
+    severity: WARNING
+    metadata:
+      category: security
+      cwe: CWE-312
+      confidence: MEDIUM
+
+  # -----------------------------------------------------------------------
+  # JWT / TOKEN SECURITY
+  # -----------------------------------------------------------------------
+
+  - id: gphosting-jwt-require-signed-tokens-false
+    pattern: new TokenValidationParameters { ..., RequireSignedTokens = false, ... }
+    message: >
+      RequireSignedTokens = false allows unsigned (alg:none) JWTs — a critical vulnerability.
+      An attacker can forge arbitrary tokens by setting alg to "none" and removing the signature.
+      Never set RequireSignedTokens to false in production code.
+    languages: [csharp]
+    severity: ERROR
+    metadata:
+      category: security
+      cwe: CWE-347
+      confidence: HIGH
+
+  - id: gphosting-jwt-alg-none-allowed
+    pattern-either:
+      - pattern: new TokenValidationParameters { ..., ValidAlgorithms = new[] { ..., "none", ... }, ... }
+      - pattern: ValidAlgorithms = new List<string> { ..., "none", ... }
+    message: >
+      "none" in ValidAlgorithms permits unsigned JWTs — a critical vulnerability.
+      Remove "none" from the list. Only allow RS256, RS512, ES256, or ES512.
+    languages: [csharp]
+    severity: ERROR
+    metadata:
+      category: security
+      cwe: CWE-347
+      confidence: HIGH
+
+  - id: gphosting-jwt-lifetime-not-validated
+    pattern: new TokenValidationParameters { ..., ValidateLifetime = false, ... }
+    message: >
+      ValidateLifetime = false allows expired tokens to be accepted.
+      Expired tokens that should be revoked will continue to work indefinitely.
+      Only disable lifetime validation in test code with a clear justification comment.
+    languages: [csharp]
+    severity: WARNING
+    metadata:
+      category: security
+      cwe: CWE-613
+      confidence: HIGH
+
+  - id: gphosting-jwt-issuer-not-validated
+    pattern: new TokenValidationParameters { ..., ValidateIssuer = false, ... }
+    message: >
+      ValidateIssuer = false allows tokens from any issuer to be accepted.
+      An attacker can present a token issued by a different server.
+      Only disable in tests — never in production endpoint handlers.
+    languages: [csharp]
+    severity: WARNING
+    metadata:
+      category: security
+      cwe: CWE-347
+      confidence: HIGH
+
+  # -----------------------------------------------------------------------
+  # WEAK CRYPTOGRAPHY
+  # -----------------------------------------------------------------------
+
+  - id: gphosting-weak-hash-md5
+    pattern-either:
+      - pattern: MD5.Create()
+      - pattern: MD5.HashData(...)
+      - pattern: new HMACMD5(...)
+      - pattern: MD5.HashDataAsync(...)
+    message: >
+      MD5 is cryptographically broken and must not be used for security-sensitive operations.
+      Use SHA256 (System.Security.Cryptography.SHA256) or SHA512 instead.
+    languages: [csharp]
+    severity: ERROR
+    metadata:
+      category: security
+      cwe: CWE-327
+      confidence: HIGH
+
+  - id: gphosting-weak-hash-sha1
+    pattern-either:
+      - pattern: SHA1.Create()
+      - pattern: SHA1.HashData(...)
+      - pattern: new HMACSHA1(...)
+      - pattern: SHA1.HashDataAsync(...)
+    message: >
+      SHA1 is cryptographically weak (collision attacks exist). Do not use for
+      security-sensitive hashing. Use SHA256 or SHA512 instead.
+      Exception: SHA1 thumbprints in X.509 certificate handling are acceptable
+      as they are used for identity, not integrity protection.
+    languages: [csharp]
+    severity: WARNING
+    metadata:
+      category: security
+      cwe: CWE-327
+      confidence: HIGH
+
+  - id: gphosting-ecb-mode
+    pattern-either:
+      - pattern: CipherMode.ECB
+      - pattern: new RijndaelManaged { ..., Mode = CipherMode.ECB, ... }
+      - pattern: new AesManaged { ..., Mode = CipherMode.ECB, ... }
+    message: >
+      ECB cipher mode leaks patterns in encrypted data (the "ECB penguin" problem).
+      Use CipherMode.CBC with a random IV, or preferably AES-GCM (authenticated encryption).
+    languages: [csharp]
+    severity: ERROR
+    metadata:
+      category: security
+      cwe: CWE-327
+      confidence: HIGH
+
+  # -----------------------------------------------------------------------
+  # OPEN REDIRECT (CVE-2024-39694 PATTERN)
+  # -----------------------------------------------------------------------
+
+  - id: gphosting-custom-end-session-validator
+    patterns:
+      - pattern: "class $CLASS : IEndSessionRequestValidator { ... }"
+      - pattern-not: "class EndSessionRequestValidator : IEndSessionRequestValidator { ... }"
+    message: >
+      Custom IEndSessionRequestValidator detected. You MUST ensure post_logout_redirect_uri
+      is ignored when id_token_hint is absent — otherwise this is an open redirect
+      vulnerability (CVE-2024-39694). Review EndSessionRequestValidator.cs for the
+      reference implementation and copy the else-branch guard.
+    languages: [csharp]
+    severity: WARNING
+    metadata:
+      category: security
+      cwe: CWE-601
+      confidence: HIGH
+      references:
+        - https://github.com/IdentityServer/IdentityServer4/security/advisories/GHSA-ff4q-64jc-gx98
+
+  - id: gphosting-custom-redirect-uri-validator
+    patterns:
+      - pattern: "class $CLASS : IRedirectUriValidator { ... }"
+      - pattern-not: "class StrictRedirectUriValidator : IRedirectUriValidator { ... }"
+      - pattern-not: "class StrictRedirectUriValidatorAppAuth : IRedirectUriValidator { ... }"
+    message: >
+      Custom IRedirectUriValidator detected. Ensure IsRedirectUriValidAsync and
+      IsPostLogoutRedirectUriValidAsync only return true for URIs explicitly registered
+      on the client. Wildcards or prefix matching must be treated with extreme caution.
+    languages: [csharp]
+    severity: WARNING
+    metadata:
+      category: security
+      cwe: CWE-601
+      confidence: HIGH
+
+  # -----------------------------------------------------------------------
+  # OAUTH / PKCE (OAUTH 2.1 REQUIREMENT)
+  # -----------------------------------------------------------------------
+
+  - id: gphosting-pkce-disabled
+    pattern: RequirePkce = false
+    message: >
+      PKCE is disabled. OAuth 2.1 requires PKCE for all clients including confidential ones.
+      Disabling PKCE makes authorization code flows vulnerable to code interception attacks.
+      Only acceptable in test fixtures — never in production client configuration.
+    languages: [csharp]
+    severity: WARNING
+    metadata:
+      category: security
+      cwe: CWE-352
+      confidence: HIGH
+
+  - id: gphosting-implicit-flow-enabled
+    pattern-either:
+      - pattern: AllowedGrantTypes = GrantTypes.Implicit
+      - pattern: AllowedGrantTypes = GrantTypes.ImplicitAndClientCredentials
+      - pattern: AllowedGrantTypes = GrantTypes.ResourceOwnerPasswordAndClientCredentials
+    message: >
+      Implicit flow is deprecated in OAuth 2.1 and prohibited in FAPI 2.0.
+      Tokens returned in the URL fragment are exposed in browser history, referrer headers,
+      and server logs. Use authorization_code + PKCE instead.
+    languages: [csharp]
+    severity: WARNING
+    metadata:
+      category: security
+      cwe: CWE-200
+      confidence: HIGH
+
+  # -----------------------------------------------------------------------
+  # INSECURE DESERIALIZATION
+  # -----------------------------------------------------------------------
+
+  - id: gphosting-newtonsoft-type-name-handling
+    patterns:
+      - pattern: new JsonSerializerSettings { ..., TypeNameHandling = TypeNameHandling.$X, ... }
+      - pattern-not: new JsonSerializerSettings { ..., TypeNameHandling = TypeNameHandling.None, ... }
+    message: >
+      TypeNameHandling other than None enables type confusion / remote code execution
+      when deserializing untrusted input. Set TypeNameHandling = TypeNameHandling.None
+      and use explicit type mapping instead.
+    languages: [csharp]
+    severity: ERROR
+    metadata:
+      category: security
+      cwe: CWE-502
+      confidence: HIGH
