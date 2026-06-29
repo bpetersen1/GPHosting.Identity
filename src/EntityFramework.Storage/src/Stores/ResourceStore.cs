@@ -53,7 +53,7 @@ namespace GPHosting.Identity.EntityFramework.Stores
             if (apiResourceNames == null) throw new ArgumentNullException(nameof(apiResourceNames));
 
             var query =
-                from apiResource in Context.ApiResources
+                from apiResource in Context.ApiResources.AsQueryable()
                 where apiResourceNames.Contains(apiResource.Name)
                 select apiResource;
             
@@ -90,7 +90,7 @@ namespace GPHosting.Identity.EntityFramework.Stores
             var names = scopeNames.ToArray();
 
             var query =
-                from api in Context.ApiResources
+                from api in Context.ApiResources.AsQueryable()
                 where api.Scopes.Where(x => names.Contains(x.Scope)).Any()
                 select api;
 
@@ -120,7 +120,7 @@ namespace GPHosting.Identity.EntityFramework.Stores
             var scopes = scopeNames.ToArray();
 
             var query =
-                from identityResource in Context.IdentityResources
+                from identityResource in Context.IdentityResources.AsQueryable()
                 where scopes.Contains(identityResource.Name)
                 select identityResource;
 
@@ -147,7 +147,7 @@ namespace GPHosting.Identity.EntityFramework.Stores
             var scopes = scopeNames.ToArray();
 
             var query =
-                from scope in Context.ApiScopes
+                from scope in Context.ApiScopes.AsQueryable()
                 where scopes.Contains(scope.Name)
                 select scope;
 

@@ -15,7 +15,7 @@ namespace GPHosting.Identity.EntityFramework.IntegrationTests.DbContexts
     {
         public ClientDbContextTests(DatabaseProviderFixture<ConfigurationDbContext> fixture) : base(fixture)
         {
-            foreach (var options in TestDatabaseProviders.SelectMany(x => x.Select(y => (DbContextOptions<ConfigurationDbContext>)y)).ToList())
+            foreach (var options in Enumerable.SelectMany<object[], DbContextOptions<ConfigurationDbContext>>(TestDatabaseProviders, x => x.Select(y => (DbContextOptions<ConfigurationDbContext>)y)).ToList())
             {
                 using (var context = new ConfigurationDbContext(options, StoreOptions))
                     context.Database.EnsureCreated();

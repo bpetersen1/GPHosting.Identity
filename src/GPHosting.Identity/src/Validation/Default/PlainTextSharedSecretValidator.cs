@@ -16,6 +16,7 @@ namespace GPHosting.Identity.Validation
     /// <summary>
     /// Validates a secret stored in plain text
     /// </summary>
+    [Obsolete("PlainTextSharedSecretValidator stores and compares secrets in plain text and is insecure. Use HashedSharedSecretValidator instead.")]
     public class PlainTextSharedSecretValidator : ISecretValidator
     {
         private readonly ILogger _logger;

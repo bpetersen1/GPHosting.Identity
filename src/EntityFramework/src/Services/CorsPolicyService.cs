@@ -47,7 +47,7 @@ namespace GPHosting.Identity.EntityFramework.Services
             // doing this here and not in the ctor because: https://github.com/aspnet/CORS/issues/105
             var dbContext = _context.HttpContext.RequestServices.GetRequiredService<IConfigurationDbContext>();
 
-            var query = from o in dbContext.ClientCorsOrigins
+            var query = from o in dbContext.ClientCorsOrigins.AsQueryable()
                         where o.Origin == origin
                         select o;
             

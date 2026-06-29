@@ -46,7 +46,7 @@ namespace GPHosting.Identity.EntityFramework.Stores
         /// <inheritdoc/>
         public virtual async Task StoreAsync(PersistedGrant token)
         {
-            var existing = (await Context.PersistedGrants.Where(x => x.Key == token.Key).ToArrayAsync())
+            var existing = (await Context.PersistedGrants.AsQueryable().Where(x => x.Key == token.Key).ToArrayAsync())
                 .SingleOrDefault(x => x.Key == token.Key);
             if (existing == null)
             {
@@ -75,7 +75,7 @@ namespace GPHosting.Identity.EntityFramework.Stores
         /// <inheritdoc/>
         public virtual async Task<PersistedGrant> GetAsync(string key)
         {
-            var persistedGrant = (await Context.PersistedGrants.AsNoTracking().Where(x => x.Key == key).ToArrayAsync())
+            var persistedGrant = (await Context.PersistedGrants.AsNoTracking().AsQueryable().Where(x => x.Key == key).ToArrayAsync())
                 .SingleOrDefault(x => x.Key == key);
             var model = persistedGrant?.ToModel();
 
@@ -102,7 +102,7 @@ namespace GPHosting.Identity.EntityFramework.Stores
         /// <inheritdoc/>
         public virtual async Task RemoveAsync(string key)
         {
-            var persistedGrant = (await Context.PersistedGrants.Where(x => x.Key == key).ToArrayAsync())
+            var persistedGrant = (await Context.PersistedGrants.AsQueryable().Where(x => x.Key == key).ToArrayAsync())
                 .SingleOrDefault(x => x.Key == key);
             if (persistedGrant!= null)
             {

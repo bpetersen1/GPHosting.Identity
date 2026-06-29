@@ -212,3 +212,9 @@ workspace.xml
 
 src/IdentityServer4/host/identityserver.db
 tempkey.jwk
+
+# Strong-name key (private key — store in GitHub Secrets as STRONG_NAME_KEY_BASE64)
+key.snk
+
+# Semgrep output
+semgrep-results.json

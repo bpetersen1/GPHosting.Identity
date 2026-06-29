@@ -75,7 +75,7 @@ namespace GPHosting.Identity.EntityFramework
             while (found >= _options.TokenCleanupBatchSize)
             {
                 var expiredGrants = await _persistedGrantDbContext.PersistedGrants
-                    .Where(x => x.Expiration < DateTime.UtcNow)
+                    .AsQueryable().Where(x => x.Expiration < DateTime.UtcNow)
                     .OrderBy(x => x.Expiration)
                     .Take(_options.TokenCleanupBatchSize)
                     .ToArrayAsync();
@@ -108,7 +108,7 @@ namespace GPHosting.Identity.EntityFramework
             while (found >= _options.TokenCleanupBatchSize)
             {
                 var expiredCodes = await _persistedGrantDbContext.DeviceFlowCodes
-                    .Where(x => x.Expiration < DateTime.UtcNow)
+                    .AsQueryable().Where(x => x.Expiration < DateTime.UtcNow)
                     .OrderBy(x => x.Expiration)
                     .Take(_options.TokenCleanupBatchSize)
                     .ToArrayAsync();

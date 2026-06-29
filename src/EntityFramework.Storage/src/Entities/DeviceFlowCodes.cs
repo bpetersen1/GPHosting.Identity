@@ -1,4 +1,5 @@
-﻿using System;
+﻿#nullable disable
+using System;
 
 namespace GPHosting.Identity.EntityFramework.Entities
 {

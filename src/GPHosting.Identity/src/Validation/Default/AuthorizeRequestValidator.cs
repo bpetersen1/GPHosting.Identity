@@ -355,6 +355,11 @@ namespace GPHosting.Identity.Validation
             var state = request.Raw.Get(OidcConstants.AuthorizeRequest.State);
             if (state.IsPresent())
             {
+                if (state.Length > _options.InputLengthRestrictions.State)
+                {
+                    LogError("State too long", request);
+                    return Invalid(request, description: "Invalid state");
+                }
                 request.State = state;
             }
 
@@ -485,18 +490,19 @@ namespace GPHosting.Identity.Validation
             var codeChallenge = request.Raw.Get(OidcConstants.AuthorizeRequest.CodeChallenge);
             if (codeChallenge.IsMissing())
             {
-                if (request.Client.RequirePkce)
+                // Public clients (no client secret) must always use PKCE per OAuth 2.0 Security BCP
+                var isPublicClient = !request.Client.RequireClientSecret;
+                if (request.Client.RequirePkce || isPublicClient)
                 {
                     LogError("code_challenge is missing", request);
                     fail.ErrorDescription = "code challenge required";
+                    return fail;
                 }
                 else
                 {
                     _logger.LogDebug("No PKCE used.");
                     return Valid(request);
                 }
-
-                return fail;
             }
 
             if (codeChallenge.Length < _options.InputLengthRestrictions.CodeChallengeMinLength ||

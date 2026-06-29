@@ -3,6 +3,7 @@
 
 
 using AutoMapper;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace GPHosting.Identity.EntityFramework.Mappers
 {
@@ -13,8 +14,10 @@ namespace GPHosting.Identity.EntityFramework.Mappers
     {
         static ClientMappers()
         {
-            Mapper = new MapperConfiguration(cfg => cfg.AddProfile<ClientMapperProfile>())
-                .CreateMapper();
+            var services = new ServiceCollection();
+            services.AddLogging();
+            services.AddAutoMapper(cfg => cfg.AddProfile<ClientMapperProfile>());
+            Mapper = services.BuildServiceProvider().GetRequiredService<IMapper>();
         }
 
         internal static IMapper Mapper { get; }

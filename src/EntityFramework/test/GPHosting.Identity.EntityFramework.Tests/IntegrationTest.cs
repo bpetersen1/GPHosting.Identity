@@ -50,7 +50,7 @@ namespace GPHosting.Identity.EntityFramework.IntegrationTests
 
         protected IntegrationTest(DatabaseProviderFixture<TDbContext> fixture)
         {
-            fixture.Options = TestDatabaseProviders.SelectMany(x => x.Select(y => (DbContextOptions<TDbContext>)y)).ToList();
+            fixture.Options = Enumerable.SelectMany<object[], DbContextOptions<TDbContext>>(TestDatabaseProviders, x => x.Select(y => (DbContextOptions<TDbContext>)y)).ToList();
             fixture.StoreOptions = StoreOptions;
         }
     }

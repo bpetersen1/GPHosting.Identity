@@ -306,6 +306,16 @@ namespace IdentityServer.IntegrationTests.Common
             return BrowserClient.GetCookie(BaseUrl, IdentityServerConstants.DefaultCheckSessionCookieName);
         }
 
+        private static Parameters? ToParameters(object extra)
+        {
+            if (extra == null) return null;
+            if (extra is Parameters p) return p;
+            var result = new Parameters();
+            foreach (var prop in extra.GetType().GetProperties())
+                result.Add(prop.Name, prop.GetValue(extra)?.ToString());
+            return result;
+        }
+
         public string CreateAuthorizeUrl(
             string clientId = null,
             string responseType = null,
@@ -332,7 +342,7 @@ namespace IdentityServer.IntegrationTests.Common
                 responseMode: responseMode,
                 codeChallenge: codeChallenge,
                 codeChallengeMethod: codeChallengeMethod,
-                extra: extra);
+                extra: ToParameters(extra));
             return url;
         }
 

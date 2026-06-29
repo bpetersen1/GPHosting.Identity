@@ -61,6 +61,15 @@ namespace GPHosting.Identity.Services
         {
             if (returnUrl.IsLocalUrl())
             {
+                // Guard against protocol-relative URL bypasses (CVE-2022-24306):
+                // IsLocalUrl only inspects the first two chars; Uri.TryCreate
+                // catches encoded slashes and other bypass techniques.
+                if (!Uri.TryCreate(returnUrl, UriKind.Relative, out _))
+                {
+                    _logger.LogTrace("returnUrl failed relative URI check");
+                    return false;
+                }
+
                 var index = returnUrl.IndexOf('?');
                 if (index >= 0)
                 {

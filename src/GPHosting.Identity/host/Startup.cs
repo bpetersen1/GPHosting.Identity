@@ -3,6 +3,7 @@
 
 
 using System;
+using Microsoft.Extensions.Hosting;
 using IdentityServerHost.Configuration;
 using IdentityModel;
 using GPHosting.Identity;
@@ -99,7 +100,7 @@ namespace IdentityServerHost
             });
         }
 
-        public void Configure(IApplicationBuilder app)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             // use this for persisted grants store
             // app.InitializePersistedGrantsStore();
@@ -114,7 +115,10 @@ namespace IdentityServerHost
             
             app.UseSerilogRequestLogging();
 
-            app.UseDeveloperExceptionPage();
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+            }
             app.UseStaticFiles();
 
             app.UseRouting();

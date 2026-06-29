@@ -22,7 +22,7 @@ namespace GPHosting.Identity.EntityFramework.IntegrationTests.TokenCleanup
 
         public TokenCleanupTests(DatabaseProviderFixture<PersistedGrantDbContext> fixture) : base(fixture)
         {
-            foreach (var options in TestDatabaseProviders.SelectMany(x => x.Select(y => (DbContextOptions<PersistedGrantDbContext>)y)).ToList())
+            foreach (var options in Enumerable.SelectMany<object[], DbContextOptions<PersistedGrantDbContext>>(TestDatabaseProviders, x => x.Select(y => (DbContextOptions<PersistedGrantDbContext>)y)).ToList())
             {
                 using (var context = new PersistedGrantDbContext(options, StoreOptions))
                 {

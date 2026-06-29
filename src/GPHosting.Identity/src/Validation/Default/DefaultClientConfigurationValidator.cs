@@ -3,6 +3,7 @@ using GPHosting.Identity.Models;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Logging;
 
 namespace GPHosting.Identity.Validation
 {
@@ -13,13 +14,15 @@ namespace GPHosting.Identity.Validation
     public class DefaultClientConfigurationValidator : IClientConfigurationValidator
     {
         private readonly IdentityServerOptions _options;
+        private readonly ILogger<DefaultClientConfigurationValidator> _logger;
 
         /// <summary>
         /// Constructor for DefaultClientConfigurationValidator
         /// </summary>
-        public DefaultClientConfigurationValidator(IdentityServerOptions options)
+        public DefaultClientConfigurationValidator(IdentityServerOptions options, ILogger<DefaultClientConfigurationValidator> logger)
         {
             _options = options;
+            _logger = logger;
         }
 
         /// <summary>
@@ -225,6 +228,27 @@ namespace GPHosting.Identity.Validation
                             context.SetError($"Client secret is required for {grantType}, but no client secret is configured.");
                             return Task.CompletedTask;
                         }
+                    }
+                }
+            }
+
+            // Warn when SharedSecret values are not base64-encoded SHA256/SHA512 hashes.
+            // Plain-text secrets are insecure; use HashedSharedSecretValidator and store hashed values.
+            foreach (var secret in context.Client.ClientSecrets)
+            {
+                if (secret.Type == IdentityServerConstants.SecretTypes.SharedSecret && secret.Value != null)
+                {
+                    try
+                    {
+                        var bytes = Convert.FromBase64String(secret.Value);
+                        if (bytes.Length != 32 && bytes.Length != 64)
+                        {
+                            _logger.LogWarning("Client {clientId} has a SharedSecret that is not a SHA256 or SHA512 hash. Plain-text secrets are insecure.", context.Client.ClientId);
+                        }
+                    }
+                    catch (FormatException)
+                    {
+                        _logger.LogWarning("Client {clientId} has a SharedSecret that is not base64-encoded. Plain-text secrets are insecure.", context.Client.ClientId);
                     }
                 }
             }

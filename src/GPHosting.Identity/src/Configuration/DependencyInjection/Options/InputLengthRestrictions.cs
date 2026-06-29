@@ -82,6 +82,11 @@ namespace GPHosting.Identity.Configuration
         public int ExternalError { get; set; } = Default;
 
         /// <summary>
+        /// Max length for the state parameter (CSRF token)
+        /// </summary>
+        public int State { get; set; } = 512;
+
+        /// <summary>
         /// Max length for authorization codes
         /// </summary>
         public int AuthorizationCode { get; set; } = Default;

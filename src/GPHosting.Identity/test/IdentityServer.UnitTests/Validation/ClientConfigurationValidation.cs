@@ -6,6 +6,7 @@ using FluentAssertions;
 using GPHosting.Identity.Configuration;
 using GPHosting.Identity.Models;
 using GPHosting.Identity.Validation;
+using Microsoft.Extensions.Logging.Abstractions;
 using System;
 using System.Threading.Tasks;
 using IdentityServer.UnitTests.Validation.Setup;
@@ -22,7 +23,7 @@ namespace IdentityServer.UnitTests.Validation
         public ClientConfigurationValidation()
         {
             _options = new IdentityServerOptions();
-            _validator = new DefaultClientConfigurationValidator(_options);
+            _validator = new DefaultClientConfigurationValidator(_options, NullLogger<DefaultClientConfigurationValidator>.Instance);
         }
 
         [Fact]

@@ -23,7 +23,7 @@ namespace GPHosting.Identity.EntityFramework.IntegrationTests.Stores
     {
         public PersistedGrantStoreTests(DatabaseProviderFixture<PersistedGrantDbContext> fixture) : base(fixture)
         {
-            foreach (var options in TestDatabaseProviders.SelectMany(x => x.Select(y => (DbContextOptions<PersistedGrantDbContext>)y)).ToList())
+            foreach (var options in Enumerable.SelectMany<object[], DbContextOptions<PersistedGrantDbContext>>(TestDatabaseProviders, x => x.Select(y => (DbContextOptions<PersistedGrantDbContext>)y)).ToList())
             {
                 using (var context = new PersistedGrantDbContext(options, StoreOptions))
                     context.Database.EnsureCreated();
@@ -109,6 +109,12 @@ namespace GPHosting.Identity.EntityFramework.IntegrationTests.Stores
         [Theory, MemberData(nameof(TestDatabaseProviders))]
         public async Task GetAllAsync_Should_Filter(DbContextOptions<PersistedGrantDbContext> options)
         {
+            using (var context = new PersistedGrantDbContext(options, StoreOptions))
+            {
+                context.PersistedGrants.RemoveRange(context.PersistedGrants.ToArray());
+                context.SaveChanges();
+            }
+
             using (var context = new PersistedGrantDbContext(options, StoreOptions))
             {
                 context.PersistedGrants.Add(CreateTestObject(sub: "sub1", clientId: "c1", sid: "s1", type: "t1").ToEntity());

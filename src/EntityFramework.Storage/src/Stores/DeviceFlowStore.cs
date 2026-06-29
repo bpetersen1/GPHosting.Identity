@@ -74,7 +74,7 @@ namespace GPHosting.Identity.EntityFramework.Stores
         /// <returns></returns>
         public virtual async Task<DeviceCode> FindByUserCodeAsync(string userCode)
         {
-            var deviceFlowCodes = (await Context.DeviceFlowCodes.AsNoTracking().Where(x => x.UserCode == userCode).ToArrayAsync())
+            var deviceFlowCodes = (await Context.DeviceFlowCodes.AsNoTracking().AsQueryable().Where(x => x.UserCode == userCode).ToArrayAsync())
                 .SingleOrDefault(x => x.UserCode == userCode);
             var model = ToModel(deviceFlowCodes?.Data);
 
@@ -90,7 +90,7 @@ namespace GPHosting.Identity.EntityFramework.Stores
         /// <returns></returns>
         public virtual async Task<DeviceCode> FindByDeviceCodeAsync(string deviceCode)
         {
-            var deviceFlowCodes = (await Context.DeviceFlowCodes.AsNoTracking().Where(x => x.DeviceCode == deviceCode).ToArrayAsync())
+            var deviceFlowCodes = (await Context.DeviceFlowCodes.AsNoTracking().AsQueryable().Where(x => x.DeviceCode == deviceCode).ToArrayAsync())
                 .SingleOrDefault(x => x.DeviceCode == deviceCode);
             var model = ToModel(deviceFlowCodes?.Data);
 
@@ -107,7 +107,7 @@ namespace GPHosting.Identity.EntityFramework.Stores
         /// <returns></returns>
         public virtual async Task UpdateByUserCodeAsync(string userCode, DeviceCode data)
         {
-            var existing = (await Context.DeviceFlowCodes.Where(x => x.UserCode == userCode).ToArrayAsync())
+            var existing = (await Context.DeviceFlowCodes.AsQueryable().Where(x => x.UserCode == userCode).ToArrayAsync())
                 .SingleOrDefault(x => x.UserCode == userCode);
             if (existing == null)
             {
@@ -138,7 +138,7 @@ namespace GPHosting.Identity.EntityFramework.Stores
         /// <returns></returns>
         public virtual async Task RemoveByDeviceCodeAsync(string deviceCode)
         {
-            var deviceFlowCodes = (await Context.DeviceFlowCodes.Where(x => x.DeviceCode == deviceCode).ToArrayAsync())
+            var deviceFlowCodes = (await Context.DeviceFlowCodes.AsQueryable().Where(x => x.DeviceCode == deviceCode).ToArrayAsync())
                 .SingleOrDefault(x => x.DeviceCode == deviceCode);
 
             if(deviceFlowCodes != null)

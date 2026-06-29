@@ -4,6 +4,7 @@
 
 using AutoMapper;
 using GPHosting.Identity.Models;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace GPHosting.Identity.EntityFramework.Mappers
 {
@@ -14,8 +15,10 @@ namespace GPHosting.Identity.EntityFramework.Mappers
     {
         static PersistedGrantMappers()
         {
-            Mapper = new MapperConfiguration(cfg =>cfg.AddProfile<PersistedGrantMapperProfile>())
-                .CreateMapper();
+            var services = new ServiceCollection();
+            services.AddLogging();
+            services.AddAutoMapper(cfg => cfg.AddProfile<PersistedGrantMapperProfile>());
+            Mapper = services.BuildServiceProvider().GetRequiredService<IMapper>();
         }
 
         internal static IMapper Mapper { get; }

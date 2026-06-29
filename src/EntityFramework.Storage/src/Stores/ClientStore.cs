@@ -52,7 +52,7 @@ namespace GPHosting.Identity.EntityFramework.Stores
         public virtual async Task<Client> FindClientByIdAsync(string clientId)
         {
             IQueryable<Entities.Client> baseQuery = Context.Clients
-                .Where(x => x.ClientId == clientId);
+                .AsQueryable().Where(x => x.ClientId == clientId);
 
             var client = (await baseQuery.ToArrayAsync())
                 .SingleOrDefault(x => x.ClientId == clientId);
