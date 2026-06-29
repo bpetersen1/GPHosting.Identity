@@ -2,11 +2,11 @@
 // Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
 
 
-using IdentityServer4.EntityFramework.Mappers;
-using IdentityServer4.Models;
+using GPHosting.Identity.EntityFramework.Mappers;
+using GPHosting.Identity.Models;
 using Xunit;
 
-namespace IdentityServer4.EntityFramework.UnitTests.Mappers
+namespace GPHosting.Identity.EntityFramework.UnitTests.Mappers
 {
     public class IdentityResourcesMappersTests
     {

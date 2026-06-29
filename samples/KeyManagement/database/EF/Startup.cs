@@ -1,11 +1,11 @@
-// Copyright (c) Brock Allen & Dominick Baier. All rights reserved.
+﻿// Copyright (c) Brock Allen & Dominick Baier. All rights reserved.
 // Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
 
 
 using System;
 using System.Linq;
 using IdentityModel;
-using IdentityServer4.KeyManagement.EntityFramework;
+using GPHosting.Identity.KeyManagement.EntityFramework;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Hosting;
@@ -53,7 +53,7 @@ namespace sample
                     options => // configuring options is optional :)
                     {
                         options.DeleteRetiredKeys = true;
-                        options.KeyType = IdentityServer4.KeyManagement.KeyType.RSA;
+                        options.KeyType = GPHosting.Identity.KeyManagement.KeyType.RSA;
 
                         // all of these values in here are changed for local testing
                         options.InitializationDuration = TimeSpan.FromSeconds(5);

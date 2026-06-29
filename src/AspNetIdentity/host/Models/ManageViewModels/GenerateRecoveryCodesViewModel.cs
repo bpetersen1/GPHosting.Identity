@@ -1,4 +1,4 @@
-﻿namespace IdentityServer4.Models.ManageViewModels
+﻿namespace GPHosting.Identity.Models.ManageViewModels
 {
     public class GenerateRecoveryCodesViewModel
     {

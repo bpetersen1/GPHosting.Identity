@@ -15,7 +15,7 @@ namespace sample
     {
         public static void Main(string[] args)
         {
-            Console.Title = "IdentityServer4";
+            Console.Title = "GPHosting.Identity";
 
             CreateWebHostBuilder(args).Build().Run();
         }

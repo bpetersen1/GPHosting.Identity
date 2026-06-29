@@ -3,10 +3,10 @@
 
 
 using System;
-using IdentityServer4.EntityFramework.Entities;
+using GPHosting.Identity.EntityFramework.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace IdentityServer4.EntityFramework.Interfaces
+namespace GPHosting.Identity.EntityFramework.Interfaces
 {
     /// <summary>
     /// Abstraction for the configuration context.

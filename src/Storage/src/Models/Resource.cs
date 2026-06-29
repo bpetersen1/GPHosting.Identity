@@ -1,11 +1,11 @@
-// Copyright (c) Brock Allen & Dominick Baier. All rights reserved.
+﻿// Copyright (c) Brock Allen & Dominick Baier. All rights reserved.
 // Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
 
 
 using System.Collections.Generic;
 using System.Diagnostics;
 
-namespace IdentityServer4.Models
+namespace GPHosting.Identity.Models
 {
     /// <summary>
     /// Models the common data of API and identity resources.

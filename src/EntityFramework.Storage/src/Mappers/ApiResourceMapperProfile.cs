@@ -5,7 +5,7 @@
 using System.Collections.Generic;
 using AutoMapper;
 
-namespace IdentityServer4.EntityFramework.Mappers
+namespace GPHosting.Identity.EntityFramework.Mappers
 {
     /// <summary>
     /// Defines entity/model mapping for API resources.

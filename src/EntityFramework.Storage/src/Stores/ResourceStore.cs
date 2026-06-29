@@ -1,4 +1,4 @@
-// Copyright (c) Brock Allen & Dominick Baier. All rights reserved.
+﻿// Copyright (c) Brock Allen & Dominick Baier. All rights reserved.
 // Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
 
 
@@ -6,19 +6,19 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using IdentityServer4.EntityFramework.Interfaces;
-using IdentityServer4.EntityFramework.Mappers;
-using IdentityServer4.Models;
-using IdentityServer4.Stores;
+using GPHosting.Identity.EntityFramework.Interfaces;
+using GPHosting.Identity.EntityFramework.Mappers;
+using GPHosting.Identity.Models;
+using GPHosting.Identity.Stores;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
-namespace IdentityServer4.EntityFramework.Stores
+namespace GPHosting.Identity.EntityFramework.Stores
 {
     /// <summary>
     /// Implementation of IResourceStore thats uses EF.
     /// </summary>
-    /// <seealso cref="IdentityServer4.Stores.IResourceStore" />
+    /// <seealso cref="GPHosting.Identity.Stores.IResourceStore" />
     public class ResourceStore : IResourceStore
     {
         /// <summary>

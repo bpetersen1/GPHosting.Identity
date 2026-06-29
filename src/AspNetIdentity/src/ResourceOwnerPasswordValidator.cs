@@ -2,22 +2,22 @@
 // Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
 
 
-using IdentityServer4.Models;
-using IdentityServer4.Validation;
+using GPHosting.Identity.Models;
+using GPHosting.Identity.Validation;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Logging;
 using System.Threading.Tasks;
 using static IdentityModel.OidcConstants;
-using IdentityServer4.Services;
-using IdentityServer4.Events;
+using GPHosting.Identity.Services;
+using GPHosting.Identity.Events;
 
-namespace IdentityServer4.AspNetIdentity
+namespace GPHosting.Identity.AspNetIdentity
 {
     /// <summary>
     /// IResourceOwnerPasswordValidator that integrates with ASP.NET Identity.
     /// </summary>
     /// <typeparam name="TUser">The type of the user.</typeparam>
-    /// <seealso cref="IdentityServer4.Validation.IResourceOwnerPasswordValidator" />
+    /// <seealso cref="GPHosting.Identity.Validation.IResourceOwnerPasswordValidator" />
     public class ResourceOwnerPasswordValidator<TUser> : IResourceOwnerPasswordValidator
         where TUser : class
     {

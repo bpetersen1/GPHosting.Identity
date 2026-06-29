@@ -1,0 +1,23 @@
+<Solution>
+  <Folder Name="/src/" />
+  <Folder Name="/src/AspNetIdentity/" />
+  <Folder Name="/src/AspNetIdentity/src/">
+    <Project Path="src/AspNetIdentity/src/GPHosting.Identity.AspNetIdentity.csproj" />
+  </Folder>
+  <Folder Name="/src/EntityFramework.Storage/" />
+  <Folder Name="/src/EntityFramework.Storage/src/">
+    <Project Path="src/EntityFramework.Storage/src/GPHosting.Identity.EntityFramework.Storage.csproj" />
+  </Folder>
+  <Folder Name="/src/EntityFramework/" />
+  <Folder Name="/src/EntityFramework/src/">
+    <Project Path="src/EntityFramework/src/GPHosting.Identity.EntityFramework.csproj" />
+  </Folder>
+  <Folder Name="/src/GPHosting.Identity/" />
+  <Folder Name="/src/GPHosting.Identity/src/">
+    <Project Path="src/GPHosting.Identity/src/GPHosting.Identity.csproj" />
+  </Folder>
+  <Folder Name="/src/Storage/" />
+  <Folder Name="/src/Storage/src/">
+    <Project Path="src/Storage/src/GPHosting.Identity.Storage.csproj" />
+  </Folder>
+</Solution>

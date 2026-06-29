@@ -1,6 +1,6 @@
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
-namespace IdentityServer4.Models.AccountViewModels
+namespace GPHosting.Identity.Models.AccountViewModels
 {
     public class ExternalLoginViewModel
     {

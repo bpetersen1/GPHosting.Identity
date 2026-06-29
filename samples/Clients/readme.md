@@ -1,3 +1,3 @@
-The client samples are designed to be used with the host in this repo:
+﻿The client samples are designed to be used with the host in this repo:
 
-https://github.com/IdentityServer/IdentityServer4/tree/main/src/IdentityServer4
+https://github.com/IdentityServer/GPHosting.Identity/tree/main/src/GPHosting.Identity

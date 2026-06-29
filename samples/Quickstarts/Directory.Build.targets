@@ -1,4 +1,4 @@
-<Project>
+﻿<Project>
 
     <PropertyGroup>
         <AspNetVersion>3.1.5</AspNetVersion>
@@ -6,9 +6,9 @@
 
     <ItemGroup>
         <PackageReference Update="IdentityModel" Version="4.3.0" />
-        <PackageReference Update="IdentityServer4" Version="4.0.0" />
-        <PackageReference Update="IdentityServer4.EntityFramework" Version="4.0.0" />
-        <PackageReference Update="IdentityServer4.AspNetIdentity" Version="4.0.0" />
+        <PackageReference Update="GPHosting.Identity" Version="4.0.0" />
+        <PackageReference Update="GPHosting.Identity.EntityFramework" Version="4.0.0" />
+        <PackageReference Update="GPHosting.Identity.AspNetIdentity" Version="4.0.0" />
 
         <PackageReference Update="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="$(AspNetVersion)" />
         <PackageReference Update="Microsoft.AspNetCore.Authentication.JwtBearer" Version="$(AspNetVersion)" />

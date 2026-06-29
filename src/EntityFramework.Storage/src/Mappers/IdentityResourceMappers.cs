@@ -3,9 +3,9 @@
 
 
 using AutoMapper;
-using IdentityServer4.EntityFramework.Entities;
+using GPHosting.Identity.EntityFramework.Entities;
 
-namespace IdentityServer4.EntityFramework.Mappers
+namespace GPHosting.Identity.EntityFramework.Mappers
 {
     /// <summary>
     /// Extension methods to map to/from entity/model for identity resources.

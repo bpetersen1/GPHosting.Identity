@@ -6,7 +6,7 @@
 
 using System;
 
-namespace IdentityServer4.EntityFramework.Entities
+namespace GPHosting.Identity.EntityFramework.Entities
 {
     public abstract class Secret
     {

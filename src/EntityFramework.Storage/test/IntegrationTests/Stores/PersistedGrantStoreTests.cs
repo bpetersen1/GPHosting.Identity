@@ -7,17 +7,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using FluentAssertions;
-using IdentityServer4.EntityFramework.DbContexts;
-using IdentityServer4.EntityFramework.Mappers;
-using IdentityServer4.EntityFramework.Options;
-using IdentityServer4.EntityFramework.Stores;
-using IdentityServer4.Models;
-using IdentityServer4.Stores;
+using GPHosting.Identity.EntityFramework.DbContexts;
+using GPHosting.Identity.EntityFramework.Mappers;
+using GPHosting.Identity.EntityFramework.Options;
+using GPHosting.Identity.EntityFramework.Stores;
+using GPHosting.Identity.Models;
+using GPHosting.Identity.Stores;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.VisualStudio.TestPlatform.ObjectModel.DataCollection;
 using Xunit;
 
-namespace IdentityServer4.EntityFramework.IntegrationTests.Stores
+namespace GPHosting.Identity.EntityFramework.IntegrationTests.Stores
 {
     public class PersistedGrantStoreTests : IntegrationTest<PersistedGrantStoreTests, PersistedGrantDbContext, OperationalStoreOptions>
     {

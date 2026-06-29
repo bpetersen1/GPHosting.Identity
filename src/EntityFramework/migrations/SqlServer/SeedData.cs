@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Linq;
 using IdentityServerHost.Configuration;
-using IdentityServer4.EntityFramework.DbContexts;
-using IdentityServer4.EntityFramework.Interfaces;
-using IdentityServer4.EntityFramework.Mappers;
+using GPHosting.Identity.EntityFramework.DbContexts;
+using GPHosting.Identity.EntityFramework.Interfaces;
+using GPHosting.Identity.EntityFramework.Mappers;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace SqlServer

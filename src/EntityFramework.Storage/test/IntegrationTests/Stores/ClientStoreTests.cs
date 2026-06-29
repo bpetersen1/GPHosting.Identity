@@ -6,16 +6,16 @@ using System;
 using System.Linq;
 using System.Threading.Tasks;
 using FluentAssertions;
-using IdentityServer4.EntityFramework.DbContexts;
-using IdentityServer4.EntityFramework.Mappers;
-using IdentityServer4.EntityFramework.Options;
-using IdentityServer4.EntityFramework.Stores;
-using IdentityServer4.Models;
+using GPHosting.Identity.EntityFramework.DbContexts;
+using GPHosting.Identity.EntityFramework.Mappers;
+using GPHosting.Identity.EntityFramework.Options;
+using GPHosting.Identity.EntityFramework.Stores;
+using GPHosting.Identity.Models;
 using Microsoft.EntityFrameworkCore;
 using Xunit;
 using Xunit.Sdk;
 
-namespace IdentityServer4.EntityFramework.IntegrationTests.Stores
+namespace GPHosting.Identity.EntityFramework.IntegrationTests.Stores
 {
     public class ClientStoreTests : IntegrationTest<ClientStoreTests, ConfigurationDbContext, ConfigurationStoreOptions>
     {

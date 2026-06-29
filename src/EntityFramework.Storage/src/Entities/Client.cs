@@ -4,11 +4,11 @@
 
 #pragma warning disable 1591
 
-using IdentityServer4.Models;
+using GPHosting.Identity.Models;
 using System;
 using System.Collections.Generic;
 
-namespace IdentityServer4.EntityFramework.Entities
+namespace GPHosting.Identity.EntityFramework.Entities
 {
     public class Client
     {

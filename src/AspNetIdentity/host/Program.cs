@@ -1,4 +1,4 @@
-// Copyright (c) Brock Allen & Dominick Baier. All rights reserved.
+﻿// Copyright (c) Brock Allen & Dominick Baier. All rights reserved.
 // Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
 
 
@@ -16,7 +16,7 @@ namespace IdentityServerHost
     {
         public static int Main(string[] args)
         {
-            Console.Title = "IdentityServer4.AspNetIdentity";
+            Console.Title = "GPHosting.Identity.AspNetIdentity";
             Activity.DefaultIdFormat = ActivityIdFormat.W3C;
 
             Log.Logger = new LoggerConfiguration()
@@ -26,7 +26,7 @@ namespace IdentityServerHost
                 .MinimumLevel.Override("System", LogEventLevel.Warning)
                 .MinimumLevel.Override("Microsoft.AspNetCore.Authentication", LogEventLevel.Information)
                 .Enrich.FromLogContext()
-                //.WriteTo.File(@"identityserver4_log.txt")
+                //.WriteTo.File(@"GPHosting.Identity_log.txt")
                 // uncomment to write to Azure diagnostics stream
                 //.WriteTo.File(
                 //    @"D:\home\LogFiles\Application\identityserver.txt",

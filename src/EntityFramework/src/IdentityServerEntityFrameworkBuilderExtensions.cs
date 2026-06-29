@@ -2,15 +2,15 @@
 // Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
 
 
-using IdentityServer4.EntityFramework.DbContexts;
-using IdentityServer4.EntityFramework.Interfaces;
-using IdentityServer4.EntityFramework.Services;
-using IdentityServer4.EntityFramework.Stores;
-using IdentityServer4.Stores;
+using GPHosting.Identity.EntityFramework.DbContexts;
+using GPHosting.Identity.EntityFramework.Interfaces;
+using GPHosting.Identity.EntityFramework.Services;
+using GPHosting.Identity.EntityFramework.Stores;
+using GPHosting.Identity.Stores;
 using System;
-using IdentityServer4.EntityFramework.Options;
-using IdentityServer4.EntityFramework;
-using IdentityServer4.EntityFramework.Storage;
+using GPHosting.Identity.EntityFramework.Options;
+using GPHosting.Identity.EntityFramework;
+using GPHosting.Identity.EntityFramework.Storage;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Hosting;
 
