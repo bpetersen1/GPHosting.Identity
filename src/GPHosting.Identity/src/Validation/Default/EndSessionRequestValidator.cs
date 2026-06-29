@@ -166,6 +166,15 @@ namespace GPHosting.Identity.Validation
                 validatedRequest.Subject = subject;
                 validatedRequest.SessionId = await UserSession.GetSessionIdAsync();
                 validatedRequest.ClientIds = await UserSession.GetClientListAsync();
+
+                // CVE-2024-39694: without id_token_hint the client cannot be identified,
+                // so post_logout_redirect_uri cannot be validated against registered URIs.
+                // Reject it unconditionally to prevent open redirect attacks.
+                var redirectUri = parameters.Get(OidcConstants.EndSessionRequest.PostLogoutRedirectUri);
+                if (redirectUri.IsPresent())
+                {
+                    Logger.LogWarning("Ignoring post_logout_redirect_uri {redirectUri}: id_token_hint is required to use post_logout_redirect_uri (CVE-2024-39694).", redirectUri);
+                }
             }
 
             LogSuccess(validatedRequest);

@@ -183,5 +183,31 @@ namespace IdentityServer.UnitTests.Validation.EndSessionRequestValidation
             result.IsError.Should().BeFalse();
             result.ValidatedRequest.Raw.Should().BeSameAs(parameters);
         }
+
+        // CVE-2024-39694: post_logout_redirect_uri must be ignored when id_token_hint is absent
+        [Fact]
+        public async Task post_logout_redirect_uri_without_id_token_hint_should_be_ignored()
+        {
+            var parameters = new NameValueCollection();
+            parameters.Add("post_logout_redirect_uri", "https://attacker.example.com/steal");
+
+            var result = await _subject.ValidateAsync(parameters, _user);
+
+            result.IsError.Should().BeFalse();
+            result.ValidatedRequest.PostLogOutUri.Should().BeNull();
+        }
+
+        [Fact]
+        public async Task post_logout_redirect_uri_without_id_token_hint_should_not_propagate_to_logout_message()
+        {
+            var parameters = new NameValueCollection();
+            parameters.Add("post_logout_redirect_uri", "https://attacker.example.com/steal");
+
+            var result = await _subject.ValidateAsync(parameters, _user);
+
+            var logoutMessage = new LogoutMessage(result.ValidatedRequest);
+            logoutMessage.PostLogoutRedirectUri.Should().BeNull();
+            logoutMessage.Parameters.Should().NotContainKey("post_logout_redirect_uri");
+        }
     }
 }
