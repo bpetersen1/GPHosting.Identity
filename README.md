@@ -8,9 +8,33 @@ GPHosting.Identity is an [OpenID Connect](http://openid.net/connect/) and [OAuth
 
 ## Security
 
-**CVE-2024-39694 (Open Redirect) — Fixed in GPHosting.Identity**
+Security is a first-class concern in GPHosting.Identity. Every default is set to the most secure option, and all known IdentityServer4 vulnerabilities have been addressed.
 
-The original IdentityServer4 contained an open redirect vulnerability in the end session endpoint: a `post_logout_redirect_uri` supplied without an `id_token_hint` was not validated against any registered client URI, allowing an attacker to redirect users to an arbitrary external URL after logout. GPHosting.Identity addresses this by explicitly rejecting `post_logout_redirect_uri` when no `id_token_hint` is present, with a logged warning for operator visibility.
+**CVE-2024-39694 (Open Redirect in end session) — Fixed**
+
+The original IdentityServer4 did not validate `post_logout_redirect_uri` when no `id_token_hint` was present, allowing attackers to redirect users to arbitrary external URLs after logout. GPHosting.Identity rejects `post_logout_redirect_uri` without a valid `id_token_hint` and logs a warning for operator visibility.
+
+**CVE-2022-24306 (Redirect URI bypass) — Fixed**
+
+The original validator compared redirect URIs as plain strings using case-insensitive comparison, which could be exploited with path-encoding or case tricks to bypass the allowlist. GPHosting.Identity parses both URIs and compares components individually: scheme and host are compared case-insensitively (per RFC 3986), while path and query are compared with exact ordinal equality.
+
+**Secure defaults out of the box**
+
+| Setting | Old default | New default | Why |
+|---|---|---|---|
+| `AccessTokenLifetime` | 3600 s (1 hour) | 900 s (15 min) | Limits exposure window if a token is leaked |
+| `AbsoluteRefreshTokenLifetime` | 2592000 s (30 days) | 86400 s (24 hours) | Reduces refresh token theft window |
+| `SlidingRefreshTokenLifetime` | 1296000 s (15 days) | 86400 s (24 hours) | Consistent with absolute lifetime |
+| `RequirePkce` | `true` | `true` | PKCE enforced for all code flow clients |
+| `AllowPlainTextPkce` | `false` | `false` | Plain PKCE method (S256 only) |
+| `RefreshTokenUsage` | `OneTimeOnly` | `OneTimeOnly` | Rotation on every use |
+| Secret storage | `HashedSharedSecretValidator` (SHA-256/512) | same | Plain-text validator is `[Obsolete]` and not registered |
+
+**Response headers hardened**
+
+- `X-Frame-Options: DENY` on all consent and form-post responses (clickjacking protection)
+- `Content-Security-Policy` with script hash on all framework-rendered HTML
+- `Referrer-Policy: no-referrer` on authorize responses
 
 To report a security issue in GPHosting.Identity, please open a [GitHub Security Advisory](https://github.com/bpetersen1/GPHosting.Identity/security/advisories/new).
 
