@@ -129,10 +129,14 @@ namespace GPHosting.Identity.Endpoints.Results
         {
             context.Response.AddScriptCspHeaders(_options.Csp, "sha256-orD0/VhH8hLqrLxKHD/HUEMdwqX6/0ve7c5hspX5VJ8=");
 
-            var referrer_policy = "no-referrer";
             if (!context.Response.Headers.ContainsKey("Referrer-Policy"))
             {
-                context.Response.Headers.Add("Referrer-Policy", referrer_policy);
+                context.Response.Headers.Append("Referrer-Policy", "no-referrer");
+            }
+
+            if (!context.Response.Headers.ContainsKey("X-Frame-Options"))
+            {
+                context.Response.Headers.Append("X-Frame-Options", "DENY");
             }
         }
 

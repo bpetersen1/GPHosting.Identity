@@ -173,9 +173,9 @@ namespace GPHosting.Identity.Models
         public ICollection<string> AllowedIdentityTokenSigningAlgorithms { get; set; } = new HashSet<string>();
 
         /// <summary>
-        /// Lifetime of access token in seconds (defaults to 3600 seconds / 1 hour)
+        /// Lifetime of access token in seconds (defaults to 900 seconds / 15 minutes)
         /// </summary>
-        public int AccessTokenLifetime { get; set; } = 3600;
+        public int AccessTokenLifetime { get; set; } = 900;
 
         /// <summary>
         /// Lifetime of authorization code in seconds (defaults to 300 seconds / 5 minutes)
@@ -183,14 +183,14 @@ namespace GPHosting.Identity.Models
         public int AuthorizationCodeLifetime { get; set; } = 300;
 
         /// <summary>
-        /// Maximum lifetime of a refresh token in seconds. Defaults to 2592000 seconds / 30 days
+        /// Maximum lifetime of a refresh token in seconds. Defaults to 86400 seconds / 24 hours
         /// </summary>
-        public int AbsoluteRefreshTokenLifetime { get; set; } = 2592000;
+        public int AbsoluteRefreshTokenLifetime { get; set; } = 86400;
 
         /// <summary>
-        /// Sliding lifetime of a refresh token in seconds. Defaults to 1296000 seconds / 15 days
+        /// Sliding lifetime of a refresh token in seconds. Defaults to 86400 seconds / 24 hours
         /// </summary>
-        public int SlidingRefreshTokenLifetime { get; set; } = 1296000;
+        public int SlidingRefreshTokenLifetime { get; set; } = 86400;
 
         /// <summary>
         /// Lifetime of a user consent in seconds. Defaults to null (no expiration)
