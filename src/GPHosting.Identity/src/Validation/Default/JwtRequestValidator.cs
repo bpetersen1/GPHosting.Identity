@@ -1,4 +1,4 @@
-﻿// Copyright (c) Brock Allen & Dominick Baier. All rights reserved.
+// Copyright (c) Brock Allen & Dominick Baier. All rights reserved.
 // Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
 
 
@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
+using System.Text.Json;
 using System.Threading.Tasks;
 using IdentityModel;
 using GPHosting.Identity.Configuration;
@@ -14,8 +15,6 @@ using GPHosting.Identity.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 
 namespace GPHosting.Identity.Validation;
 /// <summary>
@@ -25,7 +24,7 @@ public class JwtRequestValidator
 {
     private readonly string _audienceUri;
     private readonly IHttpContextAccessor _httpContextAccessor;
-    
+
     /// <summary>
     /// JWT handler
     /// </summary>
@@ -54,7 +53,7 @@ public class JwtRequestValidator
     /// The logger
     /// </summary>
     protected readonly ILogger Logger;
-    
+
     /// <summary>
     /// The optione
     /// </summary>
@@ -66,7 +65,7 @@ public class JwtRequestValidator
     public JwtRequestValidator(IHttpContextAccessor contextAccessor, IdentityServerOptions options, ILogger<JwtRequestValidator> logger)
     {
         _httpContextAccessor = contextAccessor;
-        
+
         Options = options;
         Logger = logger;
     }
@@ -180,7 +179,7 @@ public class JwtRequestValidator
         }
 
         Handler.ValidateToken(jwtTokenString, tokenValidationParameters, out var token);
-        
+
         return Task.FromResult((JwtSecurityToken)token);
     }
 
@@ -204,11 +203,8 @@ public class JwtRequestValidator
                     case string s:
                         payload.Add(key, s);
                         break;
-                    case JObject jobj:
-                        payload.Add(key, jobj.ToString(Formatting.None));
-                        break;
-                    case JArray jarr:
-                        payload.Add(key, jarr.ToString(Formatting.None));
+                    case JsonElement jsonElement:
+                        payload.Add(key, jsonElement.GetRawText());
                         break;
                 }
             }

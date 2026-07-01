@@ -8,13 +8,24 @@
   <Folder Name="/src/EntityFramework.Storage/src/">
     <Project Path="src/EntityFramework.Storage/src/GPHosting.Identity.EntityFramework.Storage.csproj" />
   </Folder>
+  <Folder Name="/src/EntityFramework.Storage/test/">
+    <Project Path="src/EntityFramework.Storage/test/UnitTests/GPHosting.Identity.EntityFramework.UnitTests.csproj" />
+    <Project Path="src/EntityFramework.Storage/test/IntegrationTests/GPHosting.Identity.EntityFramework.IntegrationTests.csproj" />
+  </Folder>
   <Folder Name="/src/EntityFramework/" />
   <Folder Name="/src/EntityFramework/src/">
     <Project Path="src/EntityFramework/src/GPHosting.Identity.EntityFramework.csproj" />
   </Folder>
+  <Folder Name="/src/EntityFramework/test/">
+    <Project Path="src/EntityFramework/test/GPHosting.Identity.EntityFramework.Tests/GPHosting.Identity.EntityFramework.Tests.csproj" />
+  </Folder>
   <Folder Name="/src/GPHosting.Identity/" />
   <Folder Name="/src/GPHosting.Identity/src/">
     <Project Path="src/GPHosting.Identity/src/GPHosting.Identity.csproj" />
+  </Folder>
+  <Folder Name="/src/GPHosting.Identity/test/">
+    <Project Path="src/GPHosting.Identity/test/IdentityServer.UnitTests/IdentityServer.UnitTests.csproj" />
+    <Project Path="src/GPHosting.Identity/test/IdentityServer.IntegrationTests/IdentityServer.IntegrationTests.csproj" />
   </Folder>
   <Folder Name="/src/Storage/" />
   <Folder Name="/src/Storage/src/">

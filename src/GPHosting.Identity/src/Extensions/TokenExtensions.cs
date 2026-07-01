@@ -1,4 +1,4 @@
-﻿// Copyright (c) Brock Allen & Dominick Baier. All rights reserved.
+// Copyright (c) Brock Allen & Dominick Baier. All rights reserved.
 // Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
 
 
@@ -6,12 +6,12 @@ using IdentityModel;
 using GPHosting.Identity.Models;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.Extensions.Logging;
-using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Security.Claims;
+using System.Text.Json;
 using GPHosting.Identity.Configuration;
 
 namespace GPHosting.Identity.Extensions;
@@ -47,7 +47,7 @@ public static class TokenExtensions
         var amrClaims = token.Claims.Where(x => x.Type == JwtClaimTypes.AuthenticationMethod).ToArray();
         var scopeClaims = token.Claims.Where(x => x.Type == JwtClaimTypes.Scope).ToArray();
         var jsonClaims = token.Claims.Where(x => x.ValueType == IdentityServerConstants.ClaimValueTypes.Json).ToList();
-        
+
         // add confirmation claim if present (it's JSON valued)
         if (token.Confirmation.IsPresent())
         {
@@ -82,15 +82,17 @@ public static class TokenExtensions
             var amrValues = amrClaims.Select(x => x.Value).Distinct().ToArray();
             payload.Add(JwtClaimTypes.AuthenticationMethod, amrValues);
         }
-        
+
         // deal with json types
-        // calling ToArray() to trigger JSON parsing once and so later 
+        // calling ToArray() to trigger JSON parsing once and so later
         // collection identity comparisons work for the anonymous type
         try
         {
-            var jsonTokens = jsonClaims.Select(x => new { x.Type, JsonValue = JRaw.Parse(x.Value) }).ToArray();
+            var jsonTokens = jsonClaims
+                .Select(x => new { x.Type, JsonValue = JsonDocument.Parse(x.Value).RootElement.Clone() })
+                .ToArray();
 
-            var jsonObjects = jsonTokens.Where(x => x.JsonValue.Type == JTokenType.Object).ToArray();
+            var jsonObjects = jsonTokens.Where(x => x.JsonValue.ValueKind == JsonValueKind.Object).ToArray();
             var jsonObjectGroups = jsonObjects.GroupBy(x => x.Type).ToArray();
             foreach (var group in jsonObjectGroups)
             {
@@ -111,7 +113,7 @@ public static class TokenExtensions
                 }
             }
 
-            var jsonArrays = jsonTokens.Where(x => x.JsonValue.Type == JTokenType.Array).ToArray();
+            var jsonArrays = jsonTokens.Where(x => x.JsonValue.ValueKind == JsonValueKind.Array).ToArray();
             var jsonArrayGroups = jsonArrays.GroupBy(x => x.Type).ToArray();
             foreach (var group in jsonArrayGroups)
             {
@@ -121,11 +123,13 @@ public static class TokenExtensions
                         $"Can't add two claims where one is a JSON array and the other is not a JSON array ({group.Key})");
                 }
 
-                var newArr = new List<JToken>();
+                var newArr = new List<JsonElement>();
                 foreach (var arrays in group)
                 {
-                    var arr = (JArray)arrays.JsonValue;
-                    newArr.AddRange(arr);
+                    foreach (var item in arrays.JsonValue.EnumerateArray())
+                    {
+                        newArr.Add(item.Clone());
+                    }
                 }
 
                 // add just one array for the group/key/claim type

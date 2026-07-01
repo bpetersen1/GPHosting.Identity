@@ -40,6 +40,25 @@ To report a security issue in GPHosting.Identity, please open a [GitHub Security
 
 ---
 
+## Modern .NET 10 foundations
+
+GPHosting.Identity is built from the ground up for modern .NET — not a shim on top of legacy infrastructure.
+
+**No Newtonsoft.Json dependency**
+
+The original IdentityServer4 pulled in Newtonsoft.Json for all JSON serialization. GPHosting.Identity uses `System.Text.Json` exclusively, which ships as part of .NET 10 itself. This means:
+
+- **Zero extra dependencies** — nothing extra lands in your package graph
+- **Better performance** — System.Text.Json is faster and allocates less memory than Newtonsoft
+- **AOT & trim compatible** — Newtonsoft.Json is explicitly incompatible with .NET Native AOT; System.Text.Json supports source-generated serialization, enabling fully ahead-of-time compiled deployments (see below)
+- **Smaller NuGet footprint** — one less transitive dependency for your consumers
+
+**C# 13 language features throughout**
+
+All source code uses modern C# 13 idioms: file-scoped namespaces, `ArgumentNullException.ThrowIfNull()`, collection expressions, and pattern matching — making the codebase easier to read, contribute to, and maintain.
+
+---
+
 ## NuGet Packages
 
 | Package | Description |

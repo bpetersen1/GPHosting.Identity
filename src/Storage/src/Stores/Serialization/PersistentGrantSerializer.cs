@@ -1,8 +1,9 @@
-﻿// Copyright (c) Brock Allen & Dominick Baier. All rights reserved.
+// Copyright (c) Brock Allen & Dominick Baier. All rights reserved.
 // Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
 
 
-using Newtonsoft.Json;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace GPHosting.Identity.Stores.Serialization;
 /// <summary>
@@ -11,16 +12,17 @@ namespace GPHosting.Identity.Stores.Serialization;
 /// <seealso cref="GPHosting.Identity.Stores.Serialization.IPersistentGrantSerializer" />
 public class PersistentGrantSerializer : IPersistentGrantSerializer
 {
-    private static readonly JsonSerializerSettings _settings;
+    private static readonly JsonSerializerOptions _options;
 
     static PersistentGrantSerializer()
     {
-        _settings = new JsonSerializerSettings
+        _options = new JsonSerializerOptions
         {
-            ContractResolver = new CustomContractResolver()
+            DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull,
+            WriteIndented = false
         };
-        _settings.Converters.Add(new ClaimConverter());
-        _settings.Converters.Add(new ClaimsPrincipalConverter());
+        _options.Converters.Add(new ClaimConverter());
+        _options.Converters.Add(new ClaimsPrincipalConverter());
     }
 
     /// <summary>
@@ -31,7 +33,7 @@ public class PersistentGrantSerializer : IPersistentGrantSerializer
     /// <returns></returns>
     public string Serialize<T>(T value)
     {
-        return JsonConvert.SerializeObject(value, _settings);
+        return JsonSerializer.Serialize(value, _options);
     }
 
     /// <summary>
@@ -42,6 +44,6 @@ public class PersistentGrantSerializer : IPersistentGrantSerializer
     /// <returns></returns>
     public T Deserialize<T>(string json)
     {
-        return JsonConvert.DeserializeObject<T>(json, _settings);
+        return JsonSerializer.Deserialize<T>(json, _options);
     }
 }

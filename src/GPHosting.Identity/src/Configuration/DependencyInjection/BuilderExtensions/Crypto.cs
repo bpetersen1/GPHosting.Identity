@@ -7,11 +7,12 @@ using GPHosting.Identity.Configuration;
 using GPHosting.Identity.Models;
 using GPHosting.Identity.Stores;
 using Microsoft.IdentityModel.Tokens;
-using Newtonsoft.Json;
 using System;
 using System.IO;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 using JsonWebKey = Microsoft.IdentityModel.Tokens.JsonWebKey;
 
 namespace Microsoft.Extensions.DependencyInjection;
@@ -184,7 +185,13 @@ public static class IdentityServerBuilderExtensionsCrypto
 
             if (persistKey)
             {
-                File.WriteAllText(filename, JsonConvert.SerializeObject(jwk));
+                var jwkOptions = new JsonSerializerOptions
+                {
+                    DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull,
+                    PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
+                    WriteIndented = false
+                };
+                File.WriteAllText(filename, JsonSerializer.Serialize(jwk, jwkOptions));
             }
 
             return builder.AddSigningCredential(key, signingAlgorithm);
