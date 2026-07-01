@@ -65,4 +65,7 @@ public class Client
     public string UserCodeType { get; set; }
     public int DeviceCodeLifetime { get; set; } = 300;
     public bool NonEditable { get; set; }
+    public bool RequirePushedAuthorization { get; set; }
+    public string AllowedAuthorizationDetailsTypes { get; set; }
+    public bool RequireFapi2 { get; set; }
 }

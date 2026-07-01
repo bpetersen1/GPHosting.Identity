@@ -27,8 +27,10 @@ public class ClientMapperProfile : Profile
         CreateMap<Entities.Client, Models.Client>()
             .ForMember(dest => dest.ProtocolType, opt => opt.Condition(srs => srs != null))
             .ForMember(x => x.AllowedIdentityTokenSigningAlgorithms, opts => opts.ConvertUsing(AllowedSigningAlgorithmsConverter.Converter, x => x.AllowedIdentityTokenSigningAlgorithms))
+            .ForMember(x => x.AllowedAuthorizationDetailsTypes, opts => opts.ConvertUsing(AllowedSigningAlgorithmsConverter.Converter, x => x.AllowedAuthorizationDetailsTypes))
             .ReverseMap()
-            .ForMember(x => x.AllowedIdentityTokenSigningAlgorithms, opts => opts.ConvertUsing(AllowedSigningAlgorithmsConverter.Converter, x => x.AllowedIdentityTokenSigningAlgorithms));
+            .ForMember(x => x.AllowedIdentityTokenSigningAlgorithms, opts => opts.ConvertUsing(AllowedSigningAlgorithmsConverter.Converter, x => x.AllowedIdentityTokenSigningAlgorithms))
+            .ForMember(x => x.AllowedAuthorizationDetailsTypes, opts => opts.ConvertUsing(AllowedSigningAlgorithmsConverter.Converter, x => x.AllowedAuthorizationDetailsTypes));
 
         CreateMap<Entities.ClientCorsOrigin, string>()
             .ConstructUsing(src => src.Origin)

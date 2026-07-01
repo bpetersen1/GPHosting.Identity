@@ -44,7 +44,7 @@ namespace IdentityServer.IntegrationTests.Clients
             });
 
             response.IsError.Should().BeFalse();
-            response.ExpiresIn.Should().Be(3600);
+            response.ExpiresIn.Should().Be(900);
             response.TokenType.Should().Be("Bearer");
             response.IdentityToken.Should().BeNull();
             response.RefreshToken.Should().NotBeNull();
@@ -59,7 +59,7 @@ namespace IdentityServer.IntegrationTests.Clients
             });
 
             response.IsError.Should().BeFalse();
-            response.ExpiresIn.Should().Be(3600);
+            response.ExpiresIn.Should().Be(900);
             response.TokenType.Should().Be("Bearer");
             response.IdentityToken.Should().BeNull();
             response.RefreshToken.Should().NotBeNull();
@@ -80,7 +80,7 @@ namespace IdentityServer.IntegrationTests.Clients
             });
 
             response.IsError.Should().BeFalse();
-            response.ExpiresIn.Should().Be(3600);
+            response.ExpiresIn.Should().Be(900);
             response.TokenType.Should().Be("Bearer");
             response.IdentityToken.Should().BeNull();
             response.RefreshToken.Should().NotBeNull();
@@ -95,7 +95,7 @@ namespace IdentityServer.IntegrationTests.Clients
             });
 
             response.IsError.Should().BeFalse();
-            response.ExpiresIn.Should().Be(3600);
+            response.ExpiresIn.Should().Be(900);
             response.TokenType.Should().Be("Bearer");
             response.IdentityToken.Should().NotBeNull();
             response.RefreshToken.Should().NotBeNull();
@@ -116,7 +116,7 @@ namespace IdentityServer.IntegrationTests.Clients
             });
 
             response.IsError.Should().BeFalse();
-            response.ExpiresIn.Should().Be(3600);
+            response.ExpiresIn.Should().Be(900);
             response.TokenType.Should().Be("Bearer");
             response.IdentityToken.Should().BeNull();
             response.RefreshToken.Should().NotBeNull();
@@ -133,7 +133,7 @@ namespace IdentityServer.IntegrationTests.Clients
             });
 
             response.IsError.Should().BeFalse();
-            response.ExpiresIn.Should().Be(3600);
+            response.ExpiresIn.Should().Be(900);
             response.TokenType.Should().Be("Bearer");
             response.IdentityToken.Should().NotBeNull();
             response.RefreshToken.Should().NotBeNull();
@@ -158,7 +158,7 @@ namespace IdentityServer.IntegrationTests.Clients
             });
 
             response.IsError.Should().BeFalse();
-            response.ExpiresIn.Should().Be(3600);
+            response.ExpiresIn.Should().Be(900);
             response.TokenType.Should().Be("Bearer");
             response.IdentityToken.Should().BeNull();
             response.RefreshToken.Should().NotBeNull();
@@ -175,7 +175,7 @@ namespace IdentityServer.IntegrationTests.Clients
             });
 
             response.IsError.Should().BeFalse();
-            response.ExpiresIn.Should().Be(3600);
+            response.ExpiresIn.Should().Be(900);
             response.TokenType.Should().Be("Bearer");
             response.IdentityToken.Should().NotBeNull();
             response.RefreshToken.Should().NotBeNull();
@@ -201,7 +201,7 @@ namespace IdentityServer.IntegrationTests.Clients
             });
 
             response.IsError.Should().BeFalse();
-            response.ExpiresIn.Should().Be(3600);
+            response.ExpiresIn.Should().Be(900);
             response.TokenType.Should().Be("Bearer");
             response.IdentityToken.Should().BeNull();
             response.RefreshToken.Should().NotBeNull();
@@ -219,7 +219,7 @@ namespace IdentityServer.IntegrationTests.Clients
             });
 
             response.IsError.Should().BeFalse();
-            response.ExpiresIn.Should().Be(3600);
+            response.ExpiresIn.Should().Be(900);
             response.TokenType.Should().Be("Bearer");
             response.IdentityToken.Should().NotBeNull();
             response.RefreshToken.Should().NotBeNull();
@@ -254,7 +254,7 @@ namespace IdentityServer.IntegrationTests.Clients
             });
 
             response.IsError.Should().BeFalse();
-            response.ExpiresIn.Should().Be(3600);
+            response.ExpiresIn.Should().Be(900);
             response.TokenType.Should().Be("Bearer");
             response.IdentityToken.Should().BeNull();
             response.RefreshToken.Should().NotBeNull();
@@ -290,7 +290,7 @@ namespace IdentityServer.IntegrationTests.Clients
             });
 
             response.IsError.Should().BeFalse();
-            response.ExpiresIn.Should().Be(3600);
+            response.ExpiresIn.Should().Be(900);
             response.TokenType.Should().Be("Bearer");
             response.IdentityToken.Should().BeNull();
             response.RefreshToken.Should().NotBeNull();

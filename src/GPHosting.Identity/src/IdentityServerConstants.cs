@@ -164,4 +164,12 @@ public static class IdentityServerConstants
         public const string JwtRequestUriHttpClient = "IdentityServer:JwtRequestUriClient";
         public const string BackChannelLogoutHttpClient = "IdentityServer:BackChannelLogoutClient";
     }
+
+    public static class DPoP
+    {
+        public const string ProofTokenHeader = "DPoP";
+        public const string TokenType = "DPoP";
+        public const string ConfirmationClaimType = "cnf";
+        public const string JktClaimType = "jkt";
+    }
 }

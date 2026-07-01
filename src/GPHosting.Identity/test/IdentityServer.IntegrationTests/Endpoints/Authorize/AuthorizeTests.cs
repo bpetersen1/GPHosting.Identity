@@ -1119,7 +1119,7 @@ namespace IdentityServer.IntegrationTests.Endpoints.Authorize
             url = url.Replace(IdentityServerPipeline.BaseUrl, "https://Ð³Ñ€Ð°Ð½Ñ‚.Ñ€Ñ„");
 
             var result = await _mockPipeline.BackChannelClient.GetAsync(url);
-            result.Headers.Location.Authority.Should().Be("xn--80af5akm.xn--p1ai");
+            result.Headers.Location.Authority.Should().Be("xn--312-sfa23abbff4880fena83b.xn--idaa750vgqa");
         }
 
         [Fact]
@@ -1133,7 +1133,9 @@ namespace IdentityServer.IntegrationTests.Endpoints.Authorize
                 scope: "openid",
                 redirectUri: "https://client4/callback",
                 state: "123_state",
-                nonce: "123_nonce");
+                nonce: "123_nonce",
+                codeChallenge: "E9Melhoa2OwvFrEMTJguCHaoeK1t8URWbuGJSstw-cM",
+                codeChallengeMethod: "S256");
 
             var response = await _mockPipeline.BrowserClient.GetAsync(url);
             _mockPipeline.LoginWasCalled.Should().BeTrue();

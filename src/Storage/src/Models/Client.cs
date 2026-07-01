@@ -311,6 +311,21 @@ public class Client
     public IDictionary<string, string> Properties { get; set; } = new Dictionary<string, string>();
 
     /// <summary>
+    /// Requires PAR for authorization requests (RFC 9126). Defaults to false.
+    /// </summary>
+    public bool RequirePushedAuthorization { get; set; } = false;
+
+    /// <summary>
+    /// Allowed authorization_details types for Rich Authorization Requests (RFC 9396).
+    /// </summary>
+    public ICollection<string> AllowedAuthorizationDetailsTypes { get; set; } = new HashSet<string>();
+
+    /// <summary>
+    /// Enables FAPI 2.0 security profile enforcement for this client. Defaults to false.
+    /// </summary>
+    public bool RequireFapi2 { get; set; } = false;
+
+    /// <summary>
     /// Validates the grant types.
     /// </summary>
     /// <param name="grantTypes">The grant types.</param>

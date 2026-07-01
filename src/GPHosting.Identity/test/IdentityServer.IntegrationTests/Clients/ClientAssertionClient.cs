@@ -67,7 +67,6 @@ namespace IdentityServer.IntegrationTests.Clients
             {
                 Address = TokenEndpoint,
 
-                ClientId = ClientId,
                 ClientAssertion =
                 {
                     Type = OidcConstants.ClientAssertionTypes.JwtBearer,
@@ -88,7 +87,6 @@ namespace IdentityServer.IntegrationTests.Clients
             var response = await _client.RequestClientCredentialsTokenAsync(new ClientCredentialsTokenRequest
             {
                 Address = TokenEndpoint,
-                ClientId = "client",
 
                 ClientAssertion =
                 {
@@ -101,7 +99,7 @@ namespace IdentityServer.IntegrationTests.Clients
 
             AssertValidToken(response);
         }
-        
+
         [Fact]
         public async Task Valid_client_with_token_replay_should_fail()
         {
@@ -111,7 +109,6 @@ namespace IdentityServer.IntegrationTests.Clients
             {
                 Address = TokenEndpoint,
 
-                ClientId = ClientId,
                 ClientAssertion =
                 {
                     Type = OidcConstants.ClientAssertionTypes.JwtBearer,
@@ -122,13 +119,12 @@ namespace IdentityServer.IntegrationTests.Clients
             });
 
             AssertValidToken(response);
-            
+
             // replay
             response = await _client.RequestClientCredentialsTokenAsync(new ClientCredentialsTokenRequest
             {
                 Address = TokenEndpoint,
 
-                ClientId = ClientId,
                 ClientAssertion =
                 {
                     Type = OidcConstants.ClientAssertionTypes.JwtBearer,
@@ -149,7 +145,6 @@ namespace IdentityServer.IntegrationTests.Clients
             {
                 Address = TokenEndpoint,
 
-                ClientId = ClientId,
                 ClientAssertion =
                 {
                     Type = OidcConstants.ClientAssertionTypes.JwtBearer,
@@ -174,7 +169,6 @@ namespace IdentityServer.IntegrationTests.Clients
             {
                 Address = TokenEndpoint,
 
-                ClientId = clientId,
                 ClientAssertion =
                 {
                     Type = OidcConstants.ClientAssertionTypes.JwtBearer,
@@ -198,7 +192,7 @@ namespace IdentityServer.IntegrationTests.Clients
         private void AssertValidToken(TokenResponse response)
         {
             response.IsError.Should().Be(false);
-            response.ExpiresIn.Should().Be(3600);
+            response.ExpiresIn.Should().Be(900);
             response.TokenType.Should().Be("Bearer");
             response.IdentityToken.Should().BeNull();
             response.RefreshToken.Should().BeNull();

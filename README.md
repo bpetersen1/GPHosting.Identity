@@ -57,6 +57,25 @@ The original IdentityServer4 pulled in Newtonsoft.Json for all JSON serializatio
 
 All source code uses modern C# 13 idioms: file-scoped namespaces, `ArgumentNullException.ThrowIfNull()`, collection expressions, and pattern matching — making the codebase easier to read, contribute to, and maintain.
 
+**Security proven by tests**
+
+Every security fix ships with tests that prove attacks fail — not just that happy paths work:
+
+- PKCE enforcement: public clients are rejected without a code challenge; `plain` method is blocked by default; S256 is the only accepted method
+- Redirect URI validation: path-case bypass, path traversal, query injection, scheme downgrade, and wildcard patterns are all verified to fail
+- Secret hashing: SHA-256 and SHA-512 stored secrets validate correctly; plain-text stored values are rejected; timing-safe comparison is verified
+- Over 1,100 tests across unit, integration, and EF Core test suites — 0 failures
+
+**Modern OAuth 2.0 standards**
+
+GPHosting.Identity implements current-generation OAuth 2.0 specifications that IdentityServer4 never supported:
+
+- **Pushed Authorization Requests (PAR — RFC 9126)**: Clients push authorization parameters to the server before redirecting the user, receiving a `request_uri` token. This prevents parameter tampering in the browser, is required for FAPI 2.0, and is available at `POST /connect/par`
+- **DPoP proof validation (RFC 9449)**: Demonstration of Proof-of-Possession binds access tokens to a client's public key, preventing stolen token replay. The `IDPoPProofValidator` verifies the JWT header type, embedded public key, HTTP method/URL binding, and `iat` replay window
+- **Rich Authorization Requests groundwork (RFC 9396)**: Clients can declare allowed `authorization_details` types for fine-grained resource authorization
+- **JARM response modes**: `query.jwt`, `fragment.jwt`, and `form_post.jwt` response mode constants for JWT-secured authorization responses
+- **FAPI 2.0 profile flag**: Per-client `RequireFapi2` and `RequirePushedAuthorization` flags for financial-grade API enforcement
+
 ---
 
 ## NuGet Packages

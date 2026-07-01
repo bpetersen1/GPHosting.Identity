@@ -100,13 +100,8 @@ namespace IdentityServer.IntegrationTests.Conformance.Basic
             var state = Guid.NewGuid().ToString();
             var nonce = Guid.NewGuid().ToString();
 
-            var url = _mockPipeline.CreateAuthorizeUrl(
-                clientId: "code_client",
-                responseType: null, // missing
-                scope: "openid",
-                redirectUri: "https://code_client/callback",
-                state: state,
-                nonce: nonce);
+            // Build URL manually because IdentityModel v7 throws when responseType is null
+            var url = $"{IdentityServerPipeline.AuthorizeEndpoint}?client_id=code_client&scope=openid&redirect_uri=https%3A%2F%2Fcode_client%2Fcallback&state={state}&nonce={nonce}";
 
             _mockPipeline.BrowserClient.AllowAutoRedirect = true;
             var response = await _mockPipeline.BrowserClient.GetAsync(url);

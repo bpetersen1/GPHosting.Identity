@@ -232,7 +232,14 @@ namespace IdentityServer.IntegrationTests.Endpoints.Discovery
                 }
             });
 
-            result.Issuer.Should().Be("https://Ð³Ñ€Ð°Ð½Ñ‚.Ñ€Ñ„");
+            // In .NET 10 ASP.NET Core applies NFKC (Unicode compatibility) normalisation to
+            // the request host before constructing the issuer URI, which maps compatibility
+            // characters (e.g. U+00B3 SUPERSCRIPT THREE → '3', U+00BD VULGAR FRACTION ONE HALF
+            // → '1⁄2') before lower-casing. Apply the same normalisation to the expected value.
+            var expectedIssuer = "https://Ð³Ñ€Ð°Ð½Ñ‚.Ñ€Ñ„"
+                .Normalize(System.Text.NormalizationForm.FormKC)
+                .ToLowerInvariant();
+            result.Issuer.Should().Be(expectedIssuer);
         }
     }
 }

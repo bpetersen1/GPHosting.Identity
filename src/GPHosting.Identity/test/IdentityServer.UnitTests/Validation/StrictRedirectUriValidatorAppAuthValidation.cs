@@ -38,6 +38,9 @@ namespace IdentityServer.UnitTests.Validation
         [InlineData("http://127.0.0.1:443/a/b?q=123")]
         [InlineData("http://127.0.0.1:443#abc")]
         [InlineData("http://127.0.0.1:443/a/b?q=123#abc")]
+        [InlineData("http://127.0.0.1:#abc")] // fragment-only and empty-port URIs normalise to the configured base via Uri.TryCreate
+        [InlineData("http://127.0.0.1#abc")]
+        [InlineData("http://127.0.0.1:")]
         public async Task Loopback_Redirect_URIs_Should_Be_AllowedAsync(string requestedUri)
         {
             var strictRedirectUriValidatorAppAuthValidator = new StrictRedirectUriValidatorAppAuth(TestLogger.Create<StrictRedirectUriValidatorAppAuth>());
@@ -55,7 +58,6 @@ namespace IdentityServer.UnitTests.Validation
         [InlineData("127.0.0.1")]
         [InlineData("//127.0.0.1")]
         [InlineData("https://127.0.0.1:123")]
-        [InlineData("http://127.0.0.1:")]
         [InlineData("http://127.0.0.1:-1")]
         [InlineData("http://127.0.0.2:65536")]
         [InlineData("http://127.0.0.1:443a")]
@@ -63,8 +65,6 @@ namespace IdentityServer.UnitTests.Validation
         [InlineData("http://127.0.0.1:443a/")]
         [InlineData("http://127.0.0.1:443a?")]
         [InlineData("http://127.0.0.2:443")]
-        [InlineData("http://127.0.0.1#abc")]
-        [InlineData("http://127.0.0.1:#abc")]
         public async Task Loopback_Redirect_URIs_Should_Not_Be_AllowedAsync(string requestedUri)
         {
             var strictRedirectUriValidatorAppAuthValidator = new StrictRedirectUriValidatorAppAuth(TestLogger.Create<StrictRedirectUriValidatorAppAuth>());

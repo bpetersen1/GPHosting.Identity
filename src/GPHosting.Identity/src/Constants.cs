@@ -204,6 +204,7 @@ internal static class Constants
         public const string EndSession = "Endsession";
         public const string CheckSession = "Checksession";
         public const string UserInfo = "Userinfo";
+        public const string PushedAuthorization = "PushedAuthorization";
     }
 
     public static class ProtocolRoutePaths
@@ -222,6 +223,9 @@ internal static class Constants
         public const string EndSessionCallback      = EndSession + "/callback";
         public const string CheckSession            = ConnectPathPrefix + "/checksession";
         public const string DeviceAuthorization     = ConnectPathPrefix + "/deviceauthorization";
+
+        public const string PushedAuthorization      = ConnectPathPrefix + "/par";
+        public const string PushedAuthorizationCanonical = "/" + PushedAuthorization;
 
         public const string MtlsPathPrefix          = ConnectPathPrefix + "/mtls";
         public const string MtlsToken               = MtlsPathPrefix + "/token";
@@ -316,6 +320,14 @@ internal static class Constants
             JwtClaimTypes.NotBefore,
             JwtClaimTypes.JwtId
         };
+    }
+
+    public static class JarmResponseModes
+    {
+        public const string Jwt = "jwt";
+        public const string QueryJwt = "query.jwt";
+        public const string FragmentJwt = "fragment.jwt";
+        public const string FormPostJwt = "form_post.jwt";
     }
 
     public static class WsFedSignOut

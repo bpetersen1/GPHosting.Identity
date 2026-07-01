@@ -68,7 +68,7 @@ namespace IdentityServer.UnitTests.Validation.TokenRequest_Validation
         {
             var refreshToken = new RefreshToken
             {
-                AccessToken = new Token("access_token") { ClientId = "roclient" },
+                AccessToken = new Token("access_token") { ClientId = "roclient", Claims = new List<Claim> { new Claim("sub", "123") } },
                 Lifetime = 10,
                 CreationTime = DateTime.UtcNow.AddSeconds(-15)
             };
@@ -101,7 +101,8 @@ namespace IdentityServer.UnitTests.Validation.TokenRequest_Validation
                 {
                     ClientId = "otherclient",
                     Lifetime = 600,
-                    CreationTime = DateTime.UtcNow
+                    CreationTime = DateTime.UtcNow,
+                    Claims = new List<Claim> { new Claim("sub", "123") }
                 }
             };
 
@@ -131,7 +132,8 @@ namespace IdentityServer.UnitTests.Validation.TokenRequest_Validation
             {
                 AccessToken = new Token("access_token")
                 {
-                    ClientId = "roclient_restricted"
+                    ClientId = "roclient_restricted",
+                    Claims = new List<Claim> { new Claim("sub", "123") }
                 },
                 Lifetime = 600,
                 CreationTime = DateTime.UtcNow

@@ -57,7 +57,7 @@ namespace IdentityServer.IntegrationTests.Clients
 
             response.IsError.Should().BeFalse();
             response.HttpStatusCode.Should().Be(HttpStatusCode.OK);
-            response.ExpiresIn.Should().Be(3600);
+            response.ExpiresIn.Should().Be(900);
             response.TokenType.Should().Be("Bearer");
             response.IdentityToken.Should().BeNull();
             response.RefreshToken.Should().BeNull();
@@ -66,8 +66,8 @@ namespace IdentityServer.IntegrationTests.Clients
 
             var unixNow = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
             var exp = Int64.Parse(payload["exp"].ToString());
-            exp.Should().BeLessThan(unixNow + 3605);
-            exp.Should().BeGreaterThan(unixNow + 3595);
+            exp.Should().BeLessThan(unixNow + 905);
+            exp.Should().BeGreaterThan(unixNow + 895);
 
             payload.Count().Should().Be(12);
             payload.Should().Contain("iss", "https://idsvr4");
@@ -106,7 +106,7 @@ namespace IdentityServer.IntegrationTests.Clients
 
             response.IsError.Should().BeFalse();
             response.HttpStatusCode.Should().Be(HttpStatusCode.OK);
-            response.ExpiresIn.Should().Be(3600);
+            response.ExpiresIn.Should().Be(900);
             response.TokenType.Should().Be("Bearer");
             response.IdentityToken.Should().BeNull();
             response.RefreshToken.Should().BeNull();
@@ -115,8 +115,8 @@ namespace IdentityServer.IntegrationTests.Clients
 
             var unixNow = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
             var exp = Int64.Parse(payload["exp"].ToString());
-            exp.Should().BeLessThan(unixNow + 3605);
-            exp.Should().BeGreaterThan(unixNow + 3595);
+            exp.Should().BeLessThan(unixNow + 905);
+            exp.Should().BeGreaterThan(unixNow + 895);
 
             payload.Count().Should().Be(13);
             payload.Should().Contain("iss", "https://idsvr4");
@@ -156,7 +156,7 @@ namespace IdentityServer.IntegrationTests.Clients
 
             response.IsError.Should().BeFalse();
             response.HttpStatusCode.Should().Be(HttpStatusCode.OK);
-            response.ExpiresIn.Should().Be(3600);
+            response.ExpiresIn.Should().Be(900);
             response.TokenType.Should().Be("Bearer");
             response.IdentityToken.Should().BeNull();
             response.RefreshToken.Should().NotBeNull();
@@ -173,7 +173,7 @@ namespace IdentityServer.IntegrationTests.Clients
 
             refreshResponse.IsError.Should().BeFalse();
             refreshResponse.HttpStatusCode.Should().Be(HttpStatusCode.OK);
-            refreshResponse.ExpiresIn.Should().Be(3600);
+            refreshResponse.ExpiresIn.Should().Be(900);
             refreshResponse.TokenType.Should().Be("Bearer");
             refreshResponse.IdentityToken.Should().BeNull();
             refreshResponse.RefreshToken.Should().NotBeNull();
@@ -182,8 +182,8 @@ namespace IdentityServer.IntegrationTests.Clients
 
             var unixNow = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
             var exp = Int64.Parse(payload["exp"].ToString());
-            exp.Should().BeLessThan(unixNow + 3605);
-            exp.Should().BeGreaterThan(unixNow + 3595);
+            exp.Should().BeLessThan(unixNow + 905);
+            exp.Should().BeGreaterThan(unixNow + 895);
 
             payload.Count().Should().Be(13);
             payload.Should().Contain("iss", "https://idsvr4");
@@ -222,7 +222,7 @@ namespace IdentityServer.IntegrationTests.Clients
 
             response.IsError.Should().BeFalse();
             response.HttpStatusCode.Should().Be(HttpStatusCode.OK);
-            response.ExpiresIn.Should().Be(3600);
+            response.ExpiresIn.Should().Be(900);
             response.TokenType.Should().Be("Bearer");
             response.IdentityToken.Should().BeNull();
             response.RefreshToken.Should().BeNull();
@@ -258,7 +258,7 @@ namespace IdentityServer.IntegrationTests.Clients
 
             response.IsError.Should().BeFalse();
             response.HttpStatusCode.Should().Be(HttpStatusCode.OK);
-            response.ExpiresIn.Should().Be(3600);
+            response.ExpiresIn.Should().Be(900);
             response.TokenType.Should().Be("Bearer");
             response.IdentityToken.Should().BeNull();
             response.RefreshToken.Should().NotBeNull();
@@ -427,7 +427,7 @@ namespace IdentityServer.IntegrationTests.Clients
 
             response.IsError.Should().BeFalse();
             response.HttpStatusCode.Should().Be(HttpStatusCode.OK);
-            response.ExpiresIn.Should().Be(3600);
+            response.ExpiresIn.Should().Be(900);
             response.TokenType.Should().Be("Bearer");
             response.IdentityToken.Should().BeNull();
             response.RefreshToken.Should().BeNull();
@@ -458,7 +458,7 @@ namespace IdentityServer.IntegrationTests.Clients
 
             response.IsError.Should().BeFalse();
             response.HttpStatusCode.Should().Be(HttpStatusCode.OK);
-            response.ExpiresIn.Should().Be(3600);
+            response.ExpiresIn.Should().Be(900);
             response.TokenType.Should().Be("Bearer");
             response.IdentityToken.Should().BeNull();
             response.RefreshToken.Should().BeNull();
@@ -491,7 +491,7 @@ namespace IdentityServer.IntegrationTests.Clients
 
             response.IsError.Should().BeFalse();
             response.HttpStatusCode.Should().Be(HttpStatusCode.OK);
-            response.ExpiresIn.Should().Be(3600);
+            response.ExpiresIn.Should().Be(900);
             response.TokenType.Should().Be("Bearer");
             response.IdentityToken.Should().BeNull();
             response.RefreshToken.Should().BeNull();
@@ -521,7 +521,7 @@ namespace IdentityServer.IntegrationTests.Clients
 
             response.IsError.Should().BeFalse();
             response.HttpStatusCode.Should().Be(HttpStatusCode.OK);
-            response.ExpiresIn.Should().Be(3600);
+            response.ExpiresIn.Should().Be(900);
             response.TokenType.Should().Be("Bearer");
             response.IdentityToken.Should().BeNull();
             response.RefreshToken.Should().BeNull();
@@ -567,7 +567,7 @@ namespace IdentityServer.IntegrationTests.Clients
 
             response.IsError.Should().BeFalse();
             response.HttpStatusCode.Should().Be(HttpStatusCode.OK);
-            response.ExpiresIn.Should().Be(3600);
+            response.ExpiresIn.Should().Be(900);
             response.TokenType.Should().Be("Bearer");
             response.IdentityToken.Should().BeNull();
             response.RefreshToken.Should().BeNull();

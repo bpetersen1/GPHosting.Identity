@@ -89,6 +89,7 @@ public static class IdentityServerBuilderExtensionsCore
         builder.AddEndpoint<TokenRevocationEndpoint>(EndpointNames.Revocation, ProtocolRoutePaths.Revocation.EnsureLeadingSlash());
         builder.AddEndpoint<TokenEndpoint>(EndpointNames.Token, ProtocolRoutePaths.Token.EnsureLeadingSlash());
         builder.AddEndpoint<UserInfoEndpoint>(EndpointNames.UserInfo, ProtocolRoutePaths.UserInfo.EnsureLeadingSlash());
+        builder.AddEndpoint<PushedAuthorizationEndpoint>(EndpointNames.PushedAuthorization, ProtocolRoutePaths.PushedAuthorization.EnsureLeadingSlash());
 
         return builder;
     }
@@ -183,6 +184,8 @@ public static class IdentityServerBuilderExtensionsCore
         builder.Services.TryAddTransient<IDeviceFlowThrottlingService, DistributedDeviceFlowThrottlingService>();
         builder.Services.AddDistributedMemoryCache();
 
+        builder.Services.AddTransient<IPushedAuthorizationRequestStore, InMemoryPushedAuthorizationRequestStore>();
+
         return builder;
     }
 
@@ -211,7 +214,9 @@ public static class IdentityServerBuilderExtensionsCore
         // optional
         builder.Services.TryAddTransient<ICustomTokenValidator, DefaultCustomTokenValidator>();
         builder.Services.TryAddTransient<ICustomAuthorizeRequestValidator, DefaultCustomAuthorizeRequestValidator>();
-        
+
+        builder.Services.AddTransient<IDPoPProofValidator, DefaultDPoPProofValidator>();
+
         return builder;
     }
 
