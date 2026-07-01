@@ -15,12 +15,24 @@
     <Project Path="src/EntityFramework.Storage/test/UnitTests/GPHosting.Identity.EntityFramework.UnitTests.csproj" />
     <Project Path="src/EntityFramework.Storage/test/IntegrationTests/GPHosting.Identity.EntityFramework.IntegrationTests.csproj" />
   </Folder>
+  <Folder Name="/src/EntityFramework.Storage/migrations/">
+    <Project Path="src/EntityFramework.Storage/migrations/SqlServer/SqlServer.csproj" />
+    <Project Path="src/EntityFramework.Storage/migrations/PostgreSQL/PostgreSQL.csproj" />
+    <Project Path="src/EntityFramework.Storage/migrations/SQLite/SQLite.csproj" />
+    <Project Path="src/EntityFramework.Storage/migrations/MySQL/MySQL.csproj" />
+  </Folder>
   <Folder Name="/src/EntityFramework/" />
   <Folder Name="/src/EntityFramework/src/">
     <Project Path="src/EntityFramework/src/GPHosting.Identity.EntityFramework.csproj" />
   </Folder>
   <Folder Name="/src/EntityFramework/test/">
     <Project Path="src/EntityFramework/test/GPHosting.Identity.EntityFramework.Tests/GPHosting.Identity.EntityFramework.Tests.csproj" />
+  </Folder>
+  <Folder Name="/src/EntityFramework/migrations/">
+    <Project Path="src/EntityFramework/migrations/SqlServer/SqlServer.csproj" />
+    <Project Path="src/EntityFramework/migrations/PostgreSQL/PostgreSQL.csproj" />
+    <Project Path="src/EntityFramework/migrations/SQLite/SQLite.csproj" />
+    <Project Path="src/EntityFramework/migrations/MySQL/MySQL.csproj" />
   </Folder>
   <Folder Name="/src/GPHosting.Identity/" />
   <Folder Name="/src/GPHosting.Identity/src/">

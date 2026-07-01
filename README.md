@@ -110,6 +110,87 @@ dotnet add package GPHosting.Identity
 
 ---
 
+## Database Providers
+
+GPHosting.Identity ships migration projects for all major databases.
+
+| Provider | Package | Migration project |
+|---|---|---|
+| SQL Server | `Microsoft.EntityFrameworkCore.SqlServer` | `migrations/SqlServer` |
+| PostgreSQL | `Npgsql.EntityFrameworkCore.PostgreSQL` | `migrations/PostgreSQL` |
+| SQLite | `Microsoft.EntityFrameworkCore.Sqlite` | `migrations/SQLite` |
+| MySQL | `MySql.EntityFrameworkCore` (Oracle) | `migrations/MySQL` |
+
+### Applying migrations
+
+Each project under `src/EntityFramework.Storage/migrations/<Provider>/` is a standalone EF Core migration host. Edit its `appsettings.json` to point at your database, then run:
+
+```shell
+dotnet ef database update --project src/EntityFramework.Storage/migrations/<Provider>/<Provider>.csproj --context ConfigurationDbContext
+dotnet ef database update --project src/EntityFramework.Storage/migrations/<Provider>/<Provider>.csproj --context PersistedGrantDbContext
+```
+
+### Wiring up your app
+
+Pass a `ConfigureDbContext` action when registering GPHosting.Identity. The method name differs per provider:
+
+**SQL Server**
+```csharp
+builder.Services.AddIdentityServer()
+    .AddConfigurationStore(o => o.ConfigureDbContext = b =>
+        b.UseSqlServer(connectionString))
+    .AddOperationalStore(o => o.ConfigureDbContext = b =>
+        b.UseSqlServer(connectionString));
+```
+
+**PostgreSQL**
+```csharp
+// dotnet add package Npgsql.EntityFrameworkCore.PostgreSQL
+builder.Services.AddIdentityServer()
+    .AddConfigurationStore(o => o.ConfigureDbContext = b =>
+        b.UseNpgsql(connectionString))
+    .AddOperationalStore(o => o.ConfigureDbContext = b =>
+        b.UseNpgsql(connectionString));
+```
+
+**SQLite**
+```csharp
+// dotnet add package Microsoft.EntityFrameworkCore.Sqlite
+builder.Services.AddIdentityServer()
+    .AddConfigurationStore(o => o.ConfigureDbContext = b =>
+        b.UseSqlite(connectionString))
+    .AddOperationalStore(o => o.ConfigureDbContext = b =>
+        b.UseSqlite(connectionString));
+```
+
+**MySQL**
+```csharp
+// dotnet add package MySql.EntityFrameworkCore
+// Note: the method is UseMySQL (capital SQL) — this is Oracle's driver, not Pomelo.
+builder.Services.AddIdentityServer()
+    .AddConfigurationStore(o => o.ConfigureDbContext = b =>
+        b.UseMySQL(connectionString))
+    .AddOperationalStore(o => o.ConfigureDbContext = b =>
+        b.UseMySQL(connectionString));
+```
+
+### MySQL — Pomelo vs Oracle driver
+
+**If you have used `Pomelo.EntityFrameworkCore.MySql` before**, note that the method name is different: Oracle uses `UseMySQL` (capital SQL), while Pomelo uses `UseMySql`. Do **not** install Pomelo alongside this library — Pomelo 9.x targets EF Core 9 and will cause a version conflict with GPHosting.Identity's EF Core 10 dependency. Once `Pomelo.EntityFrameworkCore.MySql` 10.x is released, you can switch by:
+
+1. Replacing `MySql.EntityFrameworkCore` with `Pomelo.EntityFrameworkCore.MySql` in your project.
+2. Updating the registration to use Pomelo's API:
+   ```csharp
+   b.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString))
+   ```
+3. Regenerating migrations from `src/EntityFramework.Storage/migrations/MySQL/` (update the driver reference there too).
+
+### SQLite — production warning
+
+> The `SQLitePCLRaw.lib.e_sqlite3` 2.1.11 transitive dependency has a known native-library CVE with no available upgrade at this time. SQLite is not recommended for production identity server deployments — use it for development and testing only.
+
+---
+
 ## How to Build
 
 ```shell

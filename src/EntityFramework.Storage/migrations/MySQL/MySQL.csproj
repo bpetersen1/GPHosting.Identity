@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <!--
+    Uses Oracle's MySQL.EntityFrameworkCore 10.x driver, which tracks EF Core 10.
+    Pomelo.EntityFrameworkCore.MySql can be substituted once a Pomelo 10.x release is available.
+  -->
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.2" PrivateAssets="All" />
+    <PackageReference Include="MySql.EntityFrameworkCore" Version="10.0.7" />
+    <ProjectReference Include="..\..\src\GPHosting.Identity.EntityFramework.Storage.csproj" />
+  </ItemGroup>
+
+</Project>
