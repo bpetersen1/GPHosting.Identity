@@ -3,18 +3,16 @@
 
 #pragma warning disable 1591
 
-namespace GPHosting.Identity
+namespace GPHosting.Identity;
+internal static class IdentityServerConstants
 {
-    internal static class IdentityServerConstants
+    public static class ProtocolTypes
     {
-        public static class ProtocolTypes
-        {
-            public const string OpenIdConnect = "oidc";
-        }
+        public const string OpenIdConnect = "oidc";
+    }
 
-        public static class SecretTypes
-        {
-            public const string SharedSecret = "SharedSecret";
-        }
+    public static class SecretTypes
+    {
+        public const string SharedSecret = "SharedSecret";
     }
 }

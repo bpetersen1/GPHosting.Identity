@@ -9,33 +9,31 @@ using Microsoft.Extensions.Logging;
 using System.Net;
 using System.Threading.Tasks;
 
-namespace GPHosting.Identity.Endpoints
+namespace GPHosting.Identity.Endpoints;
+internal class CheckSessionEndpoint : IEndpointHandler
 {
-    internal class CheckSessionEndpoint : IEndpointHandler
+    private readonly ILogger _logger;
+
+    public CheckSessionEndpoint(ILogger<CheckSessionEndpoint> logger)
     {
-        private readonly ILogger _logger;
+        _logger = logger;
+    }
 
-        public CheckSessionEndpoint(ILogger<CheckSessionEndpoint> logger)
+    public Task<IEndpointResult> ProcessAsync(HttpContext context)
+    {
+        IEndpointResult result;
+
+        if (!HttpMethods.IsGet(context.Request.Method))
         {
-            _logger = logger;
+            _logger.LogWarning("Invalid HTTP method for check session endpoint");
+            result = new StatusCodeResult(HttpStatusCode.MethodNotAllowed);
+        }
+        else
+        {
+            _logger.LogDebug("Rendering check session result");
+            result = new CheckSessionResult();
         }
 
-        public Task<IEndpointResult> ProcessAsync(HttpContext context)
-        {
-            IEndpointResult result;
-
-            if (!HttpMethods.IsGet(context.Request.Method))
-            {
-                _logger.LogWarning("Invalid HTTP method for check session endpoint");
-                result = new StatusCodeResult(HttpStatusCode.MethodNotAllowed);
-            }
-            else
-            {
-                _logger.LogDebug("Rendering check session result");
-                result = new CheckSessionResult();
-            }
-
-            return Task.FromResult(result);
-        }
+        return Task.FromResult(result);
+    }
    }
-}

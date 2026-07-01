@@ -5,17 +5,15 @@
 using GPHosting.Identity.Events;
 using System.Threading.Tasks;
 
-namespace GPHosting.Identity.Services
+namespace GPHosting.Identity.Services;
+/// <summary>
+/// Models persistence of events
+/// </summary>
+public interface IEventSink
 {
     /// <summary>
-    /// Models persistence of events
+    /// Raises the specified event.
     /// </summary>
-    public interface IEventSink
-    {
-        /// <summary>
-        /// Raises the specified event.
-        /// </summary>
-        /// <param name="evt">The event.</param>
-        Task PersistAsync(Event evt);
-    }
+    /// <param name="evt">The event.</param>
+    Task PersistAsync(Event evt);
 }

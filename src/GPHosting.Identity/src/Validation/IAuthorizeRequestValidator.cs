@@ -6,19 +6,17 @@ using System.Collections.Specialized;
 using System.Security.Claims;
 using System.Threading.Tasks;
 
-namespace GPHosting.Identity.Validation
+namespace GPHosting.Identity.Validation;
+/// <summary>
+///  Authorize endpoint request validator.
+/// </summary>
+public interface IAuthorizeRequestValidator
 {
     /// <summary>
-    ///  Authorize endpoint request validator.
+    ///  Validates authorize request parameters.
     /// </summary>
-    public interface IAuthorizeRequestValidator
-    {
-        /// <summary>
-        ///  Validates authorize request parameters.
-        /// </summary>
-        /// <param name="parameters"></param>
-        /// <param name="subject"></param>
-        /// <returns></returns>
-        Task<AuthorizeRequestValidationResult> ValidateAsync(NameValueCollection parameters, ClaimsPrincipal subject = null);
-    }
+    /// <param name="parameters"></param>
+    /// <param name="subject"></param>
+    /// <returns></returns>
+    Task<AuthorizeRequestValidationResult> ValidateAsync(NameValueCollection parameters, ClaimsPrincipal subject = null);
 }

@@ -4,17 +4,15 @@
 
 using System.Threading.Tasks;
 
-namespace GPHosting.Identity.Validation
+namespace GPHosting.Identity.Validation;
+/// <summary>
+/// Handles validation of resource owner password credentials
+/// </summary>
+public interface IResourceOwnerPasswordValidator
 {
     /// <summary>
-    /// Handles validation of resource owner password credentials
+    /// Validates the resource owner password credential
     /// </summary>
-    public interface IResourceOwnerPasswordValidator
-    {
-        /// <summary>
-        /// Validates the resource owner password credential
-        /// </summary>
-        /// <param name="context">The context.</param>
-        Task ValidateAsync(ResourceOwnerPasswordValidationContext context);
-    }
+    /// <param name="context">The context.</param>
+    Task ValidateAsync(ResourceOwnerPasswordValidationContext context);
 }

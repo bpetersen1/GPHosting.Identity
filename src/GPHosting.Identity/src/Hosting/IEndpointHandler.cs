@@ -5,18 +5,16 @@
 using Microsoft.AspNetCore.Http;
 using System.Threading.Tasks;
 
-namespace GPHosting.Identity.Hosting
+namespace GPHosting.Identity.Hosting;
+/// <summary>
+/// Endpoint handler
+/// </summary>
+public interface IEndpointHandler
 {
     /// <summary>
-    /// Endpoint handler
+    /// Processes the request.
     /// </summary>
-    public interface IEndpointHandler
-    {
-        /// <summary>
-        /// Processes the request.
-        /// </summary>
-        /// <param name="context">The HTTP context.</param>
-        /// <returns></returns>
-        Task<IEndpointResult> ProcessAsync(HttpContext context);
-    }
+    /// <param name="context">The HTTP context.</param>
+    /// <returns></returns>
+    Task<IEndpointResult> ProcessAsync(HttpContext context);
 }

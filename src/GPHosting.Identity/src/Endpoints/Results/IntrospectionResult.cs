@@ -9,42 +9,41 @@ using Microsoft.AspNetCore.Http;
 using System;
 using GPHosting.Identity.Extensions;
 
-namespace GPHosting.Identity.Endpoints.Results
+namespace GPHosting.Identity.Endpoints.Results;
+/// <summary>
+/// Result for introspection
+/// </summary>
+/// <seealso cref="GPHosting.Identity.Hosting.IEndpointResult" />
+public class IntrospectionResult : IEndpointResult
 {
     /// <summary>
-    /// Result for introspection
+    /// Gets the result.
     /// </summary>
-    /// <seealso cref="GPHosting.Identity.Hosting.IEndpointResult" />
-    public class IntrospectionResult : IEndpointResult
+    /// <value>
+    /// The result.
+    /// </value>
+    public Dictionary<string, object> Entries { get; }
+
+    /// <summary>
+    /// Initializes a new instance of the <see cref="IntrospectionResult"/> class.
+    /// </summary>
+    /// <param name="entries">The result.</param>
+    /// <exception cref="System.ArgumentNullException">result</exception>
+    public IntrospectionResult(Dictionary<string, object> entries)
     {
-        /// <summary>
-        /// Gets the result.
-        /// </summary>
-        /// <value>
-        /// The result.
-        /// </value>
-        public Dictionary<string, object> Entries { get; }
+        ArgumentNullException.ThrowIfNull(entries);
+        Entries = entries;
+    }
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="IntrospectionResult"/> class.
-        /// </summary>
-        /// <param name="entries">The result.</param>
-        /// <exception cref="System.ArgumentNullException">result</exception>
-        public IntrospectionResult(Dictionary<string, object> entries)
-        {
-            Entries = entries ?? throw new ArgumentNullException(nameof(entries));
-        }
-
-        /// <summary>
-        /// Executes the result.
-        /// </summary>
-        /// <param name="context">The HTTP context.</param>
-        /// <returns></returns>
-        public Task ExecuteAsync(HttpContext context)
-        {
-            context.Response.SetNoCache();
-            
-            return context.Response.WriteJsonAsync(Entries);
-        }
+    /// <summary>
+    /// Executes the result.
+    /// </summary>
+    /// <param name="context">The HTTP context.</param>
+    /// <returns></returns>
+    public Task ExecuteAsync(HttpContext context)
+    {
+        context.Response.SetNoCache();
+        
+        return context.Response.WriteJsonAsync(Entries);
     }
 }

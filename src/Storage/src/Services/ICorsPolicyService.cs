@@ -4,18 +4,16 @@
 
 using System.Threading.Tasks;
 
-namespace GPHosting.Identity.Services
+namespace GPHosting.Identity.Services;
+/// <summary>
+/// Service that determines if CORS is allowed.
+/// </summary>
+public interface ICorsPolicyService
 {
     /// <summary>
-    /// Service that determines if CORS is allowed.
+    /// Determines whether origin is allowed.
     /// </summary>
-    public interface ICorsPolicyService
-    {
-        /// <summary>
-        /// Determines whether origin is allowed.
-        /// </summary>
-        /// <param name="origin">The origin.</param>
-        /// <returns></returns>
-        Task<bool> IsOriginAllowedAsync(string origin);
-    }
+    /// <param name="origin">The origin.</param>
+    /// <returns></returns>
+    Task<bool> IsOriginAllowedAsync(string origin);
 }

@@ -4,22 +4,20 @@
 
 using AutoMapper;
 
-namespace GPHosting.Identity.EntityFramework.Mappers
+namespace GPHosting.Identity.EntityFramework.Mappers;
+/// <summary>
+/// Defines entity/model mapping for persisted grants.
+/// </summary>
+/// <seealso cref="AutoMapper.Profile" />
+public class PersistedGrantMapperProfile:Profile
 {
     /// <summary>
-    /// Defines entity/model mapping for persisted grants.
+    /// <see cref="PersistedGrantMapperProfile">
+    /// </see>
     /// </summary>
-    /// <seealso cref="AutoMapper.Profile" />
-    public class PersistedGrantMapperProfile:Profile
+    public PersistedGrantMapperProfile()
     {
-        /// <summary>
-        /// <see cref="PersistedGrantMapperProfile">
-        /// </see>
-        /// </summary>
-        public PersistedGrantMapperProfile()
-        {
-            CreateMap<Entities.PersistedGrant, Models.PersistedGrant>(MemberList.Destination)
-                .ReverseMap();
-        }
+        CreateMap<Entities.PersistedGrant, Models.PersistedGrant>(MemberList.Destination)
+            .ReverseMap();
     }
 }

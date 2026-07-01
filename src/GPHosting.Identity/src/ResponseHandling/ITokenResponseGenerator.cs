@@ -5,18 +5,16 @@
 using System.Threading.Tasks;
 using GPHosting.Identity.Validation;
 
-namespace GPHosting.Identity.ResponseHandling
+namespace GPHosting.Identity.ResponseHandling;
+/// <summary>
+/// Interface the token response generator
+/// </summary>
+public interface ITokenResponseGenerator
 {
     /// <summary>
-    /// Interface the token response generator
+    /// Processes the response.
     /// </summary>
-    public interface ITokenResponseGenerator
-    {
-        /// <summary>
-        /// Processes the response.
-        /// </summary>
-        /// <param name="validationResult">The validation result.</param>
-        /// <returns></returns>
-        Task<TokenResponse> ProcessAsync(TokenRequestValidationResult validationResult);
-    }
+    /// <param name="validationResult">The validation result.</param>
+    /// <returns></returns>
+    Task<TokenResponse> ProcessAsync(TokenRequestValidationResult validationResult);
 }

@@ -5,14 +5,12 @@
 
 #pragma warning disable 1591
 
-namespace GPHosting.Identity.EntityFramework.Entities
+namespace GPHosting.Identity.EntityFramework.Entities;
+public class ClientIdPRestriction
 {
-    public class ClientIdPRestriction
-    {
-        public int Id { get; set; }
-        public string Provider { get; set; }
+    public int Id { get; set; }
+    public string Provider { get; set; }
 
-        public int ClientId { get; set; }
-        public Client Client { get; set; }
-    }
+    public int ClientId { get; set; }
+    public Client Client { get; set; }
 }

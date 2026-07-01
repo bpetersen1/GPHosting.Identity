@@ -6,25 +6,23 @@ using GPHosting.Identity.Configuration;
 using GPHosting.Identity.Hosting;
 using static GPHosting.Identity.Constants;
 
-namespace GPHosting.Identity.Extensions
+namespace GPHosting.Identity.Extensions;
+internal static class EndpointOptionsExtensions
 {
-    internal static class EndpointOptionsExtensions
+    public static bool IsEndpointEnabled(this EndpointsOptions options, Endpoint endpoint)
     {
-        public static bool IsEndpointEnabled(this EndpointsOptions options, Endpoint endpoint)
+        return endpoint?.Name switch
         {
-            return endpoint?.Name switch
-            {
-                EndpointNames.Authorize => options.EnableAuthorizeEndpoint,
-                EndpointNames.CheckSession => options.EnableCheckSessionEndpoint,
-                EndpointNames.DeviceAuthorization => options.EnableDeviceAuthorizationEndpoint,
-                EndpointNames.Discovery => options.EnableDiscoveryEndpoint,
-                EndpointNames.EndSession => options.EnableEndSessionEndpoint,
-                EndpointNames.Introspection => options.EnableIntrospectionEndpoint,
-                EndpointNames.Revocation => options.EnableTokenRevocationEndpoint,
-                EndpointNames.Token => options.EnableTokenEndpoint,
-                EndpointNames.UserInfo => options.EnableUserInfoEndpoint,
-                _ => true
-            };
-        }
+            EndpointNames.Authorize => options.EnableAuthorizeEndpoint,
+            EndpointNames.CheckSession => options.EnableCheckSessionEndpoint,
+            EndpointNames.DeviceAuthorization => options.EnableDeviceAuthorizationEndpoint,
+            EndpointNames.Discovery => options.EnableDiscoveryEndpoint,
+            EndpointNames.EndSession => options.EnableEndSessionEndpoint,
+            EndpointNames.Introspection => options.EnableIntrospectionEndpoint,
+            EndpointNames.Revocation => options.EnableTokenRevocationEndpoint,
+            EndpointNames.Token => options.EnableTokenEndpoint,
+            EndpointNames.UserInfo => options.EnableUserInfoEndpoint,
+            _ => true
+        };
     }
 }

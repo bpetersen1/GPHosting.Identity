@@ -4,18 +4,16 @@
 
 using System.Threading.Tasks;
 
-namespace GPHosting.Identity.Services
+namespace GPHosting.Identity.Services;
+/// <summary>
+/// Interface for the handle generation service
+/// </summary>
+public interface IHandleGenerationService
 {
     /// <summary>
-    /// Interface for the handle generation service
+    /// Generates a handle.
     /// </summary>
-    public interface IHandleGenerationService
-    {
-        /// <summary>
-        /// Generates a handle.
-        /// </summary>
-        /// <param name="length">The length.</param>
-        /// <returns></returns>
-        Task<string> GenerateAsync(int length = 32);
-    }
+    /// <param name="length">The length.</param>
+    /// <returns></returns>
+    Task<string> GenerateAsync(int length = 32);
 }

@@ -5,41 +5,39 @@
 using AutoMapper;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace GPHosting.Identity.EntityFramework.Mappers
+namespace GPHosting.Identity.EntityFramework.Mappers;
+/// <summary>
+/// Extension methods to map to/from entity/model for clients.
+/// </summary>
+public static class ClientMappers
 {
-    /// <summary>
-    /// Extension methods to map to/from entity/model for clients.
-    /// </summary>
-    public static class ClientMappers
+    static ClientMappers()
     {
-        static ClientMappers()
-        {
-            var services = new ServiceCollection();
-            services.AddLogging();
-            services.AddAutoMapper(cfg => cfg.AddProfile<ClientMapperProfile>());
-            Mapper = services.BuildServiceProvider().GetRequiredService<IMapper>();
-        }
+        var services = new ServiceCollection();
+        services.AddLogging();
+        services.AddAutoMapper(cfg => cfg.AddProfile<ClientMapperProfile>());
+        Mapper = services.BuildServiceProvider().GetRequiredService<IMapper>();
+    }
 
-        internal static IMapper Mapper { get; }
+    internal static IMapper Mapper { get; }
 
-        /// <summary>
-        /// Maps an entity to a model.
-        /// </summary>
-        /// <param name="entity">The entity.</param>
-        /// <returns></returns>
-        public static Models.Client ToModel(this Entities.Client entity)
-        {
-            return Mapper.Map<Models.Client>(entity);
-        }
+    /// <summary>
+    /// Maps an entity to a model.
+    /// </summary>
+    /// <param name="entity">The entity.</param>
+    /// <returns></returns>
+    public static Models.Client ToModel(this Entities.Client entity)
+    {
+        return Mapper.Map<Models.Client>(entity);
+    }
 
-        /// <summary>
-        /// Maps a model to an entity.
-        /// </summary>
-        /// <param name="model">The model.</param>
-        /// <returns></returns>
-        public static Entities.Client ToEntity(this Models.Client model)
-        {
-            return Mapper.Map<Entities.Client>(model);
-        }
+    /// <summary>
+    /// Maps a model to an entity.
+    /// </summary>
+    /// <param name="model">The model.</param>
+    /// <returns></returns>
+    public static Entities.Client ToEntity(this Models.Client model)
+    {
+        return Mapper.Map<Entities.Client>(model);
     }
 }

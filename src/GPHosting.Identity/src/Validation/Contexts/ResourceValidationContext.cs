@@ -4,19 +4,17 @@
 
 using GPHosting.Identity.Models;
 
-namespace GPHosting.Identity.Validation
+namespace GPHosting.Identity.Validation;
+/// <summary>
+/// Class describing the resource validation context
+/// </summary>
+public class ResourceValidationContext
 {
     /// <summary>
-    /// Class describing the resource validation context
+    /// Gets or sets the result.
     /// </summary>
-    public class ResourceValidationContext
-    {
-        /// <summary>
-        /// Gets or sets the result.
-        /// </summary>
-        /// <value>
-        /// The result.
-        /// </value>
-        public GrantValidationResult Result { get; set; } = new GrantValidationResult(TokenRequestErrors.InvalidGrant);
-    }
+    /// <value>
+    /// The result.
+    /// </value>
+    public GrantValidationResult Result { get; set; } = new GrantValidationResult(TokenRequestErrors.InvalidGrant);
 }

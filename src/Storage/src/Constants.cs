@@ -2,11 +2,9 @@
 // Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
 
 
-namespace GPHosting.Identity
+namespace GPHosting.Identity;
+internal static class Constants
 {
-    internal static class Constants
-    {
-        public const string IdentityServerName               = "GPHosting.Identity";
-        public const string IdentityServerAuthenticationType = IdentityServerName;
+    public const string IdentityServerName               = "GPHosting.Identity";
+    public const string IdentityServerAuthenticationType = IdentityServerName;
    }
-}

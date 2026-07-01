@@ -1,0 +1,16 @@
+# Normalize line endings to LF in the repository; git converts to
+# CRLF on Windows checkout automatically (requires core.autocrlf=true,
+# which is the Windows git default).
+* text=auto eol=lf
+
+# Force CRLF for Windows-only files
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.ps1 text eol=crlf
+
+# Binary files — no line-ending conversion
+*.png binary
+*.jpg binary
+*.ico binary
+*.pfx binary
+*.snk binary

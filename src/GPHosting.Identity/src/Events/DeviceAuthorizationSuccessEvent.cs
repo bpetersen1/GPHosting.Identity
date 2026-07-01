@@ -6,70 +6,68 @@ using GPHosting.Identity.Extensions;
 using GPHosting.Identity.ResponseHandling;
 using GPHosting.Identity.Validation;
 
-namespace GPHosting.Identity.Events
+namespace GPHosting.Identity.Events;
+/// <summary>
+/// Event for device authorization failure
+/// </summary>
+/// <seealso cref="GPHosting.Identity.Events.Event" />
+public class DeviceAuthorizationSuccessEvent : Event
 {
     /// <summary>
-    /// Event for device authorization failure
+    /// Initializes a new instance of the <see cref="DeviceAuthorizationSuccessEvent"/> class.
     /// </summary>
-    /// <seealso cref="GPHosting.Identity.Events.Event" />
-    public class DeviceAuthorizationSuccessEvent : Event
+    /// <param name="response">The response.</param>
+    /// <param name="request">The request.</param>
+    public DeviceAuthorizationSuccessEvent(DeviceAuthorizationResponse response, DeviceAuthorizationRequestValidationResult request)
+        : this()
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DeviceAuthorizationSuccessEvent"/> class.
-        /// </summary>
-        /// <param name="response">The response.</param>
-        /// <param name="request">The request.</param>
-        public DeviceAuthorizationSuccessEvent(DeviceAuthorizationResponse response, DeviceAuthorizationRequestValidationResult request)
-            : this()
-        {
-            ClientId = request.ValidatedRequest.Client?.ClientId;
-            ClientName = request.ValidatedRequest.Client?.ClientName;
-            Endpoint = Constants.EndpointNames.DeviceAuthorization;
-            Scopes = request.ValidatedRequest.ValidatedResources?.RawScopeValues.ToSpaceSeparatedString();
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DeviceAuthorizationSuccessEvent"/> class.
-        /// </summary>
-        protected DeviceAuthorizationSuccessEvent()
-            : base(EventCategories.DeviceFlow,
-                "Device Authorization Success",
-                EventTypes.Success,
-                EventIds.DeviceAuthorizationSuccess)
-        {
-        }
-
-
-        /// <summary>
-        /// Gets or sets the client identifier.
-        /// </summary>
-        /// <value>
-        /// The client identifier.
-        /// </value>
-        public string ClientId { get; set; }
-
-        /// <summary>
-        /// Gets or sets the name of the client.
-        /// </summary>
-        /// <value>
-        /// The name of the client.
-        /// </value>
-        public string ClientName { get; set; }
-
-        /// <summary>
-        /// Gets or sets the endpoint.
-        /// </summary>
-        /// <value>
-        /// The endpoint.
-        /// </value>
-        public string Endpoint { get; set; }
-
-        /// <summary>
-        /// Gets or sets the scopes.
-        /// </summary>
-        /// <value>
-        /// The scopes.
-        /// </value>
-        public string Scopes { get; set; }
+        ClientId = request.ValidatedRequest.Client?.ClientId;
+        ClientName = request.ValidatedRequest.Client?.ClientName;
+        Endpoint = Constants.EndpointNames.DeviceAuthorization;
+        Scopes = request.ValidatedRequest.ValidatedResources?.RawScopeValues.ToSpaceSeparatedString();
     }
+
+    /// <summary>
+    /// Initializes a new instance of the <see cref="DeviceAuthorizationSuccessEvent"/> class.
+    /// </summary>
+    protected DeviceAuthorizationSuccessEvent()
+        : base(EventCategories.DeviceFlow,
+            "Device Authorization Success",
+            EventTypes.Success,
+            EventIds.DeviceAuthorizationSuccess)
+    {
+    }
+
+
+    /// <summary>
+    /// Gets or sets the client identifier.
+    /// </summary>
+    /// <value>
+    /// The client identifier.
+    /// </value>
+    public string ClientId { get; set; }
+
+    /// <summary>
+    /// Gets or sets the name of the client.
+    /// </summary>
+    /// <value>
+    /// The name of the client.
+    /// </value>
+    public string ClientName { get; set; }
+
+    /// <summary>
+    /// Gets or sets the endpoint.
+    /// </summary>
+    /// <value>
+    /// The endpoint.
+    /// </value>
+    public string Endpoint { get; set; }
+
+    /// <summary>
+    /// Gets or sets the scopes.
+    /// </summary>
+    /// <value>
+    /// The scopes.
+    /// </value>
+    public string Scopes { get; set; }
 }

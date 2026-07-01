@@ -4,26 +4,24 @@ using GPHosting.Identity.Models;
 using Microsoft.AspNetCore.Http;
 using System.Threading.Tasks;
 
-namespace GPHosting.Identity.Validation
+namespace GPHosting.Identity.Validation;
+/// <summary>
+/// Parser for finding the best secret in an Enumerable List
+/// </summary>
+public interface ISecretsListParser
 {
     /// <summary>
-    /// Parser for finding the best secret in an Enumerable List
+    /// Tries to find the best secret on the context that can be used for authentication
     /// </summary>
-    public interface ISecretsListParser
-    {
-        /// <summary>
-        /// Tries to find the best secret on the context that can be used for authentication
-        /// </summary>
-        /// <param name="context">The HTTP context.</param>
-        /// <returns>
-        /// A parsed secret
-        /// </returns>
-        Task<ParsedSecret> ParseAsync(HttpContext context);
+    /// <param name="context">The HTTP context.</param>
+    /// <returns>
+    /// A parsed secret
+    /// </returns>
+    Task<ParsedSecret> ParseAsync(HttpContext context);
 
-        /// <summary>
-        /// Gets all available authentication methods.
-        /// </summary>
-        /// <returns></returns>
-        IEnumerable<string> GetAvailableAuthenticationMethods();
-    }
+    /// <summary>
+    /// Gets all available authentication methods.
+    /// </summary>
+    /// <returns></returns>
+    IEnumerable<string> GetAvailableAuthenticationMethods();
 }

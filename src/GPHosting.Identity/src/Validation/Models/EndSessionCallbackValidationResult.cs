@@ -4,17 +4,15 @@
 
 using System.Collections.Generic;
 
-namespace GPHosting.Identity.Validation
+namespace GPHosting.Identity.Validation;
+/// <summary>
+/// Validation result for end session callback requests.
+/// </summary>
+/// <seealso cref="GPHosting.Identity.Validation.ValidationResult" />
+public class EndSessionCallbackValidationResult : ValidationResult
 {
     /// <summary>
-    /// Validation result for end session callback requests.
+    /// Gets the client front-channel logout urls.
     /// </summary>
-    /// <seealso cref="GPHosting.Identity.Validation.ValidationResult" />
-    public class EndSessionCallbackValidationResult : ValidationResult
-    {
-        /// <summary>
-        /// Gets the client front-channel logout urls.
-        /// </summary>
-        public IEnumerable<string> FrontChannelLogoutUrls { get; set; }
-    }
+    public IEnumerable<string> FrontChannelLogoutUrls { get; set; }
 }

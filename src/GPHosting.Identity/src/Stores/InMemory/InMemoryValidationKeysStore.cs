@@ -7,33 +7,32 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace GPHosting.Identity.Stores
+namespace GPHosting.Identity.Stores;
+/// <summary>
+/// The default validation key store
+/// </summary>
+/// <seealso cref="GPHosting.Identity.Stores.IValidationKeysStore" />
+public class InMemoryValidationKeysStore : IValidationKeysStore
 {
+    private readonly IEnumerable<SecurityKeyInfo> _keys;
+
     /// <summary>
-    /// The default validation key store
+    /// Initializes a new instance of the <see cref="InMemoryValidationKeysStore"/> class.
     /// </summary>
-    /// <seealso cref="GPHosting.Identity.Stores.IValidationKeysStore" />
-    public class InMemoryValidationKeysStore : IValidationKeysStore
+    /// <param name="keys">The keys.</param>
+    /// <exception cref="System.ArgumentNullException">keys</exception>
+    public InMemoryValidationKeysStore(IEnumerable<SecurityKeyInfo> keys)
     {
-        private readonly IEnumerable<SecurityKeyInfo> _keys;
+        ArgumentNullException.ThrowIfNull(keys);
+        _keys = keys;
+    }
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="InMemoryValidationKeysStore"/> class.
-        /// </summary>
-        /// <param name="keys">The keys.</param>
-        /// <exception cref="System.ArgumentNullException">keys</exception>
-        public InMemoryValidationKeysStore(IEnumerable<SecurityKeyInfo> keys)
-        {
-            _keys = keys ?? throw new ArgumentNullException(nameof(keys));
-        }
-
-        /// <summary>
-        /// Gets all validation keys.
-        /// </summary>
-        /// <returns></returns>
-        public Task<IEnumerable<SecurityKeyInfo>> GetValidationKeysAsync()
-        {
-            return Task.FromResult(_keys);
-        }
+    /// <summary>
+    /// Gets all validation keys.
+    /// </summary>
+    /// <returns></returns>
+    public Task<IEnumerable<SecurityKeyInfo>> GetValidationKeysAsync()
+    {
+        return Task.FromResult(_keys);
     }
 }

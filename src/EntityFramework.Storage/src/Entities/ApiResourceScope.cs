@@ -4,14 +4,12 @@
 
 #pragma warning disable 1591
 
-namespace GPHosting.Identity.EntityFramework.Entities
+namespace GPHosting.Identity.EntityFramework.Entities;
+public class ApiResourceScope
 {
-    public class ApiResourceScope
-    {
-        public int Id { get; set; }
-        public string Scope { get; set; }
+    public int Id { get; set; }
+    public string Scope { get; set; }
 
-        public int ApiResourceId { get; set; }
-        public ApiResource ApiResource { get; set; }
-    }
+    public int ApiResourceId { get; set; }
+    public ApiResource ApiResource { get; set; }
 }

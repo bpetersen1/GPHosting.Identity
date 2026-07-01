@@ -4,11 +4,9 @@
 
 #pragma warning disable 1591
 
-namespace GPHosting.Identity.EntityFramework.Entities
+namespace GPHosting.Identity.EntityFramework.Entities;
+public class ApiScopeClaim : UserClaim
 {
-    public class ApiScopeClaim : UserClaim
-    {
-        public int ScopeId { get; set; }
-        public ApiScope Scope { get; set; }
-    }
+    public int ScopeId { get; set; }
+    public ApiScope Scope { get; set; }
 }

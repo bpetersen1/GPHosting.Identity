@@ -6,19 +6,17 @@ using GPHosting.Identity.Models;
 using System.Collections.Specialized;
 using System.Threading.Tasks;
 
-namespace GPHosting.Identity.Validation
+namespace GPHosting.Identity.Validation;
+/// <summary>
+/// Interface for the introspection request validator
+/// </summary>
+public interface IIntrospectionRequestValidator
 {
     /// <summary>
-    /// Interface for the introspection request validator
+    /// Validates the request.
     /// </summary>
-    public interface IIntrospectionRequestValidator
-    {
-        /// <summary>
-        /// Validates the request.
-        /// </summary>
-        /// <param name="parameters">The parameters.</param>
-        /// <param name="api">The API.</param>
-        /// <returns></returns>
-        Task<IntrospectionRequestValidationResult> ValidateAsync(NameValueCollection parameters, ApiResource api);
-    }
+    /// <param name="parameters">The parameters.</param>
+    /// <param name="api">The API.</param>
+    /// <returns></returns>
+    Task<IntrospectionRequestValidationResult> ValidateAsync(NameValueCollection parameters, ApiResource api);
 }

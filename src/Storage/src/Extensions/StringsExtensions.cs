@@ -4,20 +4,18 @@
 
 using System.Diagnostics;
 
-namespace GPHosting.Identity.Extensions
+namespace GPHosting.Identity.Extensions;
+internal static class StringExtensions
 {
-    internal static class StringExtensions
+    [DebuggerStepThrough]
+    public static bool IsMissing(this string value)
     {
-        [DebuggerStepThrough]
-        public static bool IsMissing(this string value)
-        {
-            return string.IsNullOrWhiteSpace(value);
-        }
+        return string.IsNullOrWhiteSpace(value);
+    }
 
-        [DebuggerStepThrough]
-        public static bool IsPresent(this string value)
-        {
-            return !string.IsNullOrWhiteSpace(value);
-        }
+    [DebuggerStepThrough]
+    public static bool IsPresent(this string value)
+    {
+        return !string.IsNullOrWhiteSpace(value);
     }
 }

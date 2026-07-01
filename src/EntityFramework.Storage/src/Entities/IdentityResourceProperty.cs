@@ -5,11 +5,9 @@
 
 #pragma warning disable 1591
 
-namespace GPHosting.Identity.EntityFramework.Entities
+namespace GPHosting.Identity.EntityFramework.Entities;
+public class IdentityResourceProperty : Property
 {
-    public class IdentityResourceProperty : Property
-    {
-        public int IdentityResourceId { get; set; }
-        public IdentityResource IdentityResource { get; set; }
-    }
+    public int IdentityResourceId { get; set; }
+    public IdentityResource IdentityResource { get; set; }
 }

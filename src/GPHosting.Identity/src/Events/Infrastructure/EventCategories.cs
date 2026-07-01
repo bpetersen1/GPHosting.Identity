@@ -2,36 +2,34 @@
 // Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
 
 
-namespace GPHosting.Identity.Events
+namespace GPHosting.Identity.Events;
+/// <summary>
+/// Categories for events
+/// </summary>
+public static class EventCategories
 {
     /// <summary>
-    /// Categories for events
+    /// Authentication related events
     /// </summary>
-    public static class EventCategories
-    {
-        /// <summary>
-        /// Authentication related events
-        /// </summary>
-        public const string Authentication = "Authentication";
+    public const string Authentication = "Authentication";
 
-        /// <summary>
-        /// Token related events
-        /// </summary>
-        public const string Token = "Token";
+    /// <summary>
+    /// Token related events
+    /// </summary>
+    public const string Token = "Token";
 
-        /// <summary>
-        /// Grants related events
-        /// </summary>
-        public const string Grants = "Grants";
+    /// <summary>
+    /// Grants related events
+    /// </summary>
+    public const string Grants = "Grants";
 
-        /// <summary>
-        /// Error related events
-        /// </summary>
-        public const string Error = "Error";
+    /// <summary>
+    /// Error related events
+    /// </summary>
+    public const string Error = "Error";
 
-        /// <summary>
-        /// Device flow related events
-        /// </summary>
-        public const string DeviceFlow = "Device";
-    }
+    /// <summary>
+    /// Device flow related events
+    /// </summary>
+    public const string DeviceFlow = "Device";
 }
