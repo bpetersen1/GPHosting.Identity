@@ -70,7 +70,7 @@ Every security fix ships with tests that prove attacks fail — not just that ha
 
 GPHosting.Identity implements current-generation OAuth 2.0 specifications that IdentityServer4 never supported:
 
-- **Pushed Authorization Requests (PAR — RFC 9126)**: Clients push authorization parameters to the server before redirecting the user, receiving a `request_uri` token. This prevents parameter tampering in the browser, is required for FAPI 2.0, and is available at `POST /connect/par`
+- **Pushed Authorization Requests (PAR — RFC 9126)**: Clients push authorization parameters to the server before redirecting the user, receiving a `request_uri` token. This prevents parameter tampering in the browser, is required for FAPI 2.0, and is fully wired end-to-end: `POST /connect/par` stores the request, and the authorize endpoint resolves `request_uri` references, enforces one-time use, validates expiry, and rejects client_id mismatches. Per-client `RequirePushedAuthorization` flag enforces PAR for all requests from that client
 - **DPoP proof validation (RFC 9449)**: Demonstration of Proof-of-Possession binds access tokens to a client's public key, preventing stolen token replay. The `IDPoPProofValidator` verifies the JWT header type, embedded public key, HTTP method/URL binding, and `iat` replay window
 - **Rich Authorization Requests groundwork (RFC 9396)**: Clients can declare allowed `authorization_details` types for fine-grained resource authorization
 - **JARM response modes**: `query.jwt`, `fragment.jwt`, and `form_post.jwt` response mode constants for JWT-secured authorization responses

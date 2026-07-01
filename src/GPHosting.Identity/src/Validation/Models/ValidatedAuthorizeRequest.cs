@@ -180,6 +180,11 @@ public class ValidatedAuthorizeRequest : ValidatedRequest
     /// The request object
     /// </value>
     public string RequestObject { get; set; }
+
+    /// <summary>
+    /// True when the request was received via a Pushed Authorization Request (RFC 9126) request_uri reference.
+    /// </summary>
+    public bool IsPushedAuthorization { get; set; }
     
     /// <summary>
     /// Gets a value indicating whether an access token was requested.

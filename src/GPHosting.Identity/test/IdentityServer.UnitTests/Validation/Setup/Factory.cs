@@ -187,7 +187,8 @@ namespace IdentityServer.UnitTests.Validation.Setup
             IRedirectUriValidator uriValidator = null,
             IResourceValidator resourceValidator = null,
             JwtRequestValidator jwtRequestValidator = null,
-            IJwtRequestUriHttpClient jwtRequestUriHttpClient = null)
+            IJwtRequestUriHttpClient jwtRequestUriHttpClient = null,
+            IPushedAuthorizationRequestStore parStore = null)
         {
             if (options == null)
             {
@@ -241,6 +242,7 @@ namespace IdentityServer.UnitTests.Validation.Setup
                 userSession,
                 jwtRequestValidator,
                 jwtRequestUriHttpClient,
+                parStore ?? new InMemoryPushedAuthorizationRequestStore(),
                 TestLogger.Create<AuthorizeRequestValidator>());
         }
 

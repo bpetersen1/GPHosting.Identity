@@ -10,15 +10,19 @@ using GPHosting.Identity.Services;
 using GPHosting.Identity.Stores;
 using Microsoft.Extensions.Logging;
 using System;
+using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Linq;
 using System.Security.Claims;
+using System.Text.Json;
 using System.Threading.Tasks;
 using GPHosting.Identity.Logging.Models;
 
 namespace GPHosting.Identity.Validation;
 internal class AuthorizeRequestValidator : IAuthorizeRequestValidator
 {
+    private const string ParRequestUriPrefix = "urn:ietf:params:oauth:request_uri:";
+
     private readonly IdentityServerOptions _options;
     private readonly IClientStore _clients;
     private readonly ICustomAuthorizeRequestValidator _customValidator;
@@ -27,6 +31,7 @@ internal class AuthorizeRequestValidator : IAuthorizeRequestValidator
     private readonly IUserSession _userSession;
     private readonly JwtRequestValidator _jwtRequestValidator;
     private readonly IJwtRequestUriHttpClient _jwtRequestUriHttpClient;
+    private readonly IPushedAuthorizationRequestStore _parStore;
     private readonly ILogger _logger;
 
     private readonly ResponseTypeEqualityComparer
@@ -41,6 +46,7 @@ internal class AuthorizeRequestValidator : IAuthorizeRequestValidator
         IUserSession userSession,
         JwtRequestValidator jwtRequestValidator,
         IJwtRequestUriHttpClient jwtRequestUriHttpClient,
+        IPushedAuthorizationRequestStore parStore,
         ILogger<AuthorizeRequestValidator> logger)
     {
         _options = options;
@@ -51,6 +57,7 @@ internal class AuthorizeRequestValidator : IAuthorizeRequestValidator
         _jwtRequestValidator = jwtRequestValidator;
         _userSession = userSession;
         _jwtRequestUriHttpClient = jwtRequestUriHttpClient;
+        _parStore = parStore;
         _logger = logger;
     }
 
@@ -64,13 +71,27 @@ internal class AuthorizeRequestValidator : IAuthorizeRequestValidator
             Subject = subject ?? Principal.Anonymous,
             Raw = parameters ?? throw new ArgumentNullException(nameof(parameters))
         };
-        
+
+        // resolve PAR request_uri before any other validation (RFC 9126)
+        var parResult = await ResolvePushedAuthorizationAsync(request);
+        if (parResult.IsError)
+        {
+            return parResult;
+        }
+
         // load client_id
         // client_id must always be present on the request
         var loadClientResult = await LoadClientAsync(request);
         if (loadClientResult.IsError)
         {
             return loadClientResult;
+        }
+
+        // enforce RequirePushedAuthorization — client requires all authorize requests to arrive via PAR
+        if (request.Client.RequirePushedAuthorization && !request.IsPushedAuthorization)
+        {
+            LogError("Client requires pushed authorization but request did not use PAR", request);
+            return Invalid(request, OidcConstants.AuthorizeErrors.InvalidRequest, "Client requires pushed authorization requests");
         }
 
         // load request object
@@ -825,6 +846,69 @@ internal class AuthorizeRequestValidator : IAuthorizeRequestValidator
             }
         }
 
+        return Valid(request);
+    }
+
+    private async Task<AuthorizeRequestValidationResult> ResolvePushedAuthorizationAsync(ValidatedAuthorizeRequest request)
+    {
+        var requestUri = request.Raw.Get(OidcConstants.AuthorizeRequest.RequestUri);
+        if (requestUri.IsMissing() || !requestUri.StartsWith(ParRequestUriPrefix, StringComparison.Ordinal))
+            return Valid(request);
+
+        var handle = requestUri[ParRequestUriPrefix.Length..];
+        if (string.IsNullOrEmpty(handle))
+        {
+            LogError("PAR request_uri handle is empty", request);
+            return Invalid(request, OidcConstants.AuthorizeErrors.InvalidRequest, "Invalid request_uri");
+        }
+
+        var parRequest = await _parStore.GetAsync(handle);
+        if (parRequest == null)
+        {
+            LogError("PAR request_uri not found or expired", request);
+            return Invalid(request, OidcConstants.AuthorizeErrors.InvalidRequest, "The request_uri is invalid or has expired");
+        }
+
+        if (DateTime.UtcNow > parRequest.ExpiresAt)
+        {
+            await _parStore.RemoveAsync(handle);
+            LogError("PAR request_uri has expired", request);
+            return Invalid(request, OidcConstants.AuthorizeErrors.InvalidRequest, "The request_uri has expired");
+        }
+
+        Dictionary<string, string> storedParams;
+        try
+        {
+            storedParams = JsonSerializer.Deserialize<Dictionary<string, string>>(parRequest.Parameters)
+                ?? throw new InvalidOperationException("PAR parameters deserialized to null");
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Failed to deserialize PAR parameters for handle {handle}", handle);
+            return Invalid(request, OidcConstants.AuthorizeErrors.InvalidRequest, "The request_uri parameters are invalid");
+        }
+
+        // RFC 9126 §4: the client_id on the authorize request must match the one in the stored PAR params
+        var outerClientId = request.Raw.Get(OidcConstants.AuthorizeRequest.ClientId);
+        if (storedParams.TryGetValue(OidcConstants.AuthorizeRequest.ClientId, out var storedClientId) &&
+            !string.Equals(outerClientId, storedClientId, StringComparison.Ordinal))
+        {
+            LogError("client_id in authorize request does not match PAR stored client_id", request);
+            return Invalid(request, OidcConstants.AuthorizeErrors.InvalidRequest, "client_id mismatch");
+        }
+
+        // one-time use: remove immediately after successful resolution
+        await _parStore.RemoveAsync(handle);
+
+        // replace request parameters with the authoritative stored params
+        var resolved = new NameValueCollection();
+        foreach (var kvp in storedParams)
+            resolved[kvp.Key] = kvp.Value;
+
+        request.Raw = resolved;
+        request.IsPushedAuthorization = true;
+
+        _logger.LogDebug("PAR request_uri resolved successfully. handle={handle}", handle);
         return Valid(request);
     }
 
