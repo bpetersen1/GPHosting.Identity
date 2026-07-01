@@ -13,7 +13,9 @@ using GPHosting.Identity.Validation;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
+using GPHosting.Identity.Configuration;
 
 namespace GPHosting.Identity.Endpoints;
 /// <summary>
@@ -26,27 +28,22 @@ internal class TokenEndpoint : IEndpointHandler
     private readonly ITokenRequestValidator _requestValidator;
     private readonly ITokenResponseGenerator _responseGenerator;
     private readonly IEventService _events;
+    private readonly IDPoPProofValidator _dPoPValidator;
     private readonly ILogger _logger;
 
-    /// <summary>
-    /// Initializes a new instance of the <see cref="TokenEndpoint" /> class.
-    /// </summary>
-    /// <param name="clientValidator">The client validator.</param>
-    /// <param name="requestValidator">The request validator.</param>
-    /// <param name="responseGenerator">The response generator.</param>
-    /// <param name="events">The events.</param>
-    /// <param name="logger">The logger.</param>
     public TokenEndpoint(
-        IClientSecretValidator clientValidator, 
-        ITokenRequestValidator requestValidator, 
-        ITokenResponseGenerator responseGenerator, 
-        IEventService events, 
+        IClientSecretValidator clientValidator,
+        ITokenRequestValidator requestValidator,
+        ITokenResponseGenerator responseGenerator,
+        IEventService events,
+        IDPoPProofValidator dPoPValidator,
         ILogger<TokenEndpoint> logger)
     {
         _clientValidator = clientValidator;
         _requestValidator = requestValidator;
         _responseGenerator = responseGenerator;
         _events = events;
+        _dPoPValidator = dPoPValidator;
         _logger = logger;
     }
 
@@ -90,6 +87,28 @@ internal class TokenEndpoint : IEndpointHandler
         {
             await _events.RaiseAsync(new TokenIssuedFailureEvent(requestResult));
             return Error(requestResult.Error, requestResult.ErrorDescription, requestResult.CustomResponse);
+        }
+
+        // validate DPoP proof if the client sent one
+        var dPopProof = context.Request.Headers[IdentityServerConstants.DPoP.ProofTokenHeader].FirstOrDefault();
+        if (dPopProof != null)
+        {
+            var requestUrl = $"{context.Request.Scheme}://{context.Request.Host}{context.Request.Path}";
+            var dPopResult = await _dPoPValidator.ValidateAsync(new DPoPProofValidationContext
+            {
+                ProofToken = dPopProof,
+                HttpMethod = context.Request.Method,
+                HttpUrl = requestUrl
+            });
+
+            if (dPopResult.IsError)
+            {
+                _logger.LogWarning("DPoP proof validation failed: {error} — {description}", dPopResult.Error, dPopResult.ErrorDescription);
+                return Error(dPopResult.Error, dPopResult.ErrorDescription);
+            }
+
+            requestResult.ValidatedRequest.DPoPConfirmation = dPopResult.Confirmation;
+            _logger.LogDebug("DPoP proof validated. cnf={confirmation}", dPopResult.Confirmation);
         }
 
         // create response

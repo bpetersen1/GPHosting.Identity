@@ -84,21 +84,33 @@ public class TokenResponseGenerator : ITokenResponseGenerator
     /// <returns></returns>
     public virtual async Task<TokenResponse> ProcessAsync(TokenRequestValidationResult request)
     {
+        TokenResponse response;
         switch (request.ValidatedRequest.GrantType)
         {
             case OidcConstants.GrantTypes.ClientCredentials:
-                return await ProcessClientCredentialsRequestAsync(request);
+                response = await ProcessClientCredentialsRequestAsync(request);
+                break;
             case OidcConstants.GrantTypes.Password:
-                return await ProcessPasswordRequestAsync(request);
+                response = await ProcessPasswordRequestAsync(request);
+                break;
             case OidcConstants.GrantTypes.AuthorizationCode:
-                return await ProcessAuthorizationCodeRequestAsync(request);
+                response = await ProcessAuthorizationCodeRequestAsync(request);
+                break;
             case OidcConstants.GrantTypes.RefreshToken:
-                return await ProcessRefreshTokenRequestAsync(request);
+                response = await ProcessRefreshTokenRequestAsync(request);
+                break;
             case OidcConstants.GrantTypes.DeviceCode:
-                return await ProcessDeviceCodeRequestAsync(request);
+                response = await ProcessDeviceCodeRequestAsync(request);
+                break;
             default:
-                return await ProcessExtensionGrantRequestAsync(request);
+                response = await ProcessExtensionGrantRequestAsync(request);
+                break;
         }
+
+        if (request.ValidatedRequest.DPoPConfirmation != null)
+            response.TokenType = IdentityServerConstants.DPoP.TokenType;
+
+        return response;
     }
 
     /// <summary>
@@ -420,6 +432,11 @@ public class TokenResponseGenerator : ITokenResponseGenerator
         }
 
         var at = await TokenService.CreateAccessTokenAsync(tokenRequest);
+
+        // bind the DPoP JWK thumbprint as the cnf claim when DPoP proof was validated
+        if (request.DPoPConfirmation != null)
+            at.Confirmation = request.DPoPConfirmation;
+
         var accessToken = await TokenService.CreateSecurityTokenAsync(at);
 
         if (createRefreshToken)

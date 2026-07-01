@@ -57,4 +57,9 @@ public class TokenResponse
     /// The custom entries.
     /// </value>
     public Dictionary<string, object> Custom { get; set; } = new Dictionary<string, object>();
+
+    /// <summary>
+    /// The token_type value for the response. Defaults to "Bearer"; set to "DPoP" when a DPoP proof was validated.
+    /// </summary>
+    public string TokenType { get; set; } = "Bearer";
 }

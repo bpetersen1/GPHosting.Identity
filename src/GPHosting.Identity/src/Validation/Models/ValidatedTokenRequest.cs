@@ -82,4 +82,10 @@ public class ValidatedTokenRequest : ValidatedRequest
     /// The device code.
     /// </value>
     public DeviceCode DeviceCode { get; set; }
+
+    /// <summary>
+    /// The base64url JWK thumbprint from a validated DPoP proof, used as the cnf claim value.
+    /// Null when the request did not include a DPoP proof.
+    /// </summary>
+    public string DPoPConfirmation { get; set; }
 }
