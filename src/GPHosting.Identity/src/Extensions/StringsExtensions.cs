@@ -8,7 +8,6 @@ using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Diagnostics;
 using System.Linq;
-using System.Text;
 using System.Text.Encodings.Web;
 
 namespace GPHosting.Identity.Extensions;
@@ -22,14 +21,7 @@ internal static class StringExtensions
             return string.Empty;
         }
 
-        var sb = new StringBuilder(100);
-
-        foreach (var element in list)
-        {
-            sb.Append(element + " ");
-        }
-
-        return sb.ToString().Trim();
+        return string.Join(' ', list);
     }
 
     [DebuggerStepThrough]
@@ -46,13 +38,24 @@ internal static class StringExtensions
             return null;
         }
 
-        scopes = scopes.Trim();
-        var parsedScopes = scopes.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries).Distinct().ToList();
+        var span = scopes.AsSpan().Trim();
+        var result = new List<string>();
 
-        if (parsedScopes.Any())
+        foreach (var segment in span.Split(' '))
         {
-            parsedScopes.Sort();
-            return parsedScopes;
+            var token = span[segment].Trim();
+            if (token.IsEmpty) continue;
+            var tokenStr = token.ToString();
+            if (!result.Contains(tokenStr))
+            {
+                result.Add(tokenStr);
+            }
+        }
+
+        if (result.Count > 0)
+        {
+            result.Sort();
+            return result;
         }
 
         return null;

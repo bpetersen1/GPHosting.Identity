@@ -9,7 +9,6 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using IdentityModel;
 using GPHosting.Identity.Models;
-using Microsoft.AspNetCore.Authentication;
 using Microsoft.Extensions.Logging;
 
 namespace GPHosting.Identity.Services;
@@ -26,7 +25,7 @@ public class DefaultBackChannelLogoutService : IBackChannelLogoutService
     /// <summary>
     /// The system clock;
     /// </summary>
-    protected ISystemClock Clock { get; }
+    protected TimeProvider Clock { get; }
     
     /// <summary>
     /// The IdentityServerTools used to create and the JWT.
@@ -57,7 +56,7 @@ public class DefaultBackChannelLogoutService : IBackChannelLogoutService
     /// <param name="backChannelLogoutHttpClient"></param>
     /// <param name="logger"></param>
     public DefaultBackChannelLogoutService(
-        ISystemClock clock,
+        TimeProvider clock,
         IdentityServerTools tools,
         ILogoutNotificationService logoutNotificationService,
         IBackChannelLogoutHttpClient backChannelLogoutHttpClient,
@@ -163,7 +162,7 @@ public class DefaultBackChannelLogoutService : IBackChannelLogoutService
         {
             new Claim(JwtClaimTypes.Subject, request.SubjectId),
             new Claim(JwtClaimTypes.Audience, request.ClientId),
-            new Claim(JwtClaimTypes.IssuedAt, Clock.UtcNow.ToUnixTimeSeconds().ToString(), ClaimValueTypes.Integer64),
+            new Claim(JwtClaimTypes.IssuedAt, Clock.GetUtcNow().ToUnixTimeSeconds().ToString(), ClaimValueTypes.Integer64),
             new Claim(JwtClaimTypes.JwtId, CryptoRandom.CreateUniqueId(16, CryptoRandom.OutputFormat.Hex)),
             new Claim(JwtClaimTypes.Events, json, IdentityServerConstants.ClaimValueTypes.Json)
         };

@@ -11,12 +11,10 @@ using System.Threading.Tasks;
 using System.Collections.Generic;
 using Microsoft.Extensions.Logging;
 using System.Linq;
-using Microsoft.AspNetCore.Authentication;
-
 namespace GPHosting.Identity.Services;
 internal class DefaultIdentityServerInteractionService : IIdentityServerInteractionService
 {
-    private readonly ISystemClock _clock;
+    private readonly TimeProvider _clock;
     private readonly IHttpContextAccessor _context;
     private readonly IMessageStore<LogoutMessage> _logoutMessageStore;
     private readonly IMessageStore<ErrorMessage> _errorMessageStore;
@@ -27,7 +25,7 @@ internal class DefaultIdentityServerInteractionService : IIdentityServerInteract
     private readonly ReturnUrlParser _returnUrlParser;
 
     public DefaultIdentityServerInteractionService(
-        ISystemClock clock,
+        TimeProvider clock,
         IHttpContextAccessor context,
         IMessageStore<LogoutMessage> logoutMessageStore,
         IMessageStore<ErrorMessage> errorMessageStore,
@@ -85,7 +83,7 @@ internal class DefaultIdentityServerInteractionService : IIdentityServerInteract
                     SubjectId = user?.GetSubjectId(),
                     SessionId = sid,
                     ClientIds = clientIds
-                }, _clock.UtcNow.UtcDateTime);
+                }, _clock.GetUtcNow().UtcDateTime);
                 var id = await _logoutMessageStore.WriteAsync(msg);
                 return id;
             }
@@ -130,7 +128,7 @@ internal class DefaultIdentityServerInteractionService : IIdentityServerInteract
         }
 
         var consentRequest = new ConsentRequest(request, subject);
-        await _consentMessageStore.WriteAsync(consentRequest.Id, new Message<ConsentResponse>(consent, _clock.UtcNow.UtcDateTime));
+        await _consentMessageStore.WriteAsync(consentRequest.Id, new Message<ConsentResponse>(consent, _clock.GetUtcNow().UtcDateTime));
     }
 
     public Task DenyAuthorizationAsync(AuthorizationRequest request, AuthorizationError error, string errorDescription = null)

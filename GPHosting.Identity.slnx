@@ -4,6 +4,9 @@
   <Folder Name="/src/AspNetIdentity/src/">
     <Project Path="src/AspNetIdentity/src/GPHosting.Identity.AspNetIdentity.csproj" />
   </Folder>
+  <Folder Name="/src/Benchmarks/">
+    <Project Path="src/Benchmarks/GPHosting.Identity.Benchmarks/GPHosting.Identity.Benchmarks.csproj" />
+  </Folder>
   <Folder Name="/src/EntityFramework.Storage/" />
   <Folder Name="/src/EntityFramework.Storage/src/">
     <Project Path="src/EntityFramework.Storage/src/GPHosting.Identity.EntityFramework.Storage.csproj" />

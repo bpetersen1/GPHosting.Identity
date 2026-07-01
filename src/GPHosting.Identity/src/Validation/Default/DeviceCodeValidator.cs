@@ -8,7 +8,6 @@ using IdentityModel;
 using GPHosting.Identity.Extensions;
 using GPHosting.Identity.Models;
 using GPHosting.Identity.Services;
-using Microsoft.AspNetCore.Authentication;
 using Microsoft.Extensions.Logging;
 
 namespace GPHosting.Identity.Validation;
@@ -20,7 +19,7 @@ internal class DeviceCodeValidator : IDeviceCodeValidator
     private readonly IDeviceFlowCodeService _devices;
     private readonly IProfileService _profile;
     private readonly IDeviceFlowThrottlingService _throttlingService;
-    private readonly ISystemClock _systemClock;
+    private readonly TimeProvider _systemClock;
     private readonly ILogger<DeviceCodeValidator> _logger;
 
     /// <summary>
@@ -35,7 +34,7 @@ internal class DeviceCodeValidator : IDeviceCodeValidator
         IDeviceFlowCodeService devices,
         IProfileService profile,
         IDeviceFlowThrottlingService throttlingService,
-        ISystemClock systemClock,
+        TimeProvider systemClock,
         ILogger<DeviceCodeValidator> logger)
     {
         _devices = devices;
@@ -77,7 +76,7 @@ internal class DeviceCodeValidator : IDeviceCodeValidator
         }
 
         // validate lifetime
-        if (deviceCode.CreationTime.AddSeconds(deviceCode.Lifetime) < _systemClock.UtcNow)
+        if (deviceCode.CreationTime.AddSeconds(deviceCode.Lifetime) < _systemClock.GetUtcNow())
         {
             _logger.LogError("Expired device code");
             context.Result = new TokenRequestValidationResult(context.Request, OidcConstants.TokenErrors.ExpiredToken);

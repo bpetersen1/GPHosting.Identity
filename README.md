@@ -57,6 +57,13 @@ The original IdentityServer4 pulled in Newtonsoft.Json for all JSON serializatio
 
 All source code uses modern C# 13 idioms: file-scoped namespaces, `ArgumentNullException.ThrowIfNull()`, collection expressions, and pattern matching — making the codebase easier to read, contribute to, and maintain.
 
+**Performance & AOT ready**
+
+- `ISystemClock` fully replaced with `TimeProvider` across all library source — no obsolete APIs remain
+- Hot paths optimised: claim lookups in token models use `foreach` instead of LINQ chains, scope string parsing uses `ReadOnlySpan<char>` to avoid intermediate array allocations
+- `IsTrimmable` and `EnableTrimAnalyzer` enabled on both core packages — publish with `PublishTrimmed=true` safely
+- BenchmarkDotNet baseline project included at `src/Benchmarks/` for scope parsing and claim lookup, so future changes have measurable performance regression detection
+
 **Security proven by tests**
 
 Every security fix ships with tests that prove attacks fail — not just that happy paths work:

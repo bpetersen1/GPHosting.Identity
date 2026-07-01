@@ -11,7 +11,6 @@ using GPHosting.Identity.Models;
 using GPHosting.Identity.ResponseHandling;
 using GPHosting.Identity.Services;
 using GPHosting.Identity.Validation;
-using Microsoft.AspNetCore.Authentication;
 using Microsoft.Extensions.Logging;
 using Xunit;
 using static IdentityModel.OidcConstants;
@@ -20,7 +19,7 @@ namespace IdentityServer.UnitTests.ResponseHandling.AuthorizeInteractionResponse
 {
     public class CustomAuthorizeInteractionResponseGenerator : GPHosting.Identity.ResponseHandling.AuthorizeInteractionResponseGenerator
     {
-        public CustomAuthorizeInteractionResponseGenerator(ISystemClock clock, ILogger<GPHosting.Identity.ResponseHandling.AuthorizeInteractionResponseGenerator> logger, IConsentService consent, IProfileService profile) : base(clock, logger, consent, profile)
+        public CustomAuthorizeInteractionResponseGenerator(TimeProvider clock, ILogger<GPHosting.Identity.ResponseHandling.AuthorizeInteractionResponseGenerator> logger, IConsentService consent, IProfileService profile) : base(clock, logger, consent, profile)
         {
         }
 

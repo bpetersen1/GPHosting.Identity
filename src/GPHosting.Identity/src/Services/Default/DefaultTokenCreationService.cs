@@ -6,7 +6,6 @@ using IdentityModel;
 using GPHosting.Identity.Configuration;
 using GPHosting.Identity.Extensions;
 using GPHosting.Identity.Models;
-using Microsoft.AspNetCore.Authentication;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
 using System;
@@ -34,7 +33,7 @@ public class DefaultTokenCreationService : ITokenCreationService
     /// <summary>
     ///  The clock
     /// </summary>
-    protected readonly ISystemClock Clock;
+    protected readonly TimeProvider Clock;
 
     /// <summary>
     /// The options
@@ -49,7 +48,7 @@ public class DefaultTokenCreationService : ITokenCreationService
     /// <param name="options">The options.</param>
     /// <param name="logger">The logger.</param>
     public DefaultTokenCreationService(
-        ISystemClock clock,
+        TimeProvider clock,
         IKeyMaterialService keys,
         IdentityServerOptions options,
         ILogger<DefaultTokenCreationService> logger)
@@ -95,7 +94,7 @@ public class DefaultTokenCreationService : ITokenCreationService
         if (credential.Key is X509SecurityKey x509Key)
         {
             var cert = x509Key.Certificate;
-            if (Clock.UtcNow.UtcDateTime > cert.NotAfter)
+            if (Clock.GetUtcNow().UtcDateTime > cert.NotAfter)
             {
                 Logger.LogWarning("Certificate {subjectName} has expired on {expiration}", cert.Subject, cert.NotAfter.ToString(CultureInfo.InvariantCulture));
             }

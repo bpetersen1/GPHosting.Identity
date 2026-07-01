@@ -4,7 +4,6 @@
 
 using IdentityModel;
 using GPHosting.Identity.Models;
-using Microsoft.AspNetCore.Authentication;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -30,14 +29,14 @@ public static class TokenExtensions
     /// <returns></returns>
     /// <exception cref="Exception">
     /// </exception>
-    public static JwtPayload CreateJwtPayload(this Token token, ISystemClock clock, IdentityServerOptions options, ILogger logger)
+    public static JwtPayload CreateJwtPayload(this Token token, TimeProvider clock, IdentityServerOptions options, ILogger logger)
     {
         var payload = new JwtPayload(
             token.Issuer,
             null,
             null,
-            clock.UtcNow.UtcDateTime,
-            clock.UtcNow.UtcDateTime.AddSeconds(token.Lifetime));
+            clock.GetUtcNow().UtcDateTime,
+            clock.GetUtcNow().UtcDateTime.AddSeconds(token.Lifetime));
 
         foreach (var aud in token.Audiences)
         {

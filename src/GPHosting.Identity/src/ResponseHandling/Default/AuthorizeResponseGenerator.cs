@@ -12,7 +12,6 @@ using Microsoft.Extensions.Logging;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authentication;
 using GPHosting.Identity.Configuration;
 
 namespace GPHosting.Identity.ResponseHandling;
@@ -45,7 +44,7 @@ public class AuthorizeResponseGenerator : IAuthorizeResponseGenerator
     /// <summary>
     /// The clock
     /// </summary>
-    protected readonly ISystemClock Clock;
+    protected readonly TimeProvider Clock;
 
     /// <summary>
     /// The key material service
@@ -62,7 +61,7 @@ public class AuthorizeResponseGenerator : IAuthorizeResponseGenerator
     /// <param name="authorizationCodeStore">The authorization code store.</param>
     /// <param name="events">The events.</param>
     public AuthorizeResponseGenerator(
-        ISystemClock clock,
+        TimeProvider clock,
         ITokenService tokenService,
         IKeyMaterialService keyMaterialService,
         IAuthorizationCodeStore authorizationCodeStore,
@@ -239,7 +238,7 @@ public class AuthorizeResponseGenerator : IAuthorizeResponseGenerator
 
         var code = new AuthorizationCode
         {
-            CreationTime = Clock.UtcNow.UtcDateTime,
+            CreationTime = Clock.GetUtcNow().UtcDateTime,
             ClientId = request.Client.ClientId,
             Lifetime = request.Client.AuthorizationCodeLifetime,
             Subject = request.Subject,

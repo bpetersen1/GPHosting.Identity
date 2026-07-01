@@ -5,7 +5,6 @@
 using IdentityModel;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Security.Claims;
 
 namespace GPHosting.Identity.Models;
@@ -126,7 +125,15 @@ public class Token
     /// <value>
     /// The subject identifier.
     /// </value>
-    public string SubjectId => Claims.Where(x => x.Type == JwtClaimTypes.Subject).Select(x => x.Value).SingleOrDefault();
+    public string SubjectId
+    {
+        get
+        {
+            foreach (var c in Claims)
+                if (c.Type == JwtClaimTypes.Subject) return c.Value;
+            return null;
+        }
+    }
 
     /// <summary>
     /// Gets the session identifier.
@@ -134,7 +141,15 @@ public class Token
     /// <value>
     /// The session identifier.
     /// </value>
-    public string SessionId => Claims.Where(x => x.Type == JwtClaimTypes.SessionId).Select(x => x.Value).SingleOrDefault();
+    public string SessionId
+    {
+        get
+        {
+            foreach (var c in Claims)
+                if (c.Type == JwtClaimTypes.SessionId) return c.Value;
+            return null;
+        }
+    }
 
     /// <summary>
     /// Gets the scopes.
@@ -142,5 +157,14 @@ public class Token
     /// <value>
     /// The scopes.
     /// </value>
-    public IEnumerable<string> Scopes => Claims.Where(x => x.Type == JwtClaimTypes.Scope).Select(x => x.Value);
+    public IEnumerable<string> Scopes
+    {
+        get
+        {
+            var scopes = new List<string>();
+            foreach (var c in Claims)
+                if (c.Type == JwtClaimTypes.Scope) scopes.Add(c.Value);
+            return scopes;
+        }
+    }
 }
