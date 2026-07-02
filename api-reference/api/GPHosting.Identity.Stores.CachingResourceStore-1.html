@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Class CachingResourceStore&lt;T&gt; | GPHosting.Identity API Reference </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Class CachingResourceStore&lt;T&gt; | GPHosting.Identity API Reference ">
+    
+    <meta name="description" content="Caching decorator for IResourceStore">
+      <link rel="shortcut icon" href="../icon.jpg">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../icon.jpg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="GPHosting.Identity.Stores.CachingResourceStore`1">
+
+
+
+  <h1 id="GPHosting_Identity_Stores_CachingResourceStore_1" data-uid="GPHosting.Identity.Stores.CachingResourceStore`1" class="text-break">Class CachingResourceStore&lt;T&gt;</h1>
+  <div class="markdown level0 summary"><p>Caching decorator for IResourceStore</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+    <div class="level1"><span class="xref">CachingResourceStore&lt;T&gt;</span></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="GPHosting.Identity.Stores.IResourceStore.html">IResourceStore</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="GPHosting.html">GPHosting</a>.<a class="xref" href="GPHosting.Identity.html">Identity</a>.<a class="xref" href="GPHosting.Identity.Stores.html">Stores</a></h6>
+  <h6><strong>Assembly</strong>: GPHosting.Identity.dll</h6>
+  <h5 id="GPHosting_Identity_Stores_CachingResourceStore_1_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class CachingResourceStore&lt;T&gt; : IResourceStore where T : IResourceStore</code></pre>
+  </div>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="constructors">Constructors
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_Stores_CachingResourceStore_1__ctor_GPHosting_Identity_Configuration_IdentityServerOptions__0_GPHosting_Identity_Services_ICache_System_Collections_Generic_IEnumerable_GPHosting_Identity_Models_IdentityResource___GPHosting_Identity_Services_ICache_System_Collections_Generic_IEnumerable_GPHosting_Identity_Models_ApiResource___GPHosting_Identity_Services_ICache_System_Collections_Generic_IEnumerable_GPHosting_Identity_Models_ApiResource___GPHosting_Identity_Services_ICache_System_Collections_Generic_IEnumerable_GPHosting_Identity_Models_ApiScope___GPHosting_Identity_Services_ICache_GPHosting_Identity_Models_Resources__Microsoft_Extensions_Logging_ILogger_GPHosting_Identity_Stores_CachingResourceStore__0___.md&amp;value=---%0Auid%3A%20GPHosting.Identity.Stores.CachingResourceStore%601.%23ctor(GPHosting.Identity.Configuration.IdentityServerOptions%2C%600%2CGPHosting.Identity.Services.ICache%7BSystem.Collections.Generic.IEnumerable%7BGPHosting.Identity.Models.IdentityResource%7D%7D%2CGPHosting.Identity.Services.ICache%7BSystem.Collections.Generic.IEnumerable%7BGPHosting.Identity.Models.ApiResource%7D%7D%2CGPHosting.Identity.Services.ICache%7BSystem.Collections.Generic.IEnumerable%7BGPHosting.Identity.Models.ApiResource%7D%7D%2CGPHosting.Identity.Services.ICache%7BSystem.Collections.Generic.IEnumerable%7BGPHosting.Identity.Models.ApiScope%7D%7D%2CGPHosting.Identity.Services.ICache%7BGPHosting.Identity.Models.Resources%7D%2CMicrosoft.Extensions.Logging.ILogger%7BGPHosting.Identity.Stores.CachingResourceStore%7B%600%7D%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/Stores/Caching/CachingResourceStore.cs/#L47">View Source</a>
+  </span>
+  <a id="GPHosting_Identity_Stores_CachingResourceStore_1__ctor_" data-uid="GPHosting.Identity.Stores.CachingResourceStore`1.#ctor*"></a>
+  <h4 id="GPHosting_Identity_Stores_CachingResourceStore_1__ctor_GPHosting_Identity_Configuration_IdentityServerOptions__0_GPHosting_Identity_Services_ICache_System_Collections_Generic_IEnumerable_GPHosting_Identity_Models_IdentityResource___GPHosting_Identity_Services_ICache_System_Collections_Generic_IEnumerable_GPHosting_Identity_Models_ApiResource___GPHosting_Identity_Services_ICache_System_Collections_Generic_IEnumerable_GPHosting_Identity_Models_ApiResource___GPHosting_Identity_Services_ICache_System_Collections_Generic_IEnumerable_GPHosting_Identity_Models_ApiScope___GPHosting_Identity_Services_ICache_GPHosting_Identity_Models_Resources__Microsoft_Extensions_Logging_ILogger_GPHosting_Identity_Stores_CachingResourceStore__0___" data-uid="GPHosting.Identity.Stores.CachingResourceStore`1.#ctor(GPHosting.Identity.Configuration.IdentityServerOptions,`0,GPHosting.Identity.Services.ICache{System.Collections.Generic.IEnumerable{GPHosting.Identity.Models.IdentityResource}},GPHosting.Identity.Services.ICache{System.Collections.Generic.IEnumerable{GPHosting.Identity.Models.ApiResource}},GPHosting.Identity.Services.ICache{System.Collections.Generic.IEnumerable{GPHosting.Identity.Models.ApiResource}},GPHosting.Identity.Services.ICache{System.Collections.Generic.IEnumerable{GPHosting.Identity.Models.ApiScope}},GPHosting.Identity.Services.ICache{GPHosting.Identity.Models.Resources},Microsoft.Extensions.Logging.ILogger{GPHosting.Identity.Stores.CachingResourceStore{`0}})">CachingResourceStore(IdentityServerOptions, T, ICache&lt;IEnumerable&lt;IdentityResource&gt;&gt;, ICache&lt;IEnumerable&lt;ApiResource&gt;&gt;, ICache&lt;IEnumerable&lt;ApiResource&gt;&gt;, ICache&lt;IEnumerable&lt;ApiScope&gt;&gt;, ICache&lt;Resources&gt;, ILogger&lt;CachingResourceStore&lt;T&gt;&gt;)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="GPHosting.Identity.Stores.CachingResourceStore-1.html">CachingResourceStore&lt;T&gt;</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CachingResourceStore(IdentityServerOptions options, T inner, ICache&lt;IEnumerable&lt;IdentityResource&gt;&gt; identityCache, ICache&lt;IEnumerable&lt;ApiResource&gt;&gt; apiByScopeCache, ICache&lt;IEnumerable&lt;ApiResource&gt;&gt; apisCache, ICache&lt;IEnumerable&lt;ApiScope&gt;&gt; scopeCache, ICache&lt;Resources&gt; allCache, ILogger&lt;CachingResourceStore&lt;T&gt;&gt; logger)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="GPHosting.Identity.Configuration.IdentityServerOptions.html">IdentityServerOptions</a></td>
+        <td><span class="parametername">options</span></td>
+        <td><p>The options.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">inner</span></td>
+        <td><p>The inner.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="GPHosting.Identity.Services.ICache-1.html">ICache</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="GPHosting.Identity.Models.IdentityResource.html">IdentityResource</a>&gt;&gt;</td>
+        <td><span class="parametername">identityCache</span></td>
+        <td><p>The identity cache.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="GPHosting.Identity.Services.ICache-1.html">ICache</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="GPHosting.Identity.Models.ApiResource.html">ApiResource</a>&gt;&gt;</td>
+        <td><span class="parametername">apiByScopeCache</span></td>
+        <td><p>The API by scope cache.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="GPHosting.Identity.Services.ICache-1.html">ICache</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="GPHosting.Identity.Models.ApiResource.html">ApiResource</a>&gt;&gt;</td>
+        <td><span class="parametername">apisCache</span></td>
+        <td><p>The API cache.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="GPHosting.Identity.Services.ICache-1.html">ICache</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="GPHosting.Identity.Models.ApiScope.html">ApiScope</a>&gt;&gt;</td>
+        <td><span class="parametername">scopeCache</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="GPHosting.Identity.Services.ICache-1.html">ICache</a>&lt;<a class="xref" href="GPHosting.Identity.Models.Resources.html">Resources</a>&gt;</td>
+        <td><span class="parametername">allCache</span></td>
+        <td><p>All cache.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1">ILogger</a>&lt;<a class="xref" href="GPHosting.Identity.Stores.CachingResourceStore-1.html">CachingResourceStore</a>&lt;T&gt;&gt;</td>
+        <td><span class="parametername">logger</span></td>
+        <td><p>The logger.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_Stores_CachingResourceStore_1_FindApiResourcesByNameAsync_System_Collections_Generic_IEnumerable_System_String__.md&amp;value=---%0Auid%3A%20GPHosting.Identity.Stores.CachingResourceStore%601.FindApiResourcesByNameAsync(System.Collections.Generic.IEnumerable%7BSystem.String%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/Stores/Caching/CachingResourceStore.cs/#L85">View Source</a>
+  </span>
+  <a id="GPHosting_Identity_Stores_CachingResourceStore_1_FindApiResourcesByNameAsync_" data-uid="GPHosting.Identity.Stores.CachingResourceStore`1.FindApiResourcesByNameAsync*"></a>
+  <h4 id="GPHosting_Identity_Stores_CachingResourceStore_1_FindApiResourcesByNameAsync_System_Collections_Generic_IEnumerable_System_String__" data-uid="GPHosting.Identity.Stores.CachingResourceStore`1.FindApiResourcesByNameAsync(System.Collections.Generic.IEnumerable{System.String})">FindApiResourcesByNameAsync(IEnumerable&lt;string&gt;)</h4>
+  <div class="markdown level1 summary"><p>Gets API resources by API resource name.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;IEnumerable&lt;ApiResource&gt;&gt; FindApiResourcesByNameAsync(IEnumerable&lt;string&gt; apiResourceNames)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</td>
+        <td><span class="parametername">apiResourceNames</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="GPHosting.Identity.Models.ApiResource.html">ApiResource</a>&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_Stores_CachingResourceStore_1_FindApiResourcesByScopeNameAsync_System_Collections_Generic_IEnumerable_System_String__.md&amp;value=---%0Auid%3A%20GPHosting.Identity.Stores.CachingResourceStore%601.FindApiResourcesByScopeNameAsync(System.Collections.Generic.IEnumerable%7BSystem.String%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/Stores/Caching/CachingResourceStore.cs/#L111">View Source</a>
+  </span>
+  <a id="GPHosting_Identity_Stores_CachingResourceStore_1_FindApiResourcesByScopeNameAsync_" data-uid="GPHosting.Identity.Stores.CachingResourceStore`1.FindApiResourcesByScopeNameAsync*"></a>
+  <h4 id="GPHosting_Identity_Stores_CachingResourceStore_1_FindApiResourcesByScopeNameAsync_System_Collections_Generic_IEnumerable_System_String__" data-uid="GPHosting.Identity.Stores.CachingResourceStore`1.FindApiResourcesByScopeNameAsync(System.Collections.Generic.IEnumerable{System.String})">FindApiResourcesByScopeNameAsync(IEnumerable&lt;string&gt;)</h4>
+  <div class="markdown level1 summary"><p>Gets API resources by scope name.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;IEnumerable&lt;ApiResource&gt;&gt; FindApiResourcesByScopeNameAsync(IEnumerable&lt;string&gt; names)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</td>
+        <td><span class="parametername">names</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="GPHosting.Identity.Models.ApiResource.html">ApiResource</a>&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_Stores_CachingResourceStore_1_FindApiScopesByNameAsync_System_Collections_Generic_IEnumerable_System_String__.md&amp;value=---%0Auid%3A%20GPHosting.Identity.Stores.CachingResourceStore%601.FindApiScopesByNameAsync(System.Collections.Generic.IEnumerable%7BSystem.String%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/Stores/Caching/CachingResourceStore.cs/#L124">View Source</a>
+  </span>
+  <a id="GPHosting_Identity_Stores_CachingResourceStore_1_FindApiScopesByNameAsync_" data-uid="GPHosting.Identity.Stores.CachingResourceStore`1.FindApiScopesByNameAsync*"></a>
+  <h4 id="GPHosting_Identity_Stores_CachingResourceStore_1_FindApiScopesByNameAsync_System_Collections_Generic_IEnumerable_System_String__" data-uid="GPHosting.Identity.Stores.CachingResourceStore`1.FindApiScopesByNameAsync(System.Collections.Generic.IEnumerable{System.String})">FindApiScopesByNameAsync(IEnumerable&lt;string&gt;)</h4>
+  <div class="markdown level1 summary"><p>Gets API scopes by scope name.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;IEnumerable&lt;ApiScope&gt;&gt; FindApiScopesByNameAsync(IEnumerable&lt;string&gt; scopeNames)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</td>
+        <td><span class="parametername">scopeNames</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="GPHosting.Identity.Models.ApiScope.html">ApiScope</a>&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_Stores_CachingResourceStore_1_FindIdentityResourcesByScopeNameAsync_System_Collections_Generic_IEnumerable_System_String__.md&amp;value=---%0Auid%3A%20GPHosting.Identity.Stores.CachingResourceStore%601.FindIdentityResourcesByScopeNameAsync(System.Collections.Generic.IEnumerable%7BSystem.String%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/Stores/Caching/CachingResourceStore.cs/#L98">View Source</a>
+  </span>
+  <a id="GPHosting_Identity_Stores_CachingResourceStore_1_FindIdentityResourcesByScopeNameAsync_" data-uid="GPHosting.Identity.Stores.CachingResourceStore`1.FindIdentityResourcesByScopeNameAsync*"></a>
+  <h4 id="GPHosting_Identity_Stores_CachingResourceStore_1_FindIdentityResourcesByScopeNameAsync_System_Collections_Generic_IEnumerable_System_String__" data-uid="GPHosting.Identity.Stores.CachingResourceStore`1.FindIdentityResourcesByScopeNameAsync(System.Collections.Generic.IEnumerable{System.String})">FindIdentityResourcesByScopeNameAsync(IEnumerable&lt;string&gt;)</h4>
+  <div class="markdown level1 summary"><p>Gets identity resources by scope name.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;IEnumerable&lt;IdentityResource&gt;&gt; FindIdentityResourcesByScopeNameAsync(IEnumerable&lt;string&gt; names)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</td>
+        <td><span class="parametername">names</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="GPHosting.Identity.Models.IdentityResource.html">IdentityResource</a>&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_Stores_CachingResourceStore_1_GetAllResourcesAsync.md&amp;value=---%0Auid%3A%20GPHosting.Identity.Stores.CachingResourceStore%601.GetAllResourcesAsync%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/Stores/Caching/CachingResourceStore.cs/#L72">View Source</a>
+  </span>
+  <a id="GPHosting_Identity_Stores_CachingResourceStore_1_GetAllResourcesAsync_" data-uid="GPHosting.Identity.Stores.CachingResourceStore`1.GetAllResourcesAsync*"></a>
+  <h4 id="GPHosting_Identity_Stores_CachingResourceStore_1_GetAllResourcesAsync" data-uid="GPHosting.Identity.Stores.CachingResourceStore`1.GetAllResourcesAsync">GetAllResourcesAsync()</h4>
+  <div class="markdown level1 summary"><p>Gets all resources.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;Resources&gt; GetAllResourcesAsync()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="GPHosting.Identity.Models.Resources.html">Resources</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="GPHosting.Identity.Stores.IResourceStore.html">IResourceStore</a>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="GPHosting.Identity.Stores.IResourceStoreExtensions.html#GPHosting_Identity_Stores_IResourceStoreExtensions_CreateResourceValidationResult_GPHosting_Identity_Stores_IResourceStore_GPHosting_Identity_Validation_ParsedScopesResult_">IResourceStoreExtensions.CreateResourceValidationResult(IResourceStore, ParsedScopesResult)</a>
+  </div>
+  <div>
+      <a class="xref" href="GPHosting.Identity.Stores.IResourceStoreExtensions.html#GPHosting_Identity_Stores_IResourceStoreExtensions_FindEnabledIdentityResourcesByScopeAsync_GPHosting_Identity_Stores_IResourceStore_System_Collections_Generic_IEnumerable_System_String__">IResourceStoreExtensions.FindEnabledIdentityResourcesByScopeAsync(IResourceStore, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="GPHosting.Identity.Stores.IResourceStoreExtensions.html#GPHosting_Identity_Stores_IResourceStoreExtensions_FindEnabledResourcesByScopeAsync_GPHosting_Identity_Stores_IResourceStore_System_Collections_Generic_IEnumerable_System_String__">IResourceStoreExtensions.FindEnabledResourcesByScopeAsync(IResourceStore, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="GPHosting.Identity.Stores.IResourceStoreExtensions.html#GPHosting_Identity_Stores_IResourceStoreExtensions_FindResourcesByScopeAsync_GPHosting_Identity_Stores_IResourceStore_System_Collections_Generic_IEnumerable_System_String__">IResourceStoreExtensions.FindResourcesByScopeAsync(IResourceStore, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="GPHosting.Identity.Stores.IResourceStoreExtensions.html#GPHosting_Identity_Stores_IResourceStoreExtensions_GetAllEnabledResourcesAsync_GPHosting_Identity_Stores_IResourceStore_">IResourceStoreExtensions.GetAllEnabledResourcesAsync(IResourceStore)</a>
+  </div>
+  <h3 id="seealso">See Also</h3>
+  <div class="seealso">
+      <div><a class="xref" href="GPHosting.Identity.Stores.IResourceStore.html">IResourceStore</a></div>
+  </div>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_Stores_CachingResourceStore_1.md&amp;value=---%0Auid%3A%20GPHosting.Identity.Stores.CachingResourceStore%601%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/Stores/Caching/CachingResourceStore.cs/#L20" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

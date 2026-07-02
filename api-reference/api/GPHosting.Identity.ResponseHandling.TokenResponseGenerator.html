@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Class TokenResponseGenerator | GPHosting.Identity API Reference </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Class TokenResponseGenerator | GPHosting.Identity API Reference ">
+    
+    <meta name="description" content="The default token response generator">
+      <link rel="shortcut icon" href="../icon.jpg">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../icon.jpg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="GPHosting.Identity.ResponseHandling.TokenResponseGenerator">
+
+
+
+  <h1 id="GPHosting_Identity_ResponseHandling_TokenResponseGenerator" data-uid="GPHosting.Identity.ResponseHandling.TokenResponseGenerator" class="text-break">Class TokenResponseGenerator</h1>
+  <div class="markdown level0 summary"><p>The default token response generator</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+    <div class="level1"><span class="xref">TokenResponseGenerator</span></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="GPHosting.Identity.ResponseHandling.ITokenResponseGenerator.html">ITokenResponseGenerator</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="GPHosting.html">GPHosting</a>.<a class="xref" href="GPHosting.Identity.html">Identity</a>.<a class="xref" href="GPHosting.Identity.ResponseHandling.html">ResponseHandling</a></h6>
+  <h6><strong>Assembly</strong>: GPHosting.Identity.dll</h6>
+  <h5 id="GPHosting_Identity_ResponseHandling_TokenResponseGenerator_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class TokenResponseGenerator : ITokenResponseGenerator</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_ResponseHandling_TokenResponseGenerator__ctor_System_TimeProvider_GPHosting_Identity_Services_ITokenService_GPHosting_Identity_Services_IRefreshTokenService_GPHosting_Identity_Validation_IScopeParser_GPHosting_Identity_Stores_IResourceStore_GPHosting_Identity_Stores_IClientStore_Microsoft_Extensions_Logging_ILogger_GPHosting_Identity_ResponseHandling_TokenResponseGenerator__.md&amp;value=---%0Auid%3A%20GPHosting.Identity.ResponseHandling.TokenResponseGenerator.%23ctor(System.TimeProvider%2CGPHosting.Identity.Services.ITokenService%2CGPHosting.Identity.Services.IRefreshTokenService%2CGPHosting.Identity.Validation.IScopeParser%2CGPHosting.Identity.Stores.IResourceStore%2CGPHosting.Identity.Stores.IClientStore%2CMicrosoft.Extensions.Logging.ILogger%7BGPHosting.Identity.ResponseHandling.TokenResponseGenerator%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/ResponseHandling/Default/TokenResponseGenerator.cs/#L67">View Source</a>
+  </span>
+  <a id="GPHosting_Identity_ResponseHandling_TokenResponseGenerator__ctor_" data-uid="GPHosting.Identity.ResponseHandling.TokenResponseGenerator.#ctor*"></a>
+  <h4 id="GPHosting_Identity_ResponseHandling_TokenResponseGenerator__ctor_System_TimeProvider_GPHosting_Identity_Services_ITokenService_GPHosting_Identity_Services_IRefreshTokenService_GPHosting_Identity_Validation_IScopeParser_GPHosting_Identity_Stores_IResourceStore_GPHosting_Identity_Stores_IClientStore_Microsoft_Extensions_Logging_ILogger_GPHosting_Identity_ResponseHandling_TokenResponseGenerator__" data-uid="GPHosting.Identity.ResponseHandling.TokenResponseGenerator.#ctor(System.TimeProvider,GPHosting.Identity.Services.ITokenService,GPHosting.Identity.Services.IRefreshTokenService,GPHosting.Identity.Validation.IScopeParser,GPHosting.Identity.Stores.IResourceStore,GPHosting.Identity.Stores.IClientStore,Microsoft.Extensions.Logging.ILogger{GPHosting.Identity.ResponseHandling.TokenResponseGenerator})">TokenResponseGenerator(TimeProvider, ITokenService, IRefreshTokenService, IScopeParser, IResourceStore, IClientStore, ILogger&lt;TokenResponseGenerator&gt;)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="GPHosting.Identity.ResponseHandling.TokenResponseGenerator.html">TokenResponseGenerator</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TokenResponseGenerator(TimeProvider clock, ITokenService tokenService, IRefreshTokenService refreshTokenService, IScopeParser scopeParser, IResourceStore resources, IClientStore clients, ILogger&lt;TokenResponseGenerator&gt; logger)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.timeprovider">TimeProvider</a></td>
+        <td><span class="parametername">clock</span></td>
+        <td><p>The clock.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="GPHosting.Identity.Services.ITokenService.html">ITokenService</a></td>
+        <td><span class="parametername">tokenService</span></td>
+        <td><p>The token service.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="GPHosting.Identity.Services.IRefreshTokenService.html">IRefreshTokenService</a></td>
+        <td><span class="parametername">refreshTokenService</span></td>
+        <td><p>The refresh token service.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="GPHosting.Identity.Validation.IScopeParser.html">IScopeParser</a></td>
+        <td><span class="parametername">scopeParser</span></td>
+        <td><p>The scope parser.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="GPHosting.Identity.Stores.IResourceStore.html">IResourceStore</a></td>
+        <td><span class="parametername">resources</span></td>
+        <td><p>The resources.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="GPHosting.Identity.Stores.IClientStore.html">IClientStore</a></td>
+        <td><span class="parametername">clients</span></td>
+        <td><p>The clients.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1">ILogger</a>&lt;<a class="xref" href="GPHosting.Identity.ResponseHandling.TokenResponseGenerator.html">TokenResponseGenerator</a>&gt;</td>
+        <td><span class="parametername">logger</span></td>
+        <td><p>The logger.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="fields">Fields
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_ResponseHandling_TokenResponseGenerator_Clients.md&amp;value=---%0Auid%3A%20GPHosting.Identity.ResponseHandling.TokenResponseGenerator.Clients%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/ResponseHandling/Default/TokenResponseGenerator.cs/#L50">View Source</a>
+  </span>
+  <h4 id="GPHosting_Identity_ResponseHandling_TokenResponseGenerator_Clients" data-uid="GPHosting.Identity.ResponseHandling.TokenResponseGenerator.Clients">Clients</h4>
+  <div class="markdown level1 summary"><p>The clients store</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected readonly IClientStore Clients</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="GPHosting.Identity.Stores.IClientStore.html">IClientStore</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_ResponseHandling_TokenResponseGenerator_Clock.md&amp;value=---%0Auid%3A%20GPHosting.Identity.ResponseHandling.TokenResponseGenerator.Clock%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/ResponseHandling/Default/TokenResponseGenerator.cs/#L55">View Source</a>
+  </span>
+  <h4 id="GPHosting_Identity_ResponseHandling_TokenResponseGenerator_Clock" data-uid="GPHosting.Identity.ResponseHandling.TokenResponseGenerator.Clock">Clock</h4>
+  <div class="markdown level1 summary"><p>The clock</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected readonly TimeProvider Clock</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.timeprovider">TimeProvider</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_ResponseHandling_TokenResponseGenerator_Logger.md&amp;value=---%0Auid%3A%20GPHosting.Identity.ResponseHandling.TokenResponseGenerator.Logger%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/ResponseHandling/Default/TokenResponseGenerator.cs/#L25">View Source</a>
+  </span>
+  <h4 id="GPHosting_Identity_ResponseHandling_TokenResponseGenerator_Logger" data-uid="GPHosting.Identity.ResponseHandling.TokenResponseGenerator.Logger">Logger</h4>
+  <div class="markdown level1 summary"><p>The logger</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected readonly ILogger Logger</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger">ILogger</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_ResponseHandling_TokenResponseGenerator_RefreshTokenService.md&amp;value=---%0Auid%3A%20GPHosting.Identity.ResponseHandling.TokenResponseGenerator.RefreshTokenService%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/ResponseHandling/Default/TokenResponseGenerator.cs/#L35">View Source</a>
+  </span>
+  <h4 id="GPHosting_Identity_ResponseHandling_TokenResponseGenerator_RefreshTokenService" data-uid="GPHosting.Identity.ResponseHandling.TokenResponseGenerator.RefreshTokenService">RefreshTokenService</h4>
+  <div class="markdown level1 summary"><p>The refresh token service</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected readonly IRefreshTokenService RefreshTokenService</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="GPHosting.Identity.Services.IRefreshTokenService.html">IRefreshTokenService</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_ResponseHandling_TokenResponseGenerator_Resources.md&amp;value=---%0Auid%3A%20GPHosting.Identity.ResponseHandling.TokenResponseGenerator.Resources%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/ResponseHandling/Default/TokenResponseGenerator.cs/#L45">View Source</a>
+  </span>
+  <h4 id="GPHosting_Identity_ResponseHandling_TokenResponseGenerator_Resources" data-uid="GPHosting.Identity.ResponseHandling.TokenResponseGenerator.Resources">Resources</h4>
+  <div class="markdown level1 summary"><p>The resource store</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected readonly IResourceStore Resources</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="GPHosting.Identity.Stores.IResourceStore.html">IResourceStore</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_ResponseHandling_TokenResponseGenerator_TokenService.md&amp;value=---%0Auid%3A%20GPHosting.Identity.ResponseHandling.TokenResponseGenerator.TokenService%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/ResponseHandling/Default/TokenResponseGenerator.cs/#L30">View Source</a>
+  </span>
+  <h4 id="GPHosting_Identity_ResponseHandling_TokenResponseGenerator_TokenService" data-uid="GPHosting.Identity.ResponseHandling.TokenResponseGenerator.TokenService">TokenService</h4>
+  <div class="markdown level1 summary"><p>The token service</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected readonly ITokenService TokenService</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="GPHosting.Identity.Services.ITokenService.html">ITokenService</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_ResponseHandling_TokenResponseGenerator_ScopeParser.md&amp;value=---%0Auid%3A%20GPHosting.Identity.ResponseHandling.TokenResponseGenerator.ScopeParser%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/ResponseHandling/Default/TokenResponseGenerator.cs/#L40">View Source</a>
+  </span>
+  <a id="GPHosting_Identity_ResponseHandling_TokenResponseGenerator_ScopeParser_" data-uid="GPHosting.Identity.ResponseHandling.TokenResponseGenerator.ScopeParser*"></a>
+  <h4 id="GPHosting_Identity_ResponseHandling_TokenResponseGenerator_ScopeParser" data-uid="GPHosting.Identity.ResponseHandling.TokenResponseGenerator.ScopeParser">ScopeParser</h4>
+  <div class="markdown level1 summary"><p>The scope parser</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IScopeParser ScopeParser { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="GPHosting.Identity.Validation.IScopeParser.html">IScopeParser</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_ResponseHandling_TokenResponseGenerator_CreateAccessTokenAsync_GPHosting_Identity_Validation_ValidatedTokenRequest_.md&amp;value=---%0Auid%3A%20GPHosting.Identity.ResponseHandling.TokenResponseGenerator.CreateAccessTokenAsync(GPHosting.Identity.Validation.ValidatedTokenRequest)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/ResponseHandling/Default/TokenResponseGenerator.cs/#L364">View Source</a>
+  </span>
+  <a id="GPHosting_Identity_ResponseHandling_TokenResponseGenerator_CreateAccessTokenAsync_" data-uid="GPHosting.Identity.ResponseHandling.TokenResponseGenerator.CreateAccessTokenAsync*"></a>
+  <h4 id="GPHosting_Identity_ResponseHandling_TokenResponseGenerator_CreateAccessTokenAsync_GPHosting_Identity_Validation_ValidatedTokenRequest_" data-uid="GPHosting.Identity.ResponseHandling.TokenResponseGenerator.CreateAccessTokenAsync(GPHosting.Identity.Validation.ValidatedTokenRequest)">CreateAccessTokenAsync(ValidatedTokenRequest)</h4>
+  <div class="markdown level1 summary"><p>Creates the access/refresh token.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual Task&lt;(string accessToken, string refreshToken)&gt; CreateAccessTokenAsync(ValidatedTokenRequest request)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="GPHosting.Identity.Validation.ValidatedTokenRequest.html">ValidatedTokenRequest</a></td>
+        <td><span class="parametername">request</span></td>
+        <td><p>The request.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;(<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.string,system.string-.accesstoken">accessToken</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.string,system.string-.refreshtoken">refreshToken</a>)&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.invalidoperationexception">InvalidOperationException</a></td>
+        <td><p>Client does not exist anymore.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_ResponseHandling_TokenResponseGenerator_CreateIdTokenFromRefreshTokenRequestAsync_GPHosting_Identity_Validation_ValidatedTokenRequest_System_String_.md&amp;value=---%0Auid%3A%20GPHosting.Identity.ResponseHandling.TokenResponseGenerator.CreateIdTokenFromRefreshTokenRequestAsync(GPHosting.Identity.Validation.ValidatedTokenRequest%2CSystem.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/ResponseHandling/Default/TokenResponseGenerator.cs/#L455">View Source</a>
+  </span>
+  <a id="GPHosting_Identity_ResponseHandling_TokenResponseGenerator_CreateIdTokenFromRefreshTokenRequestAsync_" data-uid="GPHosting.Identity.ResponseHandling.TokenResponseGenerator.CreateIdTokenFromRefreshTokenRequestAsync*"></a>
+  <h4 id="GPHosting_Identity_ResponseHandling_TokenResponseGenerator_CreateIdTokenFromRefreshTokenRequestAsync_GPHosting_Identity_Validation_ValidatedTokenRequest_System_String_" data-uid="GPHosting.Identity.ResponseHandling.TokenResponseGenerator.CreateIdTokenFromRefreshTokenRequestAsync(GPHosting.Identity.Validation.ValidatedTokenRequest,System.String)">CreateIdTokenFromRefreshTokenRequestAsync(ValidatedTokenRequest, string)</h4>
+  <div class="markdown level1 summary"><p>Creates an id_token for a refresh token request if identity resources have been requested.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual Task&lt;string&gt; CreateIdTokenFromRefreshTokenRequestAsync(ValidatedTokenRequest request, string newAccessToken)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="GPHosting.Identity.Validation.ValidatedTokenRequest.html">ValidatedTokenRequest</a></td>
+        <td><span class="parametername">request</span></td>
+        <td><p>The request.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">newAccessToken</span></td>
+        <td><p>The new access token.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_ResponseHandling_TokenResponseGenerator_ProcessAsync_GPHosting_Identity_Validation_TokenRequestValidationResult_.md&amp;value=---%0Auid%3A%20GPHosting.Identity.ResponseHandling.TokenResponseGenerator.ProcessAsync(GPHosting.Identity.Validation.TokenRequestValidationResult)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/ResponseHandling/Default/TokenResponseGenerator.cs/#L83">View Source</a>
+  </span>
+  <a id="GPHosting_Identity_ResponseHandling_TokenResponseGenerator_ProcessAsync_" data-uid="GPHosting.Identity.ResponseHandling.TokenResponseGenerator.ProcessAsync*"></a>
+  <h4 id="GPHosting_Identity_ResponseHandling_TokenResponseGenerator_ProcessAsync_GPHosting_Identity_Validation_TokenRequestValidationResult_" data-uid="GPHosting.Identity.ResponseHandling.TokenResponseGenerator.ProcessAsync(GPHosting.Identity.Validation.TokenRequestValidationResult)">ProcessAsync(TokenRequestValidationResult)</h4>
+  <div class="markdown level1 summary"><p>Processes the response.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual Task&lt;TokenResponse&gt; ProcessAsync(TokenRequestValidationResult request)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="GPHosting.Identity.Validation.TokenRequestValidationResult.html">TokenRequestValidationResult</a></td>
+        <td><span class="parametername">request</span></td>
+        <td><p>The request.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="GPHosting.Identity.ResponseHandling.TokenResponse.html">TokenResponse</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_ResponseHandling_TokenResponseGenerator_ProcessAuthorizationCodeRequestAsync_GPHosting_Identity_Validation_TokenRequestValidationResult_.md&amp;value=---%0Auid%3A%20GPHosting.Identity.ResponseHandling.TokenResponseGenerator.ProcessAuthorizationCodeRequestAsync(GPHosting.Identity.Validation.TokenRequestValidationResult)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/ResponseHandling/Default/TokenResponseGenerator.cs/#L144">View Source</a>
+  </span>
+  <a id="GPHosting_Identity_ResponseHandling_TokenResponseGenerator_ProcessAuthorizationCodeRequestAsync_" data-uid="GPHosting.Identity.ResponseHandling.TokenResponseGenerator.ProcessAuthorizationCodeRequestAsync*"></a>
+  <h4 id="GPHosting_Identity_ResponseHandling_TokenResponseGenerator_ProcessAuthorizationCodeRequestAsync_GPHosting_Identity_Validation_TokenRequestValidationResult_" data-uid="GPHosting.Identity.ResponseHandling.TokenResponseGenerator.ProcessAuthorizationCodeRequestAsync(GPHosting.Identity.Validation.TokenRequestValidationResult)">ProcessAuthorizationCodeRequestAsync(TokenRequestValidationResult)</h4>
+  <div class="markdown level1 summary"><p>Creates the response for an authorization code request.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual Task&lt;TokenResponse&gt; ProcessAuthorizationCodeRequestAsync(TokenRequestValidationResult request)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="GPHosting.Identity.Validation.TokenRequestValidationResult.html">TokenRequestValidationResult</a></td>
+        <td><span class="parametername">request</span></td>
+        <td><p>The request.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="GPHosting.Identity.ResponseHandling.TokenResponse.html">TokenResponse</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.invalidoperationexception">InvalidOperationException</a></td>
+        <td><p>Client does not exist anymore.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_ResponseHandling_TokenResponseGenerator_ProcessClientCredentialsRequestAsync_GPHosting_Identity_Validation_TokenRequestValidationResult_.md&amp;value=---%0Auid%3A%20GPHosting.Identity.ResponseHandling.TokenResponseGenerator.ProcessClientCredentialsRequestAsync(GPHosting.Identity.Validation.TokenRequestValidationResult)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/ResponseHandling/Default/TokenResponseGenerator.cs/#L119">View Source</a>
+  </span>
+  <a id="GPHosting_Identity_ResponseHandling_TokenResponseGenerator_ProcessClientCredentialsRequestAsync_" data-uid="GPHosting.Identity.ResponseHandling.TokenResponseGenerator.ProcessClientCredentialsRequestAsync*"></a>
+  <h4 id="GPHosting_Identity_ResponseHandling_TokenResponseGenerator_ProcessClientCredentialsRequestAsync_GPHosting_Identity_Validation_TokenRequestValidationResult_" data-uid="GPHosting.Identity.ResponseHandling.TokenResponseGenerator.ProcessClientCredentialsRequestAsync(GPHosting.Identity.Validation.TokenRequestValidationResult)">ProcessClientCredentialsRequestAsync(TokenRequestValidationResult)</h4>
+  <div class="markdown level1 summary"><p>Creates the response for an client credentials request.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual Task&lt;TokenResponse&gt; ProcessClientCredentialsRequestAsync(TokenRequestValidationResult request)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="GPHosting.Identity.Validation.TokenRequestValidationResult.html">TokenRequestValidationResult</a></td>
+        <td><span class="parametername">request</span></td>
+        <td><p>The request.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="GPHosting.Identity.ResponseHandling.TokenResponse.html">TokenResponse</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_ResponseHandling_TokenResponseGenerator_ProcessDeviceCodeRequestAsync_GPHosting_Identity_Validation_TokenRequestValidationResult_.md&amp;value=---%0Auid%3A%20GPHosting.Identity.ResponseHandling.TokenResponseGenerator.ProcessDeviceCodeRequestAsync(GPHosting.Identity.Validation.TokenRequestValidationResult)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/ResponseHandling/Default/TokenResponseGenerator.cs/#L263">View Source</a>
+  </span>
+  <a id="GPHosting_Identity_ResponseHandling_TokenResponseGenerator_ProcessDeviceCodeRequestAsync_" data-uid="GPHosting.Identity.ResponseHandling.TokenResponseGenerator.ProcessDeviceCodeRequestAsync*"></a>
+  <h4 id="GPHosting_Identity_ResponseHandling_TokenResponseGenerator_ProcessDeviceCodeRequestAsync_GPHosting_Identity_Validation_TokenRequestValidationResult_" data-uid="GPHosting.Identity.ResponseHandling.TokenResponseGenerator.ProcessDeviceCodeRequestAsync(GPHosting.Identity.Validation.TokenRequestValidationResult)">ProcessDeviceCodeRequestAsync(TokenRequestValidationResult)</h4>
+  <div class="markdown level1 summary"><p>Processes the response for device code grant request.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual Task&lt;TokenResponse&gt; ProcessDeviceCodeRequestAsync(TokenRequestValidationResult request)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="GPHosting.Identity.Validation.TokenRequestValidationResult.html">TokenRequestValidationResult</a></td>
+        <td><span class="parametername">request</span></td>
+        <td><p>The request.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="GPHosting.Identity.ResponseHandling.TokenResponse.html">TokenResponse</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_ResponseHandling_TokenResponseGenerator_ProcessExtensionGrantRequestAsync_GPHosting_Identity_Validation_TokenRequestValidationResult_.md&amp;value=---%0Auid%3A%20GPHosting.Identity.ResponseHandling.TokenResponseGenerator.ProcessExtensionGrantRequestAsync(GPHosting.Identity.Validation.TokenRequestValidationResult)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/ResponseHandling/Default/TokenResponseGenerator.cs/#L327">View Source</a>
+  </span>
+  <a id="GPHosting_Identity_ResponseHandling_TokenResponseGenerator_ProcessExtensionGrantRequestAsync_" data-uid="GPHosting.Identity.ResponseHandling.TokenResponseGenerator.ProcessExtensionGrantRequestAsync*"></a>
+  <h4 id="GPHosting_Identity_ResponseHandling_TokenResponseGenerator_ProcessExtensionGrantRequestAsync_GPHosting_Identity_Validation_TokenRequestValidationResult_" data-uid="GPHosting.Identity.ResponseHandling.TokenResponseGenerator.ProcessExtensionGrantRequestAsync(GPHosting.Identity.Validation.TokenRequestValidationResult)">ProcessExtensionGrantRequestAsync(TokenRequestValidationResult)</h4>
+  <div class="markdown level1 summary"><p>Creates the response for an extension grant request.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual Task&lt;TokenResponse&gt; ProcessExtensionGrantRequestAsync(TokenRequestValidationResult request)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="GPHosting.Identity.Validation.TokenRequestValidationResult.html">TokenRequestValidationResult</a></td>
+        <td><span class="parametername">request</span></td>
+        <td><p>The request.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="GPHosting.Identity.ResponseHandling.TokenResponse.html">TokenResponse</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_ResponseHandling_TokenResponseGenerator_ProcessPasswordRequestAsync_GPHosting_Identity_Validation_TokenRequestValidationResult_.md&amp;value=---%0Auid%3A%20GPHosting.Identity.ResponseHandling.TokenResponseGenerator.ProcessPasswordRequestAsync(GPHosting.Identity.Validation.TokenRequestValidationResult)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/ResponseHandling/Default/TokenResponseGenerator.cs/#L131">View Source</a>
+  </span>
+  <a id="GPHosting_Identity_ResponseHandling_TokenResponseGenerator_ProcessPasswordRequestAsync_" data-uid="GPHosting.Identity.ResponseHandling.TokenResponseGenerator.ProcessPasswordRequestAsync*"></a>
+  <h4 id="GPHosting_Identity_ResponseHandling_TokenResponseGenerator_ProcessPasswordRequestAsync_GPHosting_Identity_Validation_TokenRequestValidationResult_" data-uid="GPHosting.Identity.ResponseHandling.TokenResponseGenerator.ProcessPasswordRequestAsync(GPHosting.Identity.Validation.TokenRequestValidationResult)">ProcessPasswordRequestAsync(TokenRequestValidationResult)</h4>
+  <div class="markdown level1 summary"><p>Creates the response for a password request.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual Task&lt;TokenResponse&gt; ProcessPasswordRequestAsync(TokenRequestValidationResult request)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="GPHosting.Identity.Validation.TokenRequestValidationResult.html">TokenRequestValidationResult</a></td>
+        <td><span class="parametername">request</span></td>
+        <td><p>The request.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="GPHosting.Identity.ResponseHandling.TokenResponse.html">TokenResponse</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_ResponseHandling_TokenResponseGenerator_ProcessRefreshTokenRequestAsync_GPHosting_Identity_Validation_TokenRequestValidationResult_.md&amp;value=---%0Auid%3A%20GPHosting.Identity.ResponseHandling.TokenResponseGenerator.ProcessRefreshTokenRequestAsync(GPHosting.Identity.Validation.TokenRequestValidationResult)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/ResponseHandling/Default/TokenResponseGenerator.cs/#L210">View Source</a>
+  </span>
+  <a id="GPHosting_Identity_ResponseHandling_TokenResponseGenerator_ProcessRefreshTokenRequestAsync_" data-uid="GPHosting.Identity.ResponseHandling.TokenResponseGenerator.ProcessRefreshTokenRequestAsync*"></a>
+  <h4 id="GPHosting_Identity_ResponseHandling_TokenResponseGenerator_ProcessRefreshTokenRequestAsync_GPHosting_Identity_Validation_TokenRequestValidationResult_" data-uid="GPHosting.Identity.ResponseHandling.TokenResponseGenerator.ProcessRefreshTokenRequestAsync(GPHosting.Identity.Validation.TokenRequestValidationResult)">ProcessRefreshTokenRequestAsync(TokenRequestValidationResult)</h4>
+  <div class="markdown level1 summary"><p>Creates the response for a refresh token request.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual Task&lt;TokenResponse&gt; ProcessRefreshTokenRequestAsync(TokenRequestValidationResult request)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="GPHosting.Identity.Validation.TokenRequestValidationResult.html">TokenRequestValidationResult</a></td>
+        <td><span class="parametername">request</span></td>
+        <td><p>The request.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="GPHosting.Identity.ResponseHandling.TokenResponse.html">TokenResponse</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_ResponseHandling_TokenResponseGenerator_ProcessTokenRequestAsync_GPHosting_Identity_Validation_TokenRequestValidationResult_.md&amp;value=---%0Auid%3A%20GPHosting.Identity.ResponseHandling.TokenResponseGenerator.ProcessTokenRequestAsync(GPHosting.Identity.Validation.TokenRequestValidationResult)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/ResponseHandling/Default/TokenResponseGenerator.cs/#L339">View Source</a>
+  </span>
+  <a id="GPHosting_Identity_ResponseHandling_TokenResponseGenerator_ProcessTokenRequestAsync_" data-uid="GPHosting.Identity.ResponseHandling.TokenResponseGenerator.ProcessTokenRequestAsync*"></a>
+  <h4 id="GPHosting_Identity_ResponseHandling_TokenResponseGenerator_ProcessTokenRequestAsync_GPHosting_Identity_Validation_TokenRequestValidationResult_" data-uid="GPHosting.Identity.ResponseHandling.TokenResponseGenerator.ProcessTokenRequestAsync(GPHosting.Identity.Validation.TokenRequestValidationResult)">ProcessTokenRequestAsync(TokenRequestValidationResult)</h4>
+  <div class="markdown level1 summary"><p>Creates the response for a token request.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual Task&lt;TokenResponse&gt; ProcessTokenRequestAsync(TokenRequestValidationResult validationResult)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="GPHosting.Identity.Validation.TokenRequestValidationResult.html">TokenRequestValidationResult</a></td>
+        <td><span class="parametername">validationResult</span></td>
+        <td><p>The validation result.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="GPHosting.Identity.ResponseHandling.TokenResponse.html">TokenResponse</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="GPHosting.Identity.ResponseHandling.ITokenResponseGenerator.html">ITokenResponseGenerator</a>
+  </div>
+  <h3 id="seealso">See Also</h3>
+  <div class="seealso">
+      <div><a class="xref" href="GPHosting.Identity.ResponseHandling.ITokenResponseGenerator.html">ITokenResponseGenerator</a></div>
+  </div>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_ResponseHandling_TokenResponseGenerator.md&amp;value=---%0Auid%3A%20GPHosting.Identity.ResponseHandling.TokenResponseGenerator%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/ResponseHandling/Default/TokenResponseGenerator.cs/#L20" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

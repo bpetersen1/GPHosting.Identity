@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Class DefaultTokenService | GPHosting.Identity API Reference </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Class DefaultTokenService | GPHosting.Identity API Reference ">
+    
+    <meta name="description" content="Default token service">
+      <link rel="shortcut icon" href="../icon.jpg">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../icon.jpg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="GPHosting.Identity.Services.DefaultTokenService">
+
+
+
+  <h1 id="GPHosting_Identity_Services_DefaultTokenService" data-uid="GPHosting.Identity.Services.DefaultTokenService" class="text-break">Class DefaultTokenService</h1>
+  <div class="markdown level0 summary"><p>Default token service</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+    <div class="level1"><span class="xref">DefaultTokenService</span></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="GPHosting.Identity.Services.ITokenService.html">ITokenService</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="GPHosting.html">GPHosting</a>.<a class="xref" href="GPHosting.Identity.html">Identity</a>.<a class="xref" href="GPHosting.Identity.Services.html">Services</a></h6>
+  <h6><strong>Assembly</strong>: GPHosting.Identity.dll</h6>
+  <h5 id="GPHosting_Identity_Services_DefaultTokenService_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class DefaultTokenService : ITokenService</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_Services_DefaultTokenService__ctor_GPHosting_Identity_Services_IClaimsService_GPHosting_Identity_Stores_IReferenceTokenStore_GPHosting_Identity_Services_ITokenCreationService_Microsoft_AspNetCore_Http_IHttpContextAccessor_System_TimeProvider_GPHosting_Identity_Services_IKeyMaterialService_GPHosting_Identity_Configuration_IdentityServerOptions_Microsoft_Extensions_Logging_ILogger_GPHosting_Identity_Services_DefaultTokenService__.md&amp;value=---%0Auid%3A%20GPHosting.Identity.Services.DefaultTokenService.%23ctor(GPHosting.Identity.Services.IClaimsService%2CGPHosting.Identity.Stores.IReferenceTokenStore%2CGPHosting.Identity.Services.ITokenCreationService%2CMicrosoft.AspNetCore.Http.IHttpContextAccessor%2CSystem.TimeProvider%2CGPHosting.Identity.Services.IKeyMaterialService%2CGPHosting.Identity.Configuration.IdentityServerOptions%2CMicrosoft.Extensions.Logging.ILogger%7BGPHosting.Identity.Services.DefaultTokenService%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/Services/Default/DefaultTokenService.cs/#L75">View Source</a>
+  </span>
+  <a id="GPHosting_Identity_Services_DefaultTokenService__ctor_" data-uid="GPHosting.Identity.Services.DefaultTokenService.#ctor*"></a>
+  <h4 id="GPHosting_Identity_Services_DefaultTokenService__ctor_GPHosting_Identity_Services_IClaimsService_GPHosting_Identity_Stores_IReferenceTokenStore_GPHosting_Identity_Services_ITokenCreationService_Microsoft_AspNetCore_Http_IHttpContextAccessor_System_TimeProvider_GPHosting_Identity_Services_IKeyMaterialService_GPHosting_Identity_Configuration_IdentityServerOptions_Microsoft_Extensions_Logging_ILogger_GPHosting_Identity_Services_DefaultTokenService__" data-uid="GPHosting.Identity.Services.DefaultTokenService.#ctor(GPHosting.Identity.Services.IClaimsService,GPHosting.Identity.Stores.IReferenceTokenStore,GPHosting.Identity.Services.ITokenCreationService,Microsoft.AspNetCore.Http.IHttpContextAccessor,System.TimeProvider,GPHosting.Identity.Services.IKeyMaterialService,GPHosting.Identity.Configuration.IdentityServerOptions,Microsoft.Extensions.Logging.ILogger{GPHosting.Identity.Services.DefaultTokenService})">DefaultTokenService(IClaimsService, IReferenceTokenStore, ITokenCreationService, IHttpContextAccessor, TimeProvider, IKeyMaterialService, IdentityServerOptions, ILogger&lt;DefaultTokenService&gt;)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="GPHosting.Identity.Services.DefaultTokenService.html">DefaultTokenService</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DefaultTokenService(IClaimsService claimsProvider, IReferenceTokenStore referenceTokenStore, ITokenCreationService creationService, IHttpContextAccessor contextAccessor, TimeProvider clock, IKeyMaterialService keyMaterialService, IdentityServerOptions options, ILogger&lt;DefaultTokenService&gt; logger)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="GPHosting.Identity.Services.IClaimsService.html">IClaimsService</a></td>
+        <td><span class="parametername">claimsProvider</span></td>
+        <td><p>The claims provider.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="GPHosting.Identity.Stores.IReferenceTokenStore.html">IReferenceTokenStore</a></td>
+        <td><span class="parametername">referenceTokenStore</span></td>
+        <td><p>The reference token store.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="GPHosting.Identity.Services.ITokenCreationService.html">ITokenCreationService</a></td>
+        <td><span class="parametername">creationService</span></td>
+        <td><p>The signing service.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.http.ihttpcontextaccessor">IHttpContextAccessor</a></td>
+        <td><span class="parametername">contextAccessor</span></td>
+        <td><p>The HTTP context accessor.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.timeprovider">TimeProvider</a></td>
+        <td><span class="parametername">clock</span></td>
+        <td><p>The clock.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="GPHosting.Identity.Services.IKeyMaterialService.html">IKeyMaterialService</a></td>
+        <td><span class="parametername">keyMaterialService</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="GPHosting.Identity.Configuration.IdentityServerOptions.html">IdentityServerOptions</a></td>
+        <td><span class="parametername">options</span></td>
+        <td><p>The IdentityServer options</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1">ILogger</a>&lt;<a class="xref" href="GPHosting.Identity.Services.DefaultTokenService.html">DefaultTokenService</a>&gt;</td>
+        <td><span class="parametername">logger</span></td>
+        <td><p>The logger.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="fields">Fields
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_Services_DefaultTokenService_ClaimsProvider.md&amp;value=---%0Auid%3A%20GPHosting.Identity.Services.DefaultTokenService.ClaimsProvider%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/Services/Default/DefaultTokenService.cs/#L37">View Source</a>
+  </span>
+  <h4 id="GPHosting_Identity_Services_DefaultTokenService_ClaimsProvider" data-uid="GPHosting.Identity.Services.DefaultTokenService.ClaimsProvider">ClaimsProvider</h4>
+  <div class="markdown level1 summary"><p>The claims provider</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected readonly IClaimsService ClaimsProvider</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="GPHosting.Identity.Services.IClaimsService.html">IClaimsService</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_Services_DefaultTokenService_Clock.md&amp;value=---%0Auid%3A%20GPHosting.Identity.Services.DefaultTokenService.Clock%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/Services/Default/DefaultTokenService.cs/#L52">View Source</a>
+  </span>
+  <h4 id="GPHosting_Identity_Services_DefaultTokenService_Clock" data-uid="GPHosting.Identity.Services.DefaultTokenService.Clock">Clock</h4>
+  <div class="markdown level1 summary"><p>The clock</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected readonly TimeProvider Clock</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.timeprovider">TimeProvider</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_Services_DefaultTokenService_ContextAccessor.md&amp;value=---%0Auid%3A%20GPHosting.Identity.Services.DefaultTokenService.ContextAccessor%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/Services/Default/DefaultTokenService.cs/#L32">View Source</a>
+  </span>
+  <h4 id="GPHosting_Identity_Services_DefaultTokenService_ContextAccessor" data-uid="GPHosting.Identity.Services.DefaultTokenService.ContextAccessor">ContextAccessor</h4>
+  <div class="markdown level1 summary"><p>The HTTP context accessor</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected readonly IHttpContextAccessor ContextAccessor</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.http.ihttpcontextaccessor">IHttpContextAccessor</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_Services_DefaultTokenService_CreationService.md&amp;value=---%0Auid%3A%20GPHosting.Identity.Services.DefaultTokenService.CreationService%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/Services/Default/DefaultTokenService.cs/#L47">View Source</a>
+  </span>
+  <h4 id="GPHosting_Identity_Services_DefaultTokenService_CreationService" data-uid="GPHosting.Identity.Services.DefaultTokenService.CreationService">CreationService</h4>
+  <div class="markdown level1 summary"><p>The signing service</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected readonly ITokenCreationService CreationService</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="GPHosting.Identity.Services.ITokenCreationService.html">ITokenCreationService</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_Services_DefaultTokenService_KeyMaterialService.md&amp;value=---%0Auid%3A%20GPHosting.Identity.Services.DefaultTokenService.KeyMaterialService%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/Services/Default/DefaultTokenService.cs/#L57">View Source</a>
+  </span>
+  <h4 id="GPHosting_Identity_Services_DefaultTokenService_KeyMaterialService" data-uid="GPHosting.Identity.Services.DefaultTokenService.KeyMaterialService">KeyMaterialService</h4>
+  <div class="markdown level1 summary"><p>The key material service</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected readonly IKeyMaterialService KeyMaterialService</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="GPHosting.Identity.Services.IKeyMaterialService.html">IKeyMaterialService</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_Services_DefaultTokenService_Logger.md&amp;value=---%0Auid%3A%20GPHosting.Identity.Services.DefaultTokenService.Logger%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/Services/Default/DefaultTokenService.cs/#L27">View Source</a>
+  </span>
+  <h4 id="GPHosting_Identity_Services_DefaultTokenService_Logger" data-uid="GPHosting.Identity.Services.DefaultTokenService.Logger">Logger</h4>
+  <div class="markdown level1 summary"><p>The logger</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected readonly ILogger Logger</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger">ILogger</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_Services_DefaultTokenService_Options.md&amp;value=---%0Auid%3A%20GPHosting.Identity.Services.DefaultTokenService.Options%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/Services/Default/DefaultTokenService.cs/#L62">View Source</a>
+  </span>
+  <h4 id="GPHosting_Identity_Services_DefaultTokenService_Options" data-uid="GPHosting.Identity.Services.DefaultTokenService.Options">Options</h4>
+  <div class="markdown level1 summary"><p>The IdentityServer options</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected readonly IdentityServerOptions Options</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="GPHosting.Identity.Configuration.IdentityServerOptions.html">IdentityServerOptions</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_Services_DefaultTokenService_ReferenceTokenStore.md&amp;value=---%0Auid%3A%20GPHosting.Identity.Services.DefaultTokenService.ReferenceTokenStore%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/Services/Default/DefaultTokenService.cs/#L42">View Source</a>
+  </span>
+  <h4 id="GPHosting_Identity_Services_DefaultTokenService_ReferenceTokenStore" data-uid="GPHosting.Identity.Services.DefaultTokenService.ReferenceTokenStore">ReferenceTokenStore</h4>
+  <div class="markdown level1 summary"><p>The reference token store</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected readonly IReferenceTokenStore ReferenceTokenStore</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="GPHosting.Identity.Stores.IReferenceTokenStore.html">IReferenceTokenStore</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_Services_DefaultTokenService_CreateAccessTokenAsync_GPHosting_Identity_Models_TokenCreationRequest_.md&amp;value=---%0Auid%3A%20GPHosting.Identity.Services.DefaultTokenService.CreateAccessTokenAsync(GPHosting.Identity.Models.TokenCreationRequest)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/Services/Default/DefaultTokenService.cs/#L182">View Source</a>
+  </span>
+  <a id="GPHosting_Identity_Services_DefaultTokenService_CreateAccessTokenAsync_" data-uid="GPHosting.Identity.Services.DefaultTokenService.CreateAccessTokenAsync*"></a>
+  <h4 id="GPHosting_Identity_Services_DefaultTokenService_CreateAccessTokenAsync_GPHosting_Identity_Models_TokenCreationRequest_" data-uid="GPHosting.Identity.Services.DefaultTokenService.CreateAccessTokenAsync(GPHosting.Identity.Models.TokenCreationRequest)">CreateAccessTokenAsync(TokenCreationRequest)</h4>
+  <div class="markdown level1 summary"><p>Creates an access token.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual Task&lt;Token&gt; CreateAccessTokenAsync(TokenCreationRequest request)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="GPHosting.Identity.Models.TokenCreationRequest.html">TokenCreationRequest</a></td>
+        <td><span class="parametername">request</span></td>
+        <td><p>The token creation request.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="GPHosting.Identity.Models.Token.html">Token</a>&gt;</td>
+        <td><p>An access token</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_Services_DefaultTokenService_CreateIdentityTokenAsync_GPHosting_Identity_Models_TokenCreationRequest_.md&amp;value=---%0Auid%3A%20GPHosting.Identity.Services.DefaultTokenService.CreateIdentityTokenAsync(GPHosting.Identity.Models.TokenCreationRequest)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/Services/Default/DefaultTokenService.cs/#L102">View Source</a>
+  </span>
+  <a id="GPHosting_Identity_Services_DefaultTokenService_CreateIdentityTokenAsync_" data-uid="GPHosting.Identity.Services.DefaultTokenService.CreateIdentityTokenAsync*"></a>
+  <h4 id="GPHosting_Identity_Services_DefaultTokenService_CreateIdentityTokenAsync_GPHosting_Identity_Models_TokenCreationRequest_" data-uid="GPHosting.Identity.Services.DefaultTokenService.CreateIdentityTokenAsync(GPHosting.Identity.Models.TokenCreationRequest)">CreateIdentityTokenAsync(TokenCreationRequest)</h4>
+  <div class="markdown level1 summary"><p>Creates an identity token.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual Task&lt;Token&gt; CreateIdentityTokenAsync(TokenCreationRequest request)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="GPHosting.Identity.Models.TokenCreationRequest.html">TokenCreationRequest</a></td>
+        <td><span class="parametername">request</span></td>
+        <td><p>The token creation request.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="GPHosting.Identity.Models.Token.html">Token</a>&gt;</td>
+        <td><p>An identity token</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_Services_DefaultTokenService_CreateSecurityTokenAsync_GPHosting_Identity_Models_Token_.md&amp;value=---%0Auid%3A%20GPHosting.Identity.Services.DefaultTokenService.CreateSecurityTokenAsync(GPHosting.Identity.Models.Token)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/Services/Default/DefaultTokenService.cs/#L259">View Source</a>
+  </span>
+  <a id="GPHosting_Identity_Services_DefaultTokenService_CreateSecurityTokenAsync_" data-uid="GPHosting.Identity.Services.DefaultTokenService.CreateSecurityTokenAsync*"></a>
+  <h4 id="GPHosting_Identity_Services_DefaultTokenService_CreateSecurityTokenAsync_GPHosting_Identity_Models_Token_" data-uid="GPHosting.Identity.Services.DefaultTokenService.CreateSecurityTokenAsync(GPHosting.Identity.Models.Token)">CreateSecurityTokenAsync(Token)</h4>
+  <div class="markdown level1 summary"><p>Creates a serialized and protected security token.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual Task&lt;string&gt; CreateSecurityTokenAsync(Token token)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="GPHosting.Identity.Models.Token.html">Token</a></td>
+        <td><span class="parametername">token</span></td>
+        <td><p>The token.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</td>
+        <td><p>A security token in serialized form</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.invalidoperationexception">InvalidOperationException</a></td>
+        <td><p>Invalid token type.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="GPHosting.Identity.Services.ITokenService.html">ITokenService</a>
+  </div>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_Services_DefaultTokenService.md&amp;value=---%0Auid%3A%20GPHosting.Identity.Services.DefaultTokenService%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/Services/Default/DefaultTokenService.cs/#L22" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

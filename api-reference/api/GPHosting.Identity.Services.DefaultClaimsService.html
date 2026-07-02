@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Class DefaultClaimsService | GPHosting.Identity API Reference </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Class DefaultClaimsService | GPHosting.Identity API Reference ">
+    
+    <meta name="description" content="Default claims provider implementation">
+      <link rel="shortcut icon" href="../icon.jpg">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../icon.jpg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="GPHosting.Identity.Services.DefaultClaimsService">
+
+
+
+  <h1 id="GPHosting_Identity_Services_DefaultClaimsService" data-uid="GPHosting.Identity.Services.DefaultClaimsService" class="text-break">Class DefaultClaimsService</h1>
+  <div class="markdown level0 summary"><p>Default claims provider implementation</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+    <div class="level1"><span class="xref">DefaultClaimsService</span></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="GPHosting.Identity.Services.IClaimsService.html">IClaimsService</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="GPHosting.html">GPHosting</a>.<a class="xref" href="GPHosting.Identity.html">Identity</a>.<a class="xref" href="GPHosting.Identity.Services.html">Services</a></h6>
+  <h6><strong>Assembly</strong>: GPHosting.Identity.dll</h6>
+  <h5 id="GPHosting_Identity_Services_DefaultClaimsService_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class DefaultClaimsService : IClaimsService</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_Services_DefaultClaimsService__ctor_GPHosting_Identity_Services_IProfileService_Microsoft_Extensions_Logging_ILogger_GPHosting_Identity_Services_DefaultClaimsService__.md&amp;value=---%0Auid%3A%20GPHosting.Identity.Services.DefaultClaimsService.%23ctor(GPHosting.Identity.Services.IProfileService%2CMicrosoft.Extensions.Logging.ILogger%7BGPHosting.Identity.Services.DefaultClaimsService%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/Services/Default/DefaultClaimsService.cs/#L36">View Source</a>
+  </span>
+  <a id="GPHosting_Identity_Services_DefaultClaimsService__ctor_" data-uid="GPHosting.Identity.Services.DefaultClaimsService.#ctor*"></a>
+  <h4 id="GPHosting_Identity_Services_DefaultClaimsService__ctor_GPHosting_Identity_Services_IProfileService_Microsoft_Extensions_Logging_ILogger_GPHosting_Identity_Services_DefaultClaimsService__" data-uid="GPHosting.Identity.Services.DefaultClaimsService.#ctor(GPHosting.Identity.Services.IProfileService,Microsoft.Extensions.Logging.ILogger{GPHosting.Identity.Services.DefaultClaimsService})">DefaultClaimsService(IProfileService, ILogger&lt;DefaultClaimsService&gt;)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="GPHosting.Identity.Services.DefaultClaimsService.html">DefaultClaimsService</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DefaultClaimsService(IProfileService profile, ILogger&lt;DefaultClaimsService&gt; logger)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="GPHosting.Identity.Services.IProfileService.html">IProfileService</a></td>
+        <td><span class="parametername">profile</span></td>
+        <td><p>The profile service</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1">ILogger</a>&lt;<a class="xref" href="GPHosting.Identity.Services.DefaultClaimsService.html">DefaultClaimsService</a>&gt;</td>
+        <td><span class="parametername">logger</span></td>
+        <td><p>The logger</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="fields">Fields
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_Services_DefaultClaimsService_Logger.md&amp;value=---%0Auid%3A%20GPHosting.Identity.Services.DefaultClaimsService.Logger%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/Services/Default/DefaultClaimsService.cs/#L24">View Source</a>
+  </span>
+  <h4 id="GPHosting_Identity_Services_DefaultClaimsService_Logger" data-uid="GPHosting.Identity.Services.DefaultClaimsService.Logger">Logger</h4>
+  <div class="markdown level1 summary"><p>The logger</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected readonly ILogger Logger</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger">ILogger</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_Services_DefaultClaimsService_Profile.md&amp;value=---%0Auid%3A%20GPHosting.Identity.Services.DefaultClaimsService.Profile%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/Services/Default/DefaultClaimsService.cs/#L29">View Source</a>
+  </span>
+  <h4 id="GPHosting_Identity_Services_DefaultClaimsService_Profile" data-uid="GPHosting.Identity.Services.DefaultClaimsService.Profile">Profile</h4>
+  <div class="markdown level1 summary"><p>The user service</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected readonly IProfileService Profile</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="GPHosting.Identity.Services.IProfileService.html">IProfileService</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_Services_DefaultClaimsService_FilterProtocolClaims_System_Collections_Generic_IEnumerable_System_Security_Claims_Claim__.md&amp;value=---%0Auid%3A%20GPHosting.Identity.Services.DefaultClaimsService.FilterProtocolClaims(System.Collections.Generic.IEnumerable%7BSystem.Security.Claims.Claim%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/Services/Default/DefaultClaimsService.cs/#L257">View Source</a>
+  </span>
+  <a id="GPHosting_Identity_Services_DefaultClaimsService_FilterProtocolClaims_" data-uid="GPHosting.Identity.Services.DefaultClaimsService.FilterProtocolClaims*"></a>
+  <h4 id="GPHosting_Identity_Services_DefaultClaimsService_FilterProtocolClaims_System_Collections_Generic_IEnumerable_System_Security_Claims_Claim__" data-uid="GPHosting.Identity.Services.DefaultClaimsService.FilterProtocolClaims(System.Collections.Generic.IEnumerable{System.Security.Claims.Claim})">FilterProtocolClaims(IEnumerable&lt;Claim&gt;)</h4>
+  <div class="markdown level1 summary"><p>Filters out protocol claims like amr, nonce etc..</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual IEnumerable&lt;Claim&gt; FilterProtocolClaims(IEnumerable&lt;Claim&gt; claims)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.security.claims.claim">Claim</a>&gt;</td>
+        <td><span class="parametername">claims</span></td>
+        <td><p>The claims.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.security.claims.claim">Claim</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_Services_DefaultClaimsService_FilterRequestedClaimTypes_System_Collections_Generic_IEnumerable_System_String__.md&amp;value=---%0Auid%3A%20GPHosting.Identity.Services.DefaultClaimsService.FilterRequestedClaimTypes(System.Collections.Generic.IEnumerable%7BSystem.String%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/Services/Default/DefaultClaimsService.cs/#L272">View Source</a>
+  </span>
+  <a id="GPHosting_Identity_Services_DefaultClaimsService_FilterRequestedClaimTypes_" data-uid="GPHosting.Identity.Services.DefaultClaimsService.FilterRequestedClaimTypes*"></a>
+  <h4 id="GPHosting_Identity_Services_DefaultClaimsService_FilterRequestedClaimTypes_System_Collections_Generic_IEnumerable_System_String__" data-uid="GPHosting.Identity.Services.DefaultClaimsService.FilterRequestedClaimTypes(System.Collections.Generic.IEnumerable{System.String})">FilterRequestedClaimTypes(IEnumerable&lt;string&gt;)</h4>
+  <div class="markdown level1 summary"><p>Filters out protocol claims like amr, nonce etc..</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual IEnumerable&lt;string&gt; FilterRequestedClaimTypes(IEnumerable&lt;string&gt; claimTypes)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</td>
+        <td><span class="parametername">claimTypes</span></td>
+        <td><p>The claim types.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_Services_DefaultClaimsService_GetAccessTokenClaimsAsync_System_Security_Claims_ClaimsPrincipal_GPHosting_Identity_Validation_ResourceValidationResult_GPHosting_Identity_Validation_ValidatedRequest_.md&amp;value=---%0Auid%3A%20GPHosting.Identity.Services.DefaultClaimsService.GetAccessTokenClaimsAsync(System.Security.Claims.ClaimsPrincipal%2CGPHosting.Identity.Validation.ResourceValidationResult%2CGPHosting.Identity.Validation.ValidatedRequest)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/Services/Default/DefaultClaimsService.cs/#L112">View Source</a>
+  </span>
+  <a id="GPHosting_Identity_Services_DefaultClaimsService_GetAccessTokenClaimsAsync_" data-uid="GPHosting.Identity.Services.DefaultClaimsService.GetAccessTokenClaimsAsync*"></a>
+  <h4 id="GPHosting_Identity_Services_DefaultClaimsService_GetAccessTokenClaimsAsync_System_Security_Claims_ClaimsPrincipal_GPHosting_Identity_Validation_ResourceValidationResult_GPHosting_Identity_Validation_ValidatedRequest_" data-uid="GPHosting.Identity.Services.DefaultClaimsService.GetAccessTokenClaimsAsync(System.Security.Claims.ClaimsPrincipal,GPHosting.Identity.Validation.ResourceValidationResult,GPHosting.Identity.Validation.ValidatedRequest)">GetAccessTokenClaimsAsync(ClaimsPrincipal, ResourceValidationResult, ValidatedRequest)</h4>
+  <div class="markdown level1 summary"><p>Returns claims for an access token.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual Task&lt;IEnumerable&lt;Claim&gt;&gt; GetAccessTokenClaimsAsync(ClaimsPrincipal subject, ResourceValidationResult resourceResult, ValidatedRequest request)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.security.claims.claimsprincipal">ClaimsPrincipal</a></td>
+        <td><span class="parametername">subject</span></td>
+        <td><p>The subject.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="GPHosting.Identity.Validation.ResourceValidationResult.html">ResourceValidationResult</a></td>
+        <td><span class="parametername">resourceResult</span></td>
+        <td><p>The validated resource result</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="GPHosting.Identity.Validation.ValidatedRequest.html">ValidatedRequest</a></td>
+        <td><span class="parametername">request</span></td>
+        <td><p>The raw request.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.security.claims.claim">Claim</a>&gt;&gt;</td>
+        <td><p>Claims for the access token</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_Services_DefaultClaimsService_GetIdentityTokenClaimsAsync_System_Security_Claims_ClaimsPrincipal_GPHosting_Identity_Validation_ResourceValidationResult_System_Boolean_GPHosting_Identity_Validation_ValidatedRequest_.md&amp;value=---%0Auid%3A%20GPHosting.Identity.Services.DefaultClaimsService.GetIdentityTokenClaimsAsync(System.Security.Claims.ClaimsPrincipal%2CGPHosting.Identity.Validation.ResourceValidationResult%2CSystem.Boolean%2CGPHosting.Identity.Validation.ValidatedRequest)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/Services/Default/DefaultClaimsService.cs/#L52">View Source</a>
+  </span>
+  <a id="GPHosting_Identity_Services_DefaultClaimsService_GetIdentityTokenClaimsAsync_" data-uid="GPHosting.Identity.Services.DefaultClaimsService.GetIdentityTokenClaimsAsync*"></a>
+  <h4 id="GPHosting_Identity_Services_DefaultClaimsService_GetIdentityTokenClaimsAsync_System_Security_Claims_ClaimsPrincipal_GPHosting_Identity_Validation_ResourceValidationResult_System_Boolean_GPHosting_Identity_Validation_ValidatedRequest_" data-uid="GPHosting.Identity.Services.DefaultClaimsService.GetIdentityTokenClaimsAsync(System.Security.Claims.ClaimsPrincipal,GPHosting.Identity.Validation.ResourceValidationResult,System.Boolean,GPHosting.Identity.Validation.ValidatedRequest)">GetIdentityTokenClaimsAsync(ClaimsPrincipal, ResourceValidationResult, bool, ValidatedRequest)</h4>
+  <div class="markdown level1 summary"><p>Returns claims for an identity token</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual Task&lt;IEnumerable&lt;Claim&gt;&gt; GetIdentityTokenClaimsAsync(ClaimsPrincipal subject, ResourceValidationResult resources, bool includeAllIdentityClaims, ValidatedRequest request)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.security.claims.claimsprincipal">ClaimsPrincipal</a></td>
+        <td><span class="parametername">subject</span></td>
+        <td><p>The subject</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="GPHosting.Identity.Validation.ResourceValidationResult.html">ResourceValidationResult</a></td>
+        <td><span class="parametername">resources</span></td>
+        <td><p>The requested resources</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">includeAllIdentityClaims</span></td>
+        <td><p>Specifies if all claims should be included in the token, or if the userinfo endpoint can be used to retrieve them</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="GPHosting.Identity.Validation.ValidatedRequest.html">ValidatedRequest</a></td>
+        <td><span class="parametername">request</span></td>
+        <td><p>The raw request</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.security.claims.claim">Claim</a>&gt;&gt;</td>
+        <td><p>Claims for the identity token</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_Services_DefaultClaimsService_GetOptionalClaims_System_Security_Claims_ClaimsPrincipal_.md&amp;value=---%0Auid%3A%20GPHosting.Identity.Services.DefaultClaimsService.GetOptionalClaims(System.Security.Claims.ClaimsPrincipal)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/Services/Default/DefaultClaimsService.cs/#L242">View Source</a>
+  </span>
+  <a id="GPHosting_Identity_Services_DefaultClaimsService_GetOptionalClaims_" data-uid="GPHosting.Identity.Services.DefaultClaimsService.GetOptionalClaims*"></a>
+  <h4 id="GPHosting_Identity_Services_DefaultClaimsService_GetOptionalClaims_System_Security_Claims_ClaimsPrincipal_" data-uid="GPHosting.Identity.Services.DefaultClaimsService.GetOptionalClaims(System.Security.Claims.ClaimsPrincipal)">GetOptionalClaims(ClaimsPrincipal)</h4>
+  <div class="markdown level1 summary"><p>Gets additional (and optional) claims from the cookie or incoming subject.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual IEnumerable&lt;Claim&gt; GetOptionalClaims(ClaimsPrincipal subject)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.security.claims.claimsprincipal">ClaimsPrincipal</a></td>
+        <td><span class="parametername">subject</span></td>
+        <td><p>The subject.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.security.claims.claim">Claim</a>&gt;</td>
+        <td><p>Additional claims</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_Services_DefaultClaimsService_GetStandardSubjectClaims_System_Security_Claims_ClaimsPrincipal_.md&amp;value=---%0Auid%3A%20GPHosting.Identity.Services.DefaultClaimsService.GetStandardSubjectClaims(System.Security.Claims.ClaimsPrincipal)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/Services/Default/DefaultClaimsService.cs/#L223">View Source</a>
+  </span>
+  <a id="GPHosting_Identity_Services_DefaultClaimsService_GetStandardSubjectClaims_" data-uid="GPHosting.Identity.Services.DefaultClaimsService.GetStandardSubjectClaims*"></a>
+  <h4 id="GPHosting_Identity_Services_DefaultClaimsService_GetStandardSubjectClaims_System_Security_Claims_ClaimsPrincipal_" data-uid="GPHosting.Identity.Services.DefaultClaimsService.GetStandardSubjectClaims(System.Security.Claims.ClaimsPrincipal)">GetStandardSubjectClaims(ClaimsPrincipal)</h4>
+  <div class="markdown level1 summary"><p>Gets the standard subject claims.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual IEnumerable&lt;Claim&gt; GetStandardSubjectClaims(ClaimsPrincipal subject)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.security.claims.claimsprincipal">ClaimsPrincipal</a></td>
+        <td><span class="parametername">subject</span></td>
+        <td><p>The subject.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.security.claims.claim">Claim</a>&gt;</td>
+        <td><p>A list of standard claims</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="GPHosting.Identity.Services.IClaimsService.html">IClaimsService</a>
+  </div>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_Services_DefaultClaimsService.md&amp;value=---%0Auid%3A%20GPHosting.Identity.Services.DefaultClaimsService%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/Services/Default/DefaultClaimsService.cs/#L19" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

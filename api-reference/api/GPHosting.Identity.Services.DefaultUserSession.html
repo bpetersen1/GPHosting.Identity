@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Class DefaultUserSession | GPHosting.Identity API Reference </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Class DefaultUserSession | GPHosting.Identity API Reference ">
+    
+    <meta name="description" content="Cookie-based session implementation">
+      <link rel="shortcut icon" href="../icon.jpg">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../icon.jpg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="GPHosting.Identity.Services.DefaultUserSession">
+
+
+
+  <h1 id="GPHosting_Identity_Services_DefaultUserSession" data-uid="GPHosting.Identity.Services.DefaultUserSession" class="text-break">Class DefaultUserSession</h1>
+  <div class="markdown level0 summary"><p>Cookie-based session implementation</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+    <div class="level1"><span class="xref">DefaultUserSession</span></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="GPHosting.Identity.Services.IUserSession.html">IUserSession</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="GPHosting.html">GPHosting</a>.<a class="xref" href="GPHosting.Identity.html">Identity</a>.<a class="xref" href="GPHosting.Identity.Services.html">Services</a></h6>
+  <h6><strong>Assembly</strong>: GPHosting.Identity.dll</h6>
+  <h5 id="GPHosting_Identity_Services_DefaultUserSession_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class DefaultUserSession : IUserSession</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_Services_DefaultUserSession__ctor_Microsoft_AspNetCore_Http_IHttpContextAccessor_Microsoft_AspNetCore_Authentication_IAuthenticationHandlerProvider_GPHosting_Identity_Configuration_IdentityServerOptions_System_TimeProvider_Microsoft_Extensions_Logging_ILogger_GPHosting_Identity_Services_IUserSession__.md&amp;value=---%0Auid%3A%20GPHosting.Identity.Services.DefaultUserSession.%23ctor(Microsoft.AspNetCore.Http.IHttpContextAccessor%2CMicrosoft.AspNetCore.Authentication.IAuthenticationHandlerProvider%2CGPHosting.Identity.Configuration.IdentityServerOptions%2CSystem.TimeProvider%2CMicrosoft.Extensions.Logging.ILogger%7BGPHosting.Identity.Services.IUserSession%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/Services/Default/DefaultUserSession.cs/#L95">View Source</a>
+  </span>
+  <a id="GPHosting_Identity_Services_DefaultUserSession__ctor_" data-uid="GPHosting.Identity.Services.DefaultUserSession.#ctor*"></a>
+  <h4 id="GPHosting_Identity_Services_DefaultUserSession__ctor_Microsoft_AspNetCore_Http_IHttpContextAccessor_Microsoft_AspNetCore_Authentication_IAuthenticationHandlerProvider_GPHosting_Identity_Configuration_IdentityServerOptions_System_TimeProvider_Microsoft_Extensions_Logging_ILogger_GPHosting_Identity_Services_IUserSession__" data-uid="GPHosting.Identity.Services.DefaultUserSession.#ctor(Microsoft.AspNetCore.Http.IHttpContextAccessor,Microsoft.AspNetCore.Authentication.IAuthenticationHandlerProvider,GPHosting.Identity.Configuration.IdentityServerOptions,System.TimeProvider,Microsoft.Extensions.Logging.ILogger{GPHosting.Identity.Services.IUserSession})">DefaultUserSession(IHttpContextAccessor, IAuthenticationHandlerProvider, IdentityServerOptions, TimeProvider, ILogger&lt;IUserSession&gt;)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="GPHosting.Identity.Services.DefaultUserSession.html">DefaultUserSession</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DefaultUserSession(IHttpContextAccessor httpContextAccessor, IAuthenticationHandlerProvider handlers, IdentityServerOptions options, TimeProvider clock, ILogger&lt;IUserSession&gt; logger)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.http.ihttpcontextaccessor">IHttpContextAccessor</a></td>
+        <td><span class="parametername">httpContextAccessor</span></td>
+        <td><p>The HTTP context accessor.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.authentication.iauthenticationhandlerprovider">IAuthenticationHandlerProvider</a></td>
+        <td><span class="parametername">handlers</span></td>
+        <td><p>The handlers.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="GPHosting.Identity.Configuration.IdentityServerOptions.html">IdentityServerOptions</a></td>
+        <td><span class="parametername">options</span></td>
+        <td><p>The options.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.timeprovider">TimeProvider</a></td>
+        <td><span class="parametername">clock</span></td>
+        <td><p>The clock.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1">ILogger</a>&lt;<a class="xref" href="GPHosting.Identity.Services.IUserSession.html">IUserSession</a>&gt;</td>
+        <td><span class="parametername">logger</span></td>
+        <td><p>The logger.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="fields">Fields
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_Services_DefaultUserSession_Clock.md&amp;value=---%0Auid%3A%20GPHosting.Identity.Services.DefaultUserSession.Clock%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/Services/Default/DefaultUserSession.cs/#L38">View Source</a>
+  </span>
+  <h4 id="GPHosting_Identity_Services_DefaultUserSession_Clock" data-uid="GPHosting.Identity.Services.DefaultUserSession.Clock">Clock</h4>
+  <div class="markdown level1 summary"><p>The clock</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected readonly TimeProvider Clock</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.timeprovider">TimeProvider</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_Services_DefaultUserSession_Handlers.md&amp;value=---%0Auid%3A%20GPHosting.Identity.Services.DefaultUserSession.Handlers%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/Services/Default/DefaultUserSession.cs/#L28">View Source</a>
+  </span>
+  <h4 id="GPHosting_Identity_Services_DefaultUserSession_Handlers" data-uid="GPHosting.Identity.Services.DefaultUserSession.Handlers">Handlers</h4>
+  <div class="markdown level1 summary"><p>The handlers</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected readonly IAuthenticationHandlerProvider Handlers</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.authentication.iauthenticationhandlerprovider">IAuthenticationHandlerProvider</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_Services_DefaultUserSession_HttpContextAccessor.md&amp;value=---%0Auid%3A%20GPHosting.Identity.Services.DefaultUserSession.HttpContextAccessor%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/Services/Default/DefaultUserSession.cs/#L23">View Source</a>
+  </span>
+  <h4 id="GPHosting_Identity_Services_DefaultUserSession_HttpContextAccessor" data-uid="GPHosting.Identity.Services.DefaultUserSession.HttpContextAccessor">HttpContextAccessor</h4>
+  <div class="markdown level1 summary"><p>The HTTP context accessor</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected readonly IHttpContextAccessor HttpContextAccessor</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.http.ihttpcontextaccessor">IHttpContextAccessor</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_Services_DefaultUserSession_Logger.md&amp;value=---%0Auid%3A%20GPHosting.Identity.Services.DefaultUserSession.Logger%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/Services/Default/DefaultUserSession.cs/#L43">View Source</a>
+  </span>
+  <h4 id="GPHosting_Identity_Services_DefaultUserSession_Logger" data-uid="GPHosting.Identity.Services.DefaultUserSession.Logger">Logger</h4>
+  <div class="markdown level1 summary"><p>The logger</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected readonly ILogger Logger</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger">ILogger</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_Services_DefaultUserSession_Options.md&amp;value=---%0Auid%3A%20GPHosting.Identity.Services.DefaultUserSession.Options%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/Services/Default/DefaultUserSession.cs/#L33">View Source</a>
+  </span>
+  <h4 id="GPHosting_Identity_Services_DefaultUserSession_Options" data-uid="GPHosting.Identity.Services.DefaultUserSession.Options">Options</h4>
+  <div class="markdown level1 summary"><p>The options</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected readonly IdentityServerOptions Options</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="GPHosting.Identity.Configuration.IdentityServerOptions.html">IdentityServerOptions</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_Services_DefaultUserSession_Principal.md&amp;value=---%0Auid%3A%20GPHosting.Identity.Services.DefaultUserSession.Principal%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/Services/Default/DefaultUserSession.cs/#L80">View Source</a>
+  </span>
+  <h4 id="GPHosting_Identity_Services_DefaultUserSession_Principal" data-uid="GPHosting.Identity.Services.DefaultUserSession.Principal">Principal</h4>
+  <div class="markdown level1 summary"><p>The principal</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected ClaimsPrincipal Principal</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.security.claims.claimsprincipal">ClaimsPrincipal</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_Services_DefaultUserSession_Properties.md&amp;value=---%0Auid%3A%20GPHosting.Identity.Services.DefaultUserSession.Properties%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/Services/Default/DefaultUserSession.cs/#L85">View Source</a>
+  </span>
+  <h4 id="GPHosting_Identity_Services_DefaultUserSession_Properties" data-uid="GPHosting.Identity.Services.DefaultUserSession.Properties">Properties</h4>
+  <div class="markdown level1 summary"><p>The properties</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected AuthenticationProperties Properties</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.authentication.authenticationproperties">AuthenticationProperties</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_Services_DefaultUserSession_CheckSessionCookieDomain.md&amp;value=---%0Auid%3A%20GPHosting.Identity.Services.DefaultUserSession.CheckSessionCookieDomain%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/Services/Default/DefaultUserSession.cs/#L67">View Source</a>
+  </span>
+  <a id="GPHosting_Identity_Services_DefaultUserSession_CheckSessionCookieDomain_" data-uid="GPHosting.Identity.Services.DefaultUserSession.CheckSessionCookieDomain*"></a>
+  <h4 id="GPHosting_Identity_Services_DefaultUserSession_CheckSessionCookieDomain" data-uid="GPHosting.Identity.Services.DefaultUserSession.CheckSessionCookieDomain">CheckSessionCookieDomain</h4>
+  <div class="markdown level1 summary"><p>Gets the domain of the check session cookie.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected string CheckSessionCookieDomain { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><p>The domain of the check session cookie.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_Services_DefaultUserSession_CheckSessionCookieName.md&amp;value=---%0Auid%3A%20GPHosting.Identity.Services.DefaultUserSession.CheckSessionCookieName%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/Services/Default/DefaultUserSession.cs/#L59">View Source</a>
+  </span>
+  <a id="GPHosting_Identity_Services_DefaultUserSession_CheckSessionCookieName_" data-uid="GPHosting.Identity.Services.DefaultUserSession.CheckSessionCookieName*"></a>
+  <h4 id="GPHosting_Identity_Services_DefaultUserSession_CheckSessionCookieName" data-uid="GPHosting.Identity.Services.DefaultUserSession.CheckSessionCookieName">CheckSessionCookieName</h4>
+  <div class="markdown level1 summary"><p>Gets the name of the check session cookie.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected string CheckSessionCookieName { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><p>The name of the check session cookie.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_Services_DefaultUserSession_CheckSessionCookieSameSiteMode.md&amp;value=---%0Auid%3A%20GPHosting.Identity.Services.DefaultUserSession.CheckSessionCookieSameSiteMode%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/Services/Default/DefaultUserSession.cs/#L75">View Source</a>
+  </span>
+  <a id="GPHosting_Identity_Services_DefaultUserSession_CheckSessionCookieSameSiteMode_" data-uid="GPHosting.Identity.Services.DefaultUserSession.CheckSessionCookieSameSiteMode*"></a>
+  <h4 id="GPHosting_Identity_Services_DefaultUserSession_CheckSessionCookieSameSiteMode" data-uid="GPHosting.Identity.Services.DefaultUserSession.CheckSessionCookieSameSiteMode">CheckSessionCookieSameSiteMode</h4>
+  <div class="markdown level1 summary"><p>Gets the SameSite mode of the check session cookie.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected SameSiteMode CheckSessionCookieSameSiteMode { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.http.samesitemode">SameSiteMode</a></td>
+        <td><p>The SameSite mode of the check session cookie.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_Services_DefaultUserSession_HttpContext.md&amp;value=---%0Auid%3A%20GPHosting.Identity.Services.DefaultUserSession.HttpContext%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/Services/Default/DefaultUserSession.cs/#L51">View Source</a>
+  </span>
+  <a id="GPHosting_Identity_Services_DefaultUserSession_HttpContext_" data-uid="GPHosting.Identity.Services.DefaultUserSession.HttpContext*"></a>
+  <h4 id="GPHosting_Identity_Services_DefaultUserSession_HttpContext" data-uid="GPHosting.Identity.Services.DefaultUserSession.HttpContext">HttpContext</h4>
+  <div class="markdown level1 summary"><p>Gets the HTTP context.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected HttpContext HttpContext { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.http.httpcontext">HttpContext</a></td>
+        <td><p>The HTTP context.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_Services_DefaultUserSession_AddClientIdAsync_System_String_.md&amp;value=---%0Auid%3A%20GPHosting.Identity.Services.DefaultUserSession.AddClientIdAsync(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/Services/Default/DefaultUserSession.cs/#L278">View Source</a>
+  </span>
+  <a id="GPHosting_Identity_Services_DefaultUserSession_AddClientIdAsync_" data-uid="GPHosting.Identity.Services.DefaultUserSession.AddClientIdAsync*"></a>
+  <h4 id="GPHosting_Identity_Services_DefaultUserSession_AddClientIdAsync_System_String_" data-uid="GPHosting.Identity.Services.DefaultUserSession.AddClientIdAsync(System.String)">AddClientIdAsync(string)</h4>
+  <div class="markdown level1 summary"><p>Adds a client to the list of clients the user has signed into during their session.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual Task AddClientIdAsync(string clientId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">clientId</span></td>
+        <td><p>The client identifier.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></td>
+        <td><p>clientId</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_Services_DefaultUserSession_AuthenticateAsync.md&amp;value=---%0Auid%3A%20GPHosting.Identity.Services.DefaultUserSession.AuthenticateAsync%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/Services/Default/DefaultUserSession.cs/#L122">View Source</a>
+  </span>
+  <a id="GPHosting_Identity_Services_DefaultUserSession_AuthenticateAsync_" data-uid="GPHosting.Identity.Services.DefaultUserSession.AuthenticateAsync*"></a>
+  <h4 id="GPHosting_Identity_Services_DefaultUserSession_AuthenticateAsync" data-uid="GPHosting.Identity.Services.DefaultUserSession.AuthenticateAsync">AuthenticateAsync()</h4>
+  <div class="markdown level1 summary"><p>Authenticates the authentication cookie for the current HTTP request and caches the user and properties results.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual Task AuthenticateAsync()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_Services_DefaultUserSession_CreateSessionIdAsync_System_Security_Claims_ClaimsPrincipal_Microsoft_AspNetCore_Authentication_AuthenticationProperties_.md&amp;value=---%0Auid%3A%20GPHosting.Identity.Services.DefaultUserSession.CreateSessionIdAsync(System.Security.Claims.ClaimsPrincipal%2CMicrosoft.AspNetCore.Authentication.AuthenticationProperties)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/Services/Default/DefaultUserSession.cs/#L154">View Source</a>
+  </span>
+  <a id="GPHosting_Identity_Services_DefaultUserSession_CreateSessionIdAsync_" data-uid="GPHosting.Identity.Services.DefaultUserSession.CreateSessionIdAsync*"></a>
+  <h4 id="GPHosting_Identity_Services_DefaultUserSession_CreateSessionIdAsync_System_Security_Claims_ClaimsPrincipal_Microsoft_AspNetCore_Authentication_AuthenticationProperties_" data-uid="GPHosting.Identity.Services.DefaultUserSession.CreateSessionIdAsync(System.Security.Claims.ClaimsPrincipal,Microsoft.AspNetCore.Authentication.AuthenticationProperties)">CreateSessionIdAsync(ClaimsPrincipal, AuthenticationProperties)</h4>
+  <div class="markdown level1 summary"><p>Creates a session identifier for the signin context and issues the session id cookie.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual Task&lt;string&gt; CreateSessionIdAsync(ClaimsPrincipal principal, AuthenticationProperties properties)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.security.claims.claimsprincipal">ClaimsPrincipal</a></td>
+        <td><span class="parametername">principal</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.authentication.authenticationproperties">AuthenticationProperties</a></td>
+        <td><span class="parametername">properties</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></td>
+        <td><p>principal
+or
+properties</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_Services_DefaultUserSession_CreateSessionIdCookieOptions.md&amp;value=---%0Auid%3A%20GPHosting.Identity.Services.DefaultUserSession.CreateSessionIdCookieOptions%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/Services/Default/DefaultUserSession.cs/#L236">View Source</a>
+  </span>
+  <a id="GPHosting_Identity_Services_DefaultUserSession_CreateSessionIdCookieOptions_" data-uid="GPHosting.Identity.Services.DefaultUserSession.CreateSessionIdCookieOptions*"></a>
+  <h4 id="GPHosting_Identity_Services_DefaultUserSession_CreateSessionIdCookieOptions" data-uid="GPHosting.Identity.Services.DefaultUserSession.CreateSessionIdCookieOptions">CreateSessionIdCookieOptions()</h4>
+  <div class="markdown level1 summary"><p>Creates the options for the session cookie.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual CookieOptions CreateSessionIdCookieOptions()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.http.cookieoptions">CookieOptions</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_Services_DefaultUserSession_EnsureSessionIdCookieAsync.md&amp;value=---%0Auid%3A%20GPHosting.Identity.Services.DefaultUserSession.EnsureSessionIdCookieAsync%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/Services/Default/DefaultUserSession.cs/#L202">View Source</a>
+  </span>
+  <a id="GPHosting_Identity_Services_DefaultUserSession_EnsureSessionIdCookieAsync_" data-uid="GPHosting.Identity.Services.DefaultUserSession.EnsureSessionIdCookieAsync*"></a>
+  <h4 id="GPHosting_Identity_Services_DefaultUserSession_EnsureSessionIdCookieAsync" data-uid="GPHosting.Identity.Services.DefaultUserSession.EnsureSessionIdCookieAsync">EnsureSessionIdCookieAsync()</h4>
+  <div class="markdown level1 summary"><p>Ensures the session identifier cookie asynchronous.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual Task EnsureSessionIdCookieAsync()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_Services_DefaultUserSession_GetClientListAsync.md&amp;value=---%0Auid%3A%20GPHosting.Identity.Services.DefaultUserSession.GetClientListAsync%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/Services/Default/DefaultUserSession.cs/#L298">View Source</a>
+  </span>
+  <a id="GPHosting_Identity_Services_DefaultUserSession_GetClientListAsync_" data-uid="GPHosting.Identity.Services.DefaultUserSession.GetClientListAsync*"></a>
+  <h4 id="GPHosting_Identity_Services_DefaultUserSession_GetClientListAsync" data-uid="GPHosting.Identity.Services.DefaultUserSession.GetClientListAsync">GetClientListAsync()</h4>
+  <div class="markdown level1 summary"><p>Gets the list of clients the user has signed into during their session.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual Task&lt;IEnumerable&lt;string&gt;&gt; GetClientListAsync()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_Services_DefaultUserSession_GetSessionIdAsync.md&amp;value=---%0Auid%3A%20GPHosting.Identity.Services.DefaultUserSession.GetSessionIdAsync%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/Services/Default/DefaultUserSession.cs/#L191">View Source</a>
+  </span>
+  <a id="GPHosting_Identity_Services_DefaultUserSession_GetSessionIdAsync_" data-uid="GPHosting.Identity.Services.DefaultUserSession.GetSessionIdAsync*"></a>
+  <h4 id="GPHosting_Identity_Services_DefaultUserSession_GetSessionIdAsync" data-uid="GPHosting.Identity.Services.DefaultUserSession.GetSessionIdAsync">GetSessionIdAsync()</h4>
+  <div class="markdown level1 summary"><p>Gets the current session identifier.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual Task&lt;string&gt; GetSessionIdAsync()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_Services_DefaultUserSession_GetUserAsync.md&amp;value=---%0Auid%3A%20GPHosting.Identity.Services.DefaultUserSession.GetUserAsync%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/Services/Default/DefaultUserSession.cs/#L180">View Source</a>
+  </span>
+  <a id="GPHosting_Identity_Services_DefaultUserSession_GetUserAsync_" data-uid="GPHosting.Identity.Services.DefaultUserSession.GetUserAsync*"></a>
+  <h4 id="GPHosting_Identity_Services_DefaultUserSession_GetUserAsync" data-uid="GPHosting.Identity.Services.DefaultUserSession.GetUserAsync">GetUserAsync()</h4>
+  <div class="markdown level1 summary"><p>Gets the current authenticated user.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual Task&lt;ClaimsPrincipal&gt; GetUserAsync()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.security.claims.claimsprincipal">ClaimsPrincipal</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_Services_DefaultUserSession_IssueSessionIdCookie_System_String_.md&amp;value=---%0Auid%3A%20GPHosting.Identity.Services.DefaultUserSession.IssueSessionIdCookie(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/Services/Default/DefaultUserSession.cs/#L258">View Source</a>
+  </span>
+  <a id="GPHosting_Identity_Services_DefaultUserSession_IssueSessionIdCookie_" data-uid="GPHosting.Identity.Services.DefaultUserSession.IssueSessionIdCookie*"></a>
+  <h4 id="GPHosting_Identity_Services_DefaultUserSession_IssueSessionIdCookie_System_String_" data-uid="GPHosting.Identity.Services.DefaultUserSession.IssueSessionIdCookie(System.String)">IssueSessionIdCookie(string)</h4>
+  <div class="markdown level1 summary"><p>Issues the cookie that contains the session id.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void IssueSessionIdCookie(string sid)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">sid</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_Services_DefaultUserSession_RemoveSessionIdCookieAsync.md&amp;value=---%0Auid%3A%20GPHosting.Identity.Services.DefaultUserSession.RemoveSessionIdCookieAsync%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/Services/Default/DefaultUserSession.cs/#L219">View Source</a>
+  </span>
+  <a id="GPHosting_Identity_Services_DefaultUserSession_RemoveSessionIdCookieAsync_" data-uid="GPHosting.Identity.Services.DefaultUserSession.RemoveSessionIdCookieAsync*"></a>
+  <h4 id="GPHosting_Identity_Services_DefaultUserSession_RemoveSessionIdCookieAsync" data-uid="GPHosting.Identity.Services.DefaultUserSession.RemoveSessionIdCookieAsync">RemoveSessionIdCookieAsync()</h4>
+  <div class="markdown level1 summary"><p>Removes the session identifier cookie.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual Task RemoveSessionIdCookieAsync()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="GPHosting.Identity.Services.IUserSession.html">IUserSession</a>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="GPHosting.Identity.Services.IUserSessionExtensions.html#GPHosting_Identity_Services_IUserSessionExtensions_GetLogoutNotificationContext_GPHosting_Identity_Services_IUserSession_">IUserSessionExtensions.GetLogoutNotificationContext(IUserSession)</a>
+  </div>
+  <h3 id="seealso">See Also</h3>
+  <div class="seealso">
+      <div><a class="xref" href="GPHosting.Identity.Services.IUserSession.html">IUserSession</a></div>
+  </div>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_Services_DefaultUserSession.md&amp;value=---%0Auid%3A%20GPHosting.Identity.Services.DefaultUserSession%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/Services/Default/DefaultUserSession.cs/#L18" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

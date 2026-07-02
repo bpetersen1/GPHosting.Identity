@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Interface IIdentityServerInteractionService | GPHosting.Identity API Reference </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Interface IIdentityServerInteractionService | GPHosting.Identity API Reference ">
+    
+    <meta name="description" content="Provide services be used by the user interface to communicate with IdentityServer.">
+      <link rel="shortcut icon" href="../icon.jpg">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../icon.jpg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="GPHosting.Identity.Services.IIdentityServerInteractionService">
+
+
+
+  <h1 id="GPHosting_Identity_Services_IIdentityServerInteractionService" data-uid="GPHosting.Identity.Services.IIdentityServerInteractionService" class="text-break">Interface IIdentityServerInteractionService</h1>
+  <div class="markdown level0 summary"><p>Provide services be used by the user interface to communicate with IdentityServer.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="GPHosting.html">GPHosting</a>.<a class="xref" href="GPHosting.Identity.html">Identity</a>.<a class="xref" href="GPHosting.Identity.Services.html">Services</a></h6>
+  <h6><strong>Assembly</strong>: GPHosting.Identity.dll</h6>
+  <h5 id="GPHosting_Identity_Services_IIdentityServerInteractionService_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public interface IIdentityServerInteractionService</code></pre>
+  </div>
+  <h3 id="methods">Methods
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_Services_IIdentityServerInteractionService_CreateLogoutContextAsync.md&amp;value=---%0Auid%3A%20GPHosting.Identity.Services.IIdentityServerInteractionService.CreateLogoutContextAsync%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/Services/IIdentityServerInteractionService.cs/#L43">View Source</a>
+  </span>
+  <a id="GPHosting_Identity_Services_IIdentityServerInteractionService_CreateLogoutContextAsync_" data-uid="GPHosting.Identity.Services.IIdentityServerInteractionService.CreateLogoutContextAsync*"></a>
+  <h4 id="GPHosting_Identity_Services_IIdentityServerInteractionService_CreateLogoutContextAsync" data-uid="GPHosting.Identity.Services.IIdentityServerInteractionService.CreateLogoutContextAsync">CreateLogoutContextAsync()</h4>
+  <div class="markdown level1 summary"><p>Used to create a logoutId if there is not one presently.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;string&gt; CreateLogoutContextAsync()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_Services_IIdentityServerInteractionService_DenyAuthorizationAsync_GPHosting_Identity_Models_AuthorizationRequest_GPHosting_Identity_Models_AuthorizationError_System_String_.md&amp;value=---%0Auid%3A%20GPHosting.Identity.Services.IIdentityServerInteractionService.DenyAuthorizationAsync(GPHosting.Identity.Models.AuthorizationRequest%2CGPHosting.Identity.Models.AuthorizationError%2CSystem.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/Services/IIdentityServerInteractionService.cs/#L60">View Source</a>
+  </span>
+  <a id="GPHosting_Identity_Services_IIdentityServerInteractionService_DenyAuthorizationAsync_" data-uid="GPHosting.Identity.Services.IIdentityServerInteractionService.DenyAuthorizationAsync*"></a>
+  <h4 id="GPHosting_Identity_Services_IIdentityServerInteractionService_DenyAuthorizationAsync_GPHosting_Identity_Models_AuthorizationRequest_GPHosting_Identity_Models_AuthorizationError_System_String_" data-uid="GPHosting.Identity.Services.IIdentityServerInteractionService.DenyAuthorizationAsync(GPHosting.Identity.Models.AuthorizationRequest,GPHosting.Identity.Models.AuthorizationError,System.String)">DenyAuthorizationAsync(AuthorizationRequest, AuthorizationError, string)</h4>
+  <div class="markdown level1 summary"><p>Triggers error back to the client for the authorization request.
+This API is a simpler helper on top of GrantConsentAsync.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task DenyAuthorizationAsync(AuthorizationRequest request, AuthorizationError error, string errorDescription = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="GPHosting.Identity.Models.AuthorizationRequest.html">AuthorizationRequest</a></td>
+        <td><span class="parametername">request</span></td>
+        <td><p>The request.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="GPHosting.Identity.Models.AuthorizationError.html">AuthorizationError</a></td>
+        <td><span class="parametername">error</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">errorDescription</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_Services_IIdentityServerInteractionService_GetAllUserGrantsAsync.md&amp;value=---%0Auid%3A%20GPHosting.Identity.Services.IIdentityServerInteractionService.GetAllUserGrantsAsync%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/Services/IIdentityServerInteractionService.cs/#L65">View Source</a>
+  </span>
+  <a id="GPHosting_Identity_Services_IIdentityServerInteractionService_GetAllUserGrantsAsync_" data-uid="GPHosting.Identity.Services.IIdentityServerInteractionService.GetAllUserGrantsAsync*"></a>
+  <h4 id="GPHosting_Identity_Services_IIdentityServerInteractionService_GetAllUserGrantsAsync" data-uid="GPHosting.Identity.Services.IIdentityServerInteractionService.GetAllUserGrantsAsync">GetAllUserGrantsAsync()</h4>
+  <div class="markdown level1 summary"><p>Returns a collection representing all of the user's consents and grants.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;IEnumerable&lt;Grant&gt;&gt; GetAllUserGrantsAsync()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="GPHosting.Identity.Models.Grant.html">Grant</a>&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_Services_IIdentityServerInteractionService_GetAuthorizationContextAsync_System_String_.md&amp;value=---%0Auid%3A%20GPHosting.Identity.Services.IIdentityServerInteractionService.GetAuthorizationContextAsync(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/Services/IIdentityServerInteractionService.cs/#L19">View Source</a>
+  </span>
+  <a id="GPHosting_Identity_Services_IIdentityServerInteractionService_GetAuthorizationContextAsync_" data-uid="GPHosting.Identity.Services.IIdentityServerInteractionService.GetAuthorizationContextAsync*"></a>
+  <h4 id="GPHosting_Identity_Services_IIdentityServerInteractionService_GetAuthorizationContextAsync_System_String_" data-uid="GPHosting.Identity.Services.IIdentityServerInteractionService.GetAuthorizationContextAsync(System.String)">GetAuthorizationContextAsync(string)</h4>
+  <div class="markdown level1 summary"><p>Gets the authorization context.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;AuthorizationRequest&gt; GetAuthorizationContextAsync(string returnUrl)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">returnUrl</span></td>
+        <td><p>The return URL.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="GPHosting.Identity.Models.AuthorizationRequest.html">AuthorizationRequest</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_Services_IIdentityServerInteractionService_GetErrorContextAsync_System_String_.md&amp;value=---%0Auid%3A%20GPHosting.Identity.Services.IIdentityServerInteractionService.GetErrorContextAsync(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/Services/IIdentityServerInteractionService.cs/#L31">View Source</a>
+  </span>
+  <a id="GPHosting_Identity_Services_IIdentityServerInteractionService_GetErrorContextAsync_" data-uid="GPHosting.Identity.Services.IIdentityServerInteractionService.GetErrorContextAsync*"></a>
+  <h4 id="GPHosting_Identity_Services_IIdentityServerInteractionService_GetErrorContextAsync_System_String_" data-uid="GPHosting.Identity.Services.IIdentityServerInteractionService.GetErrorContextAsync(System.String)">GetErrorContextAsync(string)</h4>
+  <div class="markdown level1 summary"><p>Gets the error context.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;ErrorMessage&gt; GetErrorContextAsync(string errorId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">errorId</span></td>
+        <td><p>The error identifier.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="GPHosting.Identity.Models.ErrorMessage.html">ErrorMessage</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_Services_IIdentityServerInteractionService_GetLogoutContextAsync_System_String_.md&amp;value=---%0Auid%3A%20GPHosting.Identity.Services.IIdentityServerInteractionService.GetLogoutContextAsync(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/Services/IIdentityServerInteractionService.cs/#L37">View Source</a>
+  </span>
+  <a id="GPHosting_Identity_Services_IIdentityServerInteractionService_GetLogoutContextAsync_" data-uid="GPHosting.Identity.Services.IIdentityServerInteractionService.GetLogoutContextAsync*"></a>
+  <h4 id="GPHosting_Identity_Services_IIdentityServerInteractionService_GetLogoutContextAsync_System_String_" data-uid="GPHosting.Identity.Services.IIdentityServerInteractionService.GetLogoutContextAsync(System.String)">GetLogoutContextAsync(string)</h4>
+  <div class="markdown level1 summary"><p>Gets the logout context.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;LogoutRequest&gt; GetLogoutContextAsync(string logoutId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">logoutId</span></td>
+        <td><p>The logout identifier.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="GPHosting.Identity.Models.LogoutRequest.html">LogoutRequest</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_Services_IIdentityServerInteractionService_GrantConsentAsync_GPHosting_Identity_Models_AuthorizationRequest_GPHosting_Identity_Models_ConsentResponse_System_String_.md&amp;value=---%0Auid%3A%20GPHosting.Identity.Services.IIdentityServerInteractionService.GrantConsentAsync(GPHosting.Identity.Models.AuthorizationRequest%2CGPHosting.Identity.Models.ConsentResponse%2CSystem.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/Services/IIdentityServerInteractionService.cs/#L51">View Source</a>
+  </span>
+  <a id="GPHosting_Identity_Services_IIdentityServerInteractionService_GrantConsentAsync_" data-uid="GPHosting.Identity.Services.IIdentityServerInteractionService.GrantConsentAsync*"></a>
+  <h4 id="GPHosting_Identity_Services_IIdentityServerInteractionService_GrantConsentAsync_GPHosting_Identity_Models_AuthorizationRequest_GPHosting_Identity_Models_ConsentResponse_System_String_" data-uid="GPHosting.Identity.Services.IIdentityServerInteractionService.GrantConsentAsync(GPHosting.Identity.Models.AuthorizationRequest,GPHosting.Identity.Models.ConsentResponse,System.String)">GrantConsentAsync(AuthorizationRequest, ConsentResponse, string)</h4>
+  <div class="markdown level1 summary"><p>Informs IdentityServer of the user's consent.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task GrantConsentAsync(AuthorizationRequest request, ConsentResponse consent, string subject = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="GPHosting.Identity.Models.AuthorizationRequest.html">AuthorizationRequest</a></td>
+        <td><span class="parametername">request</span></td>
+        <td><p>The request.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="GPHosting.Identity.Models.ConsentResponse.html">ConsentResponse</a></td>
+        <td><span class="parametername">consent</span></td>
+        <td><p>The consent.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">subject</span></td>
+        <td><p>The subject.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_Services_IIdentityServerInteractionService_IsValidReturnUrl_System_String_.md&amp;value=---%0Auid%3A%20GPHosting.Identity.Services.IIdentityServerInteractionService.IsValidReturnUrl(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/Services/IIdentityServerInteractionService.cs/#L25">View Source</a>
+  </span>
+  <a id="GPHosting_Identity_Services_IIdentityServerInteractionService_IsValidReturnUrl_" data-uid="GPHosting.Identity.Services.IIdentityServerInteractionService.IsValidReturnUrl*"></a>
+  <h4 id="GPHosting_Identity_Services_IIdentityServerInteractionService_IsValidReturnUrl_System_String_" data-uid="GPHosting.Identity.Services.IIdentityServerInteractionService.IsValidReturnUrl(System.String)">IsValidReturnUrl(string)</h4>
+  <div class="markdown level1 summary"><p>Indicates if the returnUrl is a valid URL for redirect after login or consent.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool IsValidReturnUrl(string returnUrl)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">returnUrl</span></td>
+        <td><p>The return URL.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_Services_IIdentityServerInteractionService_RevokeTokensForCurrentSessionAsync.md&amp;value=---%0Auid%3A%20GPHosting.Identity.Services.IIdentityServerInteractionService.RevokeTokensForCurrentSessionAsync%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/Services/IIdentityServerInteractionService.cs/#L76">View Source</a>
+  </span>
+  <a id="GPHosting_Identity_Services_IIdentityServerInteractionService_RevokeTokensForCurrentSessionAsync_" data-uid="GPHosting.Identity.Services.IIdentityServerInteractionService.RevokeTokensForCurrentSessionAsync*"></a>
+  <h4 id="GPHosting_Identity_Services_IIdentityServerInteractionService_RevokeTokensForCurrentSessionAsync" data-uid="GPHosting.Identity.Services.IIdentityServerInteractionService.RevokeTokensForCurrentSessionAsync">RevokeTokensForCurrentSessionAsync()</h4>
+  <div class="markdown level1 summary"><p>Revokes all of a user's consents and grants for clients the user has signed into during their current session.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task RevokeTokensForCurrentSessionAsync()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_Services_IIdentityServerInteractionService_RevokeUserConsentAsync_System_String_.md&amp;value=---%0Auid%3A%20GPHosting.Identity.Services.IIdentityServerInteractionService.RevokeUserConsentAsync(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/Services/IIdentityServerInteractionService.cs/#L71">View Source</a>
+  </span>
+  <a id="GPHosting_Identity_Services_IIdentityServerInteractionService_RevokeUserConsentAsync_" data-uid="GPHosting.Identity.Services.IIdentityServerInteractionService.RevokeUserConsentAsync*"></a>
+  <h4 id="GPHosting_Identity_Services_IIdentityServerInteractionService_RevokeUserConsentAsync_System_String_" data-uid="GPHosting.Identity.Services.IIdentityServerInteractionService.RevokeUserConsentAsync(System.String)">RevokeUserConsentAsync(string)</h4>
+  <div class="markdown level1 summary"><p>Revokes all a user's consents and grants for a client.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task RevokeUserConsentAsync(string clientId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">clientId</span></td>
+        <td><p>The client identifier.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_Services_IIdentityServerInteractionService.md&amp;value=---%0Auid%3A%20GPHosting.Identity.Services.IIdentityServerInteractionService%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/Services/IIdentityServerInteractionService.cs/#L13" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

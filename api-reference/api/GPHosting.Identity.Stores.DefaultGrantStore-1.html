@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Class DefaultGrantStore&lt;T&gt; | GPHosting.Identity API Reference </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Class DefaultGrantStore&lt;T&gt; | GPHosting.Identity API Reference ">
+    
+    <meta name="description" content="Base class for persisting grants using the IPersistedGrantStore.">
+      <link rel="shortcut icon" href="../icon.jpg">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../icon.jpg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="GPHosting.Identity.Stores.DefaultGrantStore`1">
+
+
+
+  <h1 id="GPHosting_Identity_Stores_DefaultGrantStore_1" data-uid="GPHosting.Identity.Stores.DefaultGrantStore`1" class="text-break">Class DefaultGrantStore&lt;T&gt;</h1>
+  <div class="markdown level0 summary"><p>Base class for persisting grants using the IPersistedGrantStore.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+    <div class="level1"><span class="xref">DefaultGrantStore&lt;T&gt;</span></div>
+      <div class="level2"><a class="xref" href="GPHosting.Identity.Stores.DefaultAuthorizationCodeStore.html">DefaultAuthorizationCodeStore</a></div>
+      <div class="level2"><a class="xref" href="GPHosting.Identity.Stores.DefaultReferenceTokenStore.html">DefaultReferenceTokenStore</a></div>
+      <div class="level2"><a class="xref" href="GPHosting.Identity.Stores.DefaultRefreshTokenStore.html">DefaultRefreshTokenStore</a></div>
+      <div class="level2"><a class="xref" href="GPHosting.Identity.Stores.DefaultUserConsentStore.html">DefaultUserConsentStore</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="GPHosting.html">GPHosting</a>.<a class="xref" href="GPHosting.Identity.html">Identity</a>.<a class="xref" href="GPHosting.Identity.Stores.html">Stores</a></h6>
+  <h6><strong>Assembly</strong>: GPHosting.Identity.dll</h6>
+  <h5 id="GPHosting_Identity_Stores_DefaultGrantStore_1_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class DefaultGrantStore&lt;T&gt;</code></pre>
+  </div>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="constructors">Constructors
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_Stores_DefaultGrantStore_1__ctor_System_String_GPHosting_Identity_Stores_IPersistedGrantStore_GPHosting_Identity_Stores_Serialization_IPersistentGrantSerializer_GPHosting_Identity_Services_IHandleGenerationService_Microsoft_Extensions_Logging_ILogger_.md&amp;value=---%0Auid%3A%20GPHosting.Identity.Stores.DefaultGrantStore%601.%23ctor(System.String%2CGPHosting.Identity.Stores.IPersistedGrantStore%2CGPHosting.Identity.Stores.Serialization.IPersistentGrantSerializer%2CGPHosting.Identity.Services.IHandleGenerationService%2CMicrosoft.Extensions.Logging.ILogger)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/Stores/Default/DefaultGrantStore.cs/#L54">View Source</a>
+  </span>
+  <a id="GPHosting_Identity_Stores_DefaultGrantStore_1__ctor_" data-uid="GPHosting.Identity.Stores.DefaultGrantStore`1.#ctor*"></a>
+  <h4 id="GPHosting_Identity_Stores_DefaultGrantStore_1__ctor_System_String_GPHosting_Identity_Stores_IPersistedGrantStore_GPHosting_Identity_Stores_Serialization_IPersistentGrantSerializer_GPHosting_Identity_Services_IHandleGenerationService_Microsoft_Extensions_Logging_ILogger_" data-uid="GPHosting.Identity.Stores.DefaultGrantStore`1.#ctor(System.String,GPHosting.Identity.Stores.IPersistedGrantStore,GPHosting.Identity.Stores.Serialization.IPersistentGrantSerializer,GPHosting.Identity.Services.IHandleGenerationService,Microsoft.Extensions.Logging.ILogger)">DefaultGrantStore(string, IPersistedGrantStore, IPersistentGrantSerializer, IHandleGenerationService, ILogger)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="GPHosting.Identity.Stores.DefaultGrantStore-1.html">DefaultGrantStore&lt;T&gt;</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected DefaultGrantStore(string grantType, IPersistedGrantStore store, IPersistentGrantSerializer serializer, IHandleGenerationService handleGenerationService, ILogger logger)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">grantType</span></td>
+        <td><p>Type of the grant.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="GPHosting.Identity.Stores.IPersistedGrantStore.html">IPersistedGrantStore</a></td>
+        <td><span class="parametername">store</span></td>
+        <td><p>The store.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="GPHosting.Identity.Stores.Serialization.IPersistentGrantSerializer.html">IPersistentGrantSerializer</a></td>
+        <td><span class="parametername">serializer</span></td>
+        <td><p>The serializer.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="GPHosting.Identity.Services.IHandleGenerationService.html">IHandleGenerationService</a></td>
+        <td><span class="parametername">handleGenerationService</span></td>
+        <td><p>The handle generation service.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger">ILogger</a></td>
+        <td><span class="parametername">logger</span></td>
+        <td><p>The logger.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></td>
+        <td><p>grantType</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_Stores_DefaultGrantStore_1_GrantType.md&amp;value=---%0Auid%3A%20GPHosting.Identity.Stores.DefaultGrantStore%601.GrantType%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/Stores/Default/DefaultGrantStore.cs/#L23">View Source</a>
+  </span>
+  <a id="GPHosting_Identity_Stores_DefaultGrantStore_1_GrantType_" data-uid="GPHosting.Identity.Stores.DefaultGrantStore`1.GrantType*"></a>
+  <h4 id="GPHosting_Identity_Stores_DefaultGrantStore_1_GrantType" data-uid="GPHosting.Identity.Stores.DefaultGrantStore`1.GrantType">GrantType</h4>
+  <div class="markdown level1 summary"><p>The grant type being stored.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected string GrantType { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_Stores_DefaultGrantStore_1_HandleGenerationService.md&amp;value=---%0Auid%3A%20GPHosting.Identity.Stores.DefaultGrantStore%601.HandleGenerationService%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/Stores/Default/DefaultGrantStore.cs/#L43">View Source</a>
+  </span>
+  <a id="GPHosting_Identity_Stores_DefaultGrantStore_1_HandleGenerationService_" data-uid="GPHosting.Identity.Stores.DefaultGrantStore`1.HandleGenerationService*"></a>
+  <h4 id="GPHosting_Identity_Stores_DefaultGrantStore_1_HandleGenerationService" data-uid="GPHosting.Identity.Stores.DefaultGrantStore`1.HandleGenerationService">HandleGenerationService</h4>
+  <div class="markdown level1 summary"><p>The HandleGenerationService.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected IHandleGenerationService HandleGenerationService { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="GPHosting.Identity.Services.IHandleGenerationService.html">IHandleGenerationService</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_Stores_DefaultGrantStore_1_Logger.md&amp;value=---%0Auid%3A%20GPHosting.Identity.Stores.DefaultGrantStore%601.Logger%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/Stores/Default/DefaultGrantStore.cs/#L28">View Source</a>
+  </span>
+  <a id="GPHosting_Identity_Stores_DefaultGrantStore_1_Logger_" data-uid="GPHosting.Identity.Stores.DefaultGrantStore`1.Logger*"></a>
+  <h4 id="GPHosting_Identity_Stores_DefaultGrantStore_1_Logger" data-uid="GPHosting.Identity.Stores.DefaultGrantStore`1.Logger">Logger</h4>
+  <div class="markdown level1 summary"><p>The logger.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected ILogger Logger { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger">ILogger</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_Stores_DefaultGrantStore_1_Serializer.md&amp;value=---%0Auid%3A%20GPHosting.Identity.Stores.DefaultGrantStore%601.Serializer%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/Stores/Default/DefaultGrantStore.cs/#L38">View Source</a>
+  </span>
+  <a id="GPHosting_Identity_Stores_DefaultGrantStore_1_Serializer_" data-uid="GPHosting.Identity.Stores.DefaultGrantStore`1.Serializer*"></a>
+  <h4 id="GPHosting_Identity_Stores_DefaultGrantStore_1_Serializer" data-uid="GPHosting.Identity.Stores.DefaultGrantStore`1.Serializer">Serializer</h4>
+  <div class="markdown level1 summary"><p>The PersistentGrantSerializer;</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected IPersistentGrantSerializer Serializer { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="GPHosting.Identity.Stores.Serialization.IPersistentGrantSerializer.html">IPersistentGrantSerializer</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_Stores_DefaultGrantStore_1_Store.md&amp;value=---%0Auid%3A%20GPHosting.Identity.Stores.DefaultGrantStore%601.Store%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/Stores/Default/DefaultGrantStore.cs/#L33">View Source</a>
+  </span>
+  <a id="GPHosting_Identity_Stores_DefaultGrantStore_1_Store_" data-uid="GPHosting.Identity.Stores.DefaultGrantStore`1.Store*"></a>
+  <h4 id="GPHosting_Identity_Stores_DefaultGrantStore_1_Store" data-uid="GPHosting.Identity.Stores.DefaultGrantStore`1.Store">Store</h4>
+  <div class="markdown level1 summary"><p>The PersistedGrantStore.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected IPersistedGrantStore Store { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="GPHosting.Identity.Stores.IPersistedGrantStore.html">IPersistedGrantStore</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_Stores_DefaultGrantStore_1_CreateItemAsync__0_System_String_System_String_System_String_System_String_System_DateTime_System_Int32_.md&amp;value=---%0Auid%3A%20GPHosting.Identity.Stores.DefaultGrantStore%601.CreateItemAsync(%600%2CSystem.String%2CSystem.String%2CSystem.String%2CSystem.String%2CSystem.DateTime%2CSystem.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/Stores/Default/DefaultGrantStore.cs/#L121">View Source</a>
+  </span>
+  <a id="GPHosting_Identity_Stores_DefaultGrantStore_1_CreateItemAsync_" data-uid="GPHosting.Identity.Stores.DefaultGrantStore`1.CreateItemAsync*"></a>
+  <h4 id="GPHosting_Identity_Stores_DefaultGrantStore_1_CreateItemAsync__0_System_String_System_String_System_String_System_String_System_DateTime_System_Int32_" data-uid="GPHosting.Identity.Stores.DefaultGrantStore`1.CreateItemAsync(`0,System.String,System.String,System.String,System.String,System.DateTime,System.Int32)">CreateItemAsync(T, string, string, string, string, DateTime, int)</h4>
+  <div class="markdown level1 summary"><p>Creates the item.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual Task&lt;string&gt; CreateItemAsync(T item, string clientId, string subjectId, string sessionId, string description, DateTime created, int lifetime)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">item</span></td>
+        <td><p>The item.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">clientId</span></td>
+        <td><p>The client identifier.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">subjectId</span></td>
+        <td><p>The subject identifier.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">sessionId</span></td>
+        <td><p>The session identifier.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">description</span></td>
+        <td><p>The description.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></td>
+        <td><span class="parametername">created</span></td>
+        <td><p>The created.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">lifetime</span></td>
+        <td><p>The lifetime.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_Stores_DefaultGrantStore_1_GetHashedKey_System_String_.md&amp;value=---%0Auid%3A%20GPHosting.Identity.Stores.DefaultGrantStore%601.GetHashedKey(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/Stores/Default/DefaultGrantStore.cs/#L76">View Source</a>
+  </span>
+  <a id="GPHosting_Identity_Stores_DefaultGrantStore_1_GetHashedKey_" data-uid="GPHosting.Identity.Stores.DefaultGrantStore`1.GetHashedKey*"></a>
+  <h4 id="GPHosting_Identity_Stores_DefaultGrantStore_1_GetHashedKey_System_String_" data-uid="GPHosting.Identity.Stores.DefaultGrantStore`1.GetHashedKey(System.String)">GetHashedKey(string)</h4>
+  <div class="markdown level1 summary"><p>Gets the hashed key.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual string GetHashedKey(string value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_Stores_DefaultGrantStore_1_GetItemAsync_System_String_.md&amp;value=---%0Auid%3A%20GPHosting.Identity.Stores.DefaultGrantStore%601.GetItemAsync(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/Stores/Default/DefaultGrantStore.cs/#L86">View Source</a>
+  </span>
+  <a id="GPHosting_Identity_Stores_DefaultGrantStore_1_GetItemAsync_" data-uid="GPHosting.Identity.Stores.DefaultGrantStore`1.GetItemAsync*"></a>
+  <h4 id="GPHosting_Identity_Stores_DefaultGrantStore_1_GetItemAsync_System_String_" data-uid="GPHosting.Identity.Stores.DefaultGrantStore`1.GetItemAsync(System.String)">GetItemAsync(string)</h4>
+  <div class="markdown level1 summary"><p>Gets the item.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual Task&lt;T&gt; GetItemAsync(string key)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">key</span></td>
+        <td><p>The key.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;T&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_Stores_DefaultGrantStore_1_RemoveAllAsync_System_String_System_String_.md&amp;value=---%0Auid%3A%20GPHosting.Identity.Stores.DefaultGrantStore%601.RemoveAllAsync(System.String%2CSystem.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/Stores/Default/DefaultGrantStore.cs/#L181">View Source</a>
+  </span>
+  <a id="GPHosting_Identity_Stores_DefaultGrantStore_1_RemoveAllAsync_" data-uid="GPHosting.Identity.Stores.DefaultGrantStore`1.RemoveAllAsync*"></a>
+  <h4 id="GPHosting_Identity_Stores_DefaultGrantStore_1_RemoveAllAsync_System_String_System_String_" data-uid="GPHosting.Identity.Stores.DefaultGrantStore`1.RemoveAllAsync(System.String,System.String)">RemoveAllAsync(string, string)</h4>
+  <div class="markdown level1 summary"><p>Removes all items for a subject id / cliend id combination.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual Task RemoveAllAsync(string subjectId, string clientId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">subjectId</span></td>
+        <td><p>The subject identifier.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">clientId</span></td>
+        <td><p>The client identifier.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_Stores_DefaultGrantStore_1_RemoveItemAsync_System_String_.md&amp;value=---%0Auid%3A%20GPHosting.Identity.Stores.DefaultGrantStore%601.RemoveItemAsync(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/Stores/Default/DefaultGrantStore.cs/#L169">View Source</a>
+  </span>
+  <a id="GPHosting_Identity_Stores_DefaultGrantStore_1_RemoveItemAsync_" data-uid="GPHosting.Identity.Stores.DefaultGrantStore`1.RemoveItemAsync*"></a>
+  <h4 id="GPHosting_Identity_Stores_DefaultGrantStore_1_RemoveItemAsync_System_String_" data-uid="GPHosting.Identity.Stores.DefaultGrantStore`1.RemoveItemAsync(System.String)">RemoveItemAsync(string)</h4>
+  <div class="markdown level1 summary"><p>Removes the item.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual Task RemoveItemAsync(string key)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">key</span></td>
+        <td><p>The key.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_Stores_DefaultGrantStore_1_StoreItemAsync_System_String__0_System_String_System_String_System_String_System_String_System_DateTime_System_Nullable_System_DateTime__System_Nullable_System_DateTime__.md&amp;value=---%0Auid%3A%20GPHosting.Identity.Stores.DefaultGrantStore%601.StoreItemAsync(System.String%2C%600%2CSystem.String%2CSystem.String%2CSystem.String%2CSystem.String%2CSystem.DateTime%2CSystem.Nullable%7BSystem.DateTime%7D%2CSystem.Nullable%7BSystem.DateTime%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/Stores/Default/DefaultGrantStore.cs/#L141">View Source</a>
+  </span>
+  <a id="GPHosting_Identity_Stores_DefaultGrantStore_1_StoreItemAsync_" data-uid="GPHosting.Identity.Stores.DefaultGrantStore`1.StoreItemAsync*"></a>
+  <h4 id="GPHosting_Identity_Stores_DefaultGrantStore_1_StoreItemAsync_System_String__0_System_String_System_String_System_String_System_String_System_DateTime_System_Nullable_System_DateTime__System_Nullable_System_DateTime__" data-uid="GPHosting.Identity.Stores.DefaultGrantStore`1.StoreItemAsync(System.String,`0,System.String,System.String,System.String,System.String,System.DateTime,System.Nullable{System.DateTime},System.Nullable{System.DateTime})">StoreItemAsync(string, T, string, string, string, string, DateTime, DateTime?, DateTime?)</h4>
+  <div class="markdown level1 summary"><p>Stores the item.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual Task StoreItemAsync(string key, T item, string clientId, string subjectId, string sessionId, string description, DateTime created, DateTime? expiration, DateTime? consumedTime = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">key</span></td>
+        <td><p>The key.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">item</span></td>
+        <td><p>The item.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">clientId</span></td>
+        <td><p>The client identifier.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">subjectId</span></td>
+        <td><p>The subject identifier.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">sessionId</span></td>
+        <td><p>The session identifier.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">description</span></td>
+        <td><p>The description.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></td>
+        <td><span class="parametername">created</span></td>
+        <td><p>The created time.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a>?</td>
+        <td><span class="parametername">expiration</span></td>
+        <td><p>The expiration.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a>?</td>
+        <td><span class="parametername">consumedTime</span></td>
+        <td><p>The consumed time.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_Stores_DefaultGrantStore_1.md&amp;value=---%0Auid%3A%20GPHosting.Identity.Stores.DefaultGrantStore%601%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/Stores/Default/DefaultGrantStore.cs/#L18" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

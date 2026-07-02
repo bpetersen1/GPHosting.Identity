@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Class DiscoveryResponseGenerator | GPHosting.Identity API Reference </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Class DiscoveryResponseGenerator | GPHosting.Identity API Reference ">
+    
+    <meta name="description" content="Default implementation of the discovery endpoint response generator">
+      <link rel="shortcut icon" href="../icon.jpg">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../icon.jpg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="GPHosting.Identity.ResponseHandling.DiscoveryResponseGenerator">
+
+
+
+  <h1 id="GPHosting_Identity_ResponseHandling_DiscoveryResponseGenerator" data-uid="GPHosting.Identity.ResponseHandling.DiscoveryResponseGenerator" class="text-break">Class DiscoveryResponseGenerator</h1>
+  <div class="markdown level0 summary"><p>Default implementation of the discovery endpoint response generator</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+    <div class="level1"><span class="xref">DiscoveryResponseGenerator</span></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="GPHosting.Identity.ResponseHandling.IDiscoveryResponseGenerator.html">IDiscoveryResponseGenerator</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="GPHosting.html">GPHosting</a>.<a class="xref" href="GPHosting.Identity.html">Identity</a>.<a class="xref" href="GPHosting.Identity.ResponseHandling.html">ResponseHandling</a></h6>
+  <h6><strong>Assembly</strong>: GPHosting.Identity.dll</h6>
+  <h5 id="GPHosting_Identity_ResponseHandling_DiscoveryResponseGenerator_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class DiscoveryResponseGenerator : IDiscoveryResponseGenerator</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_ResponseHandling_DiscoveryResponseGenerator__ctor_GPHosting_Identity_Configuration_IdentityServerOptions_GPHosting_Identity_Stores_IResourceStore_GPHosting_Identity_Services_IKeyMaterialService_GPHosting_Identity_Validation_ExtensionGrantValidator_GPHosting_Identity_Validation_ISecretsListParser_GPHosting_Identity_Validation_IResourceOwnerPasswordValidator_Microsoft_Extensions_Logging_ILogger_GPHosting_Identity_ResponseHandling_DiscoveryResponseGenerator__.md&amp;value=---%0Auid%3A%20GPHosting.Identity.ResponseHandling.DiscoveryResponseGenerator.%23ctor(GPHosting.Identity.Configuration.IdentityServerOptions%2CGPHosting.Identity.Stores.IResourceStore%2CGPHosting.Identity.Services.IKeyMaterialService%2CGPHosting.Identity.Validation.ExtensionGrantValidator%2CGPHosting.Identity.Validation.ISecretsListParser%2CGPHosting.Identity.Validation.IResourceOwnerPasswordValidator%2CMicrosoft.Extensions.Logging.ILogger%7BGPHosting.Identity.ResponseHandling.DiscoveryResponseGenerator%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/ResponseHandling/Default/DiscoveryResponseGenerator.cs/#L71">View Source</a>
+  </span>
+  <a id="GPHosting_Identity_ResponseHandling_DiscoveryResponseGenerator__ctor_" data-uid="GPHosting.Identity.ResponseHandling.DiscoveryResponseGenerator.#ctor*"></a>
+  <h4 id="GPHosting_Identity_ResponseHandling_DiscoveryResponseGenerator__ctor_GPHosting_Identity_Configuration_IdentityServerOptions_GPHosting_Identity_Stores_IResourceStore_GPHosting_Identity_Services_IKeyMaterialService_GPHosting_Identity_Validation_ExtensionGrantValidator_GPHosting_Identity_Validation_ISecretsListParser_GPHosting_Identity_Validation_IResourceOwnerPasswordValidator_Microsoft_Extensions_Logging_ILogger_GPHosting_Identity_ResponseHandling_DiscoveryResponseGenerator__" data-uid="GPHosting.Identity.ResponseHandling.DiscoveryResponseGenerator.#ctor(GPHosting.Identity.Configuration.IdentityServerOptions,GPHosting.Identity.Stores.IResourceStore,GPHosting.Identity.Services.IKeyMaterialService,GPHosting.Identity.Validation.ExtensionGrantValidator,GPHosting.Identity.Validation.ISecretsListParser,GPHosting.Identity.Validation.IResourceOwnerPasswordValidator,Microsoft.Extensions.Logging.ILogger{GPHosting.Identity.ResponseHandling.DiscoveryResponseGenerator})">DiscoveryResponseGenerator(IdentityServerOptions, IResourceStore, IKeyMaterialService, ExtensionGrantValidator, ISecretsListParser, IResourceOwnerPasswordValidator, ILogger&lt;DiscoveryResponseGenerator&gt;)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="GPHosting.Identity.ResponseHandling.DiscoveryResponseGenerator.html">DiscoveryResponseGenerator</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DiscoveryResponseGenerator(IdentityServerOptions options, IResourceStore resourceStore, IKeyMaterialService keys, ExtensionGrantValidator extensionGrants, ISecretsListParser secretParsers, IResourceOwnerPasswordValidator resourceOwnerValidator, ILogger&lt;DiscoveryResponseGenerator&gt; logger)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="GPHosting.Identity.Configuration.IdentityServerOptions.html">IdentityServerOptions</a></td>
+        <td><span class="parametername">options</span></td>
+        <td><p>The options.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="GPHosting.Identity.Stores.IResourceStore.html">IResourceStore</a></td>
+        <td><span class="parametername">resourceStore</span></td>
+        <td><p>The resource store.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="GPHosting.Identity.Services.IKeyMaterialService.html">IKeyMaterialService</a></td>
+        <td><span class="parametername">keys</span></td>
+        <td><p>The keys.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="GPHosting.Identity.Validation.ExtensionGrantValidator.html">ExtensionGrantValidator</a></td>
+        <td><span class="parametername">extensionGrants</span></td>
+        <td><p>The extension grants.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="GPHosting.Identity.Validation.ISecretsListParser.html">ISecretsListParser</a></td>
+        <td><span class="parametername">secretParsers</span></td>
+        <td><p>The secret parsers.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="GPHosting.Identity.Validation.IResourceOwnerPasswordValidator.html">IResourceOwnerPasswordValidator</a></td>
+        <td><span class="parametername">resourceOwnerValidator</span></td>
+        <td><p>The resource owner validator.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1">ILogger</a>&lt;<a class="xref" href="GPHosting.Identity.ResponseHandling.DiscoveryResponseGenerator.html">DiscoveryResponseGenerator</a>&gt;</td>
+        <td><span class="parametername">logger</span></td>
+        <td><p>The logger.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="fields">Fields
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_ResponseHandling_DiscoveryResponseGenerator_ExtensionGrants.md&amp;value=---%0Auid%3A%20GPHosting.Identity.ResponseHandling.DiscoveryResponseGenerator.ExtensionGrants%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/ResponseHandling/Default/DiscoveryResponseGenerator.cs/#L34">View Source</a>
+  </span>
+  <h4 id="GPHosting_Identity_ResponseHandling_DiscoveryResponseGenerator_ExtensionGrants" data-uid="GPHosting.Identity.ResponseHandling.DiscoveryResponseGenerator.ExtensionGrants">ExtensionGrants</h4>
+  <div class="markdown level1 summary"><p>The extension grants validator</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected readonly ExtensionGrantValidator ExtensionGrants</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="GPHosting.Identity.Validation.ExtensionGrantValidator.html">ExtensionGrantValidator</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_ResponseHandling_DiscoveryResponseGenerator_Keys.md&amp;value=---%0Auid%3A%20GPHosting.Identity.ResponseHandling.DiscoveryResponseGenerator.Keys%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/ResponseHandling/Default/DiscoveryResponseGenerator.cs/#L39">View Source</a>
+  </span>
+  <h4 id="GPHosting_Identity_ResponseHandling_DiscoveryResponseGenerator_Keys" data-uid="GPHosting.Identity.ResponseHandling.DiscoveryResponseGenerator.Keys">Keys</h4>
+  <div class="markdown level1 summary"><p>The key material service</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected readonly IKeyMaterialService Keys</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="GPHosting.Identity.Services.IKeyMaterialService.html">IKeyMaterialService</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_ResponseHandling_DiscoveryResponseGenerator_Logger.md&amp;value=---%0Auid%3A%20GPHosting.Identity.ResponseHandling.DiscoveryResponseGenerator.Logger%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/ResponseHandling/Default/DiscoveryResponseGenerator.cs/#L59">View Source</a>
+  </span>
+  <h4 id="GPHosting_Identity_ResponseHandling_DiscoveryResponseGenerator_Logger" data-uid="GPHosting.Identity.ResponseHandling.DiscoveryResponseGenerator.Logger">Logger</h4>
+  <div class="markdown level1 summary"><p>The logger</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected readonly ILogger Logger</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger">ILogger</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_ResponseHandling_DiscoveryResponseGenerator_Options.md&amp;value=---%0Auid%3A%20GPHosting.Identity.ResponseHandling.DiscoveryResponseGenerator.Options%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/ResponseHandling/Default/DiscoveryResponseGenerator.cs/#L29">View Source</a>
+  </span>
+  <h4 id="GPHosting_Identity_ResponseHandling_DiscoveryResponseGenerator_Options" data-uid="GPHosting.Identity.ResponseHandling.DiscoveryResponseGenerator.Options">Options</h4>
+  <div class="markdown level1 summary"><p>The options</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected readonly IdentityServerOptions Options</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="GPHosting.Identity.Configuration.IdentityServerOptions.html">IdentityServerOptions</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_ResponseHandling_DiscoveryResponseGenerator_ResourceOwnerValidator.md&amp;value=---%0Auid%3A%20GPHosting.Identity.ResponseHandling.DiscoveryResponseGenerator.ResourceOwnerValidator%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/ResponseHandling/Default/DiscoveryResponseGenerator.cs/#L44">View Source</a>
+  </span>
+  <h4 id="GPHosting_Identity_ResponseHandling_DiscoveryResponseGenerator_ResourceOwnerValidator" data-uid="GPHosting.Identity.ResponseHandling.DiscoveryResponseGenerator.ResourceOwnerValidator">ResourceOwnerValidator</h4>
+  <div class="markdown level1 summary"><p>The resource owner validator</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected readonly IResourceOwnerPasswordValidator ResourceOwnerValidator</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="GPHosting.Identity.Validation.IResourceOwnerPasswordValidator.html">IResourceOwnerPasswordValidator</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_ResponseHandling_DiscoveryResponseGenerator_ResourceStore.md&amp;value=---%0Auid%3A%20GPHosting.Identity.ResponseHandling.DiscoveryResponseGenerator.ResourceStore%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/ResponseHandling/Default/DiscoveryResponseGenerator.cs/#L49">View Source</a>
+  </span>
+  <h4 id="GPHosting_Identity_ResponseHandling_DiscoveryResponseGenerator_ResourceStore" data-uid="GPHosting.Identity.ResponseHandling.DiscoveryResponseGenerator.ResourceStore">ResourceStore</h4>
+  <div class="markdown level1 summary"><p>The resource store</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected readonly IResourceStore ResourceStore</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="GPHosting.Identity.Stores.IResourceStore.html">IResourceStore</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_ResponseHandling_DiscoveryResponseGenerator_SecretParsers.md&amp;value=---%0Auid%3A%20GPHosting.Identity.ResponseHandling.DiscoveryResponseGenerator.SecretParsers%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/ResponseHandling/Default/DiscoveryResponseGenerator.cs/#L54">View Source</a>
+  </span>
+  <h4 id="GPHosting_Identity_ResponseHandling_DiscoveryResponseGenerator_SecretParsers" data-uid="GPHosting.Identity.ResponseHandling.DiscoveryResponseGenerator.SecretParsers">SecretParsers</h4>
+  <div class="markdown level1 summary"><p>The secret parsers</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected readonly ISecretsListParser SecretParsers</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="GPHosting.Identity.Validation.ISecretsListParser.html">ISecretsListParser</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_ResponseHandling_DiscoveryResponseGenerator_CreateDiscoveryDocumentAsync_System_String_System_String_.md&amp;value=---%0Auid%3A%20GPHosting.Identity.ResponseHandling.DiscoveryResponseGenerator.CreateDiscoveryDocumentAsync(System.String%2CSystem.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/ResponseHandling/Default/DiscoveryResponseGenerator.cs/#L94">View Source</a>
+  </span>
+  <a id="GPHosting_Identity_ResponseHandling_DiscoveryResponseGenerator_CreateDiscoveryDocumentAsync_" data-uid="GPHosting.Identity.ResponseHandling.DiscoveryResponseGenerator.CreateDiscoveryDocumentAsync*"></a>
+  <h4 id="GPHosting_Identity_ResponseHandling_DiscoveryResponseGenerator_CreateDiscoveryDocumentAsync_System_String_System_String_" data-uid="GPHosting.Identity.ResponseHandling.DiscoveryResponseGenerator.CreateDiscoveryDocumentAsync(System.String,System.String)">CreateDiscoveryDocumentAsync(string, string)</h4>
+  <div class="markdown level1 summary"><p>Creates the discovery document.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual Task&lt;Dictionary&lt;string, object&gt;&gt; CreateDiscoveryDocumentAsync(string baseUrl, string issuerUri)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">baseUrl</span></td>
+        <td><p>The base URL.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">issuerUri</span></td>
+        <td><p>The issuer URI.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_ResponseHandling_DiscoveryResponseGenerator_CreateJwkDocumentAsync.md&amp;value=---%0Auid%3A%20GPHosting.Identity.ResponseHandling.DiscoveryResponseGenerator.CreateJwkDocumentAsync%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/ResponseHandling/Default/DiscoveryResponseGenerator.cs/#L366">View Source</a>
+  </span>
+  <a id="GPHosting_Identity_ResponseHandling_DiscoveryResponseGenerator_CreateJwkDocumentAsync_" data-uid="GPHosting.Identity.ResponseHandling.DiscoveryResponseGenerator.CreateJwkDocumentAsync*"></a>
+  <h4 id="GPHosting_Identity_ResponseHandling_DiscoveryResponseGenerator_CreateJwkDocumentAsync" data-uid="GPHosting.Identity.ResponseHandling.DiscoveryResponseGenerator.CreateJwkDocumentAsync">CreateJwkDocumentAsync()</h4>
+  <div class="markdown level1 summary"><p>Creates the JWK document.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual Task&lt;IEnumerable&lt;JsonWebKey&gt;&gt; CreateJwkDocumentAsync()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="GPHosting.Identity.Models.JsonWebKey.html">JsonWebKey</a>&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="GPHosting.Identity.ResponseHandling.IDiscoveryResponseGenerator.html">IDiscoveryResponseGenerator</a>
+  </div>
+  <h3 id="seealso">See Also</h3>
+  <div class="seealso">
+      <div><a class="xref" href="GPHosting.Identity.ResponseHandling.IDiscoveryResponseGenerator.html">IDiscoveryResponseGenerator</a></div>
+  </div>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_ResponseHandling_DiscoveryResponseGenerator.md&amp;value=---%0Auid%3A%20GPHosting.Identity.ResponseHandling.DiscoveryResponseGenerator%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/ResponseHandling/Default/DiscoveryResponseGenerator.cs/#L24" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

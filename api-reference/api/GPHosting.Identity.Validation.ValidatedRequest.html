@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Class ValidatedRequest | GPHosting.Identity API Reference </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Class ValidatedRequest | GPHosting.Identity API Reference ">
+    
+    <meta name="description" content="Base class for a validate authorize or token request">
+      <link rel="shortcut icon" href="../icon.jpg">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../icon.jpg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="GPHosting.Identity.Validation.ValidatedRequest">
+
+
+
+  <h1 id="GPHosting_Identity_Validation_ValidatedRequest" data-uid="GPHosting.Identity.Validation.ValidatedRequest" class="text-break">Class ValidatedRequest</h1>
+  <div class="markdown level0 summary"><p>Base class for a validate authorize or token request</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+    <div class="level1"><span class="xref">ValidatedRequest</span></div>
+      <div class="level2"><a class="xref" href="GPHosting.Identity.Validation.ValidatedAuthorizeRequest.html">ValidatedAuthorizeRequest</a></div>
+      <div class="level2"><a class="xref" href="GPHosting.Identity.Validation.ValidatedDeviceAuthorizationRequest.html">ValidatedDeviceAuthorizationRequest</a></div>
+      <div class="level2"><a class="xref" href="GPHosting.Identity.Validation.ValidatedEndSessionRequest.html">ValidatedEndSessionRequest</a></div>
+      <div class="level2"><a class="xref" href="GPHosting.Identity.Validation.ValidatedTokenRequest.html">ValidatedTokenRequest</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="GPHosting.html">GPHosting</a>.<a class="xref" href="GPHosting.Identity.html">Identity</a>.<a class="xref" href="GPHosting.Identity.Validation.html">Validation</a></h6>
+  <h6><strong>Assembly</strong>: GPHosting.Identity.dll</h6>
+  <h5 id="GPHosting_Identity_Validation_ValidatedRequest_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class ValidatedRequest</code></pre>
+  </div>
+  <h3 id="properties">Properties
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_Validation_ValidatedRequest_AccessTokenLifetime.md&amp;value=---%0Auid%3A%20GPHosting.Identity.Validation.ValidatedRequest.AccessTokenLifetime%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/Validation/Models/ValidatedRequest.cs/#L48">View Source</a>
+  </span>
+  <a id="GPHosting_Identity_Validation_ValidatedRequest_AccessTokenLifetime_" data-uid="GPHosting.Identity.Validation.ValidatedRequest.AccessTokenLifetime*"></a>
+  <h4 id="GPHosting_Identity_Validation_ValidatedRequest_AccessTokenLifetime" data-uid="GPHosting.Identity.Validation.ValidatedRequest.AccessTokenLifetime">AccessTokenLifetime</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the effective access token lifetime for the current request.
+This value is initally read from the client configuration but can be modified in the request pipeline</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int AccessTokenLifetime { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_Validation_ValidatedRequest_AccessTokenType.md&amp;value=---%0Auid%3A%20GPHosting.Identity.Validation.ValidatedRequest.AccessTokenType%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/Validation/Models/ValidatedRequest.cs/#L60">View Source</a>
+  </span>
+  <a id="GPHosting_Identity_Validation_ValidatedRequest_AccessTokenType_" data-uid="GPHosting.Identity.Validation.ValidatedRequest.AccessTokenType*"></a>
+  <h4 id="GPHosting_Identity_Validation_ValidatedRequest_AccessTokenType" data-uid="GPHosting.Identity.Validation.ValidatedRequest.AccessTokenType">AccessTokenType</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the effective access token type for the current request.
+This value is initally read from the client configuration but can be modified in the request pipeline</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AccessTokenType AccessTokenType { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="GPHosting.Identity.Models.AccessTokenType.html">AccessTokenType</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_Validation_ValidatedRequest_Client.md&amp;value=---%0Auid%3A%20GPHosting.Identity.Validation.ValidatedRequest.Client%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/Validation/Models/ValidatedRequest.cs/#L34">View Source</a>
+  </span>
+  <a id="GPHosting_Identity_Validation_ValidatedRequest_Client_" data-uid="GPHosting.Identity.Validation.ValidatedRequest.Client*"></a>
+  <h4 id="GPHosting_Identity_Validation_ValidatedRequest_Client" data-uid="GPHosting.Identity.Validation.ValidatedRequest.Client">Client</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the client.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Client Client { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="GPHosting.Identity.Models.Client.html">Client</a></td>
+        <td><p>The client.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_Validation_ValidatedRequest_ClientClaims.md&amp;value=---%0Auid%3A%20GPHosting.Identity.Validation.ValidatedRequest.ClientClaims%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/Validation/Models/ValidatedRequest.cs/#L54">View Source</a>
+  </span>
+  <a id="GPHosting_Identity_Validation_ValidatedRequest_ClientClaims_" data-uid="GPHosting.Identity.Validation.ValidatedRequest.ClientClaims*"></a>
+  <h4 id="GPHosting_Identity_Validation_ValidatedRequest_ClientClaims" data-uid="GPHosting.Identity.Validation.ValidatedRequest.ClientClaims">ClientClaims</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the client claims for the current request.
+This value is initally read from the client configuration but can be modified in the request pipeline</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ICollection&lt;Claim&gt; ClientClaims { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.security.claims.claim">Claim</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_Validation_ValidatedRequest_ClientId.md&amp;value=---%0Auid%3A%20GPHosting.Identity.Validation.ValidatedRequest.ClientId%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/Validation/Models/ValidatedRequest.cs/#L108">View Source</a>
+  </span>
+  <a id="GPHosting_Identity_Validation_ValidatedRequest_ClientId_" data-uid="GPHosting.Identity.Validation.ValidatedRequest.ClientId*"></a>
+  <h4 id="GPHosting_Identity_Validation_ValidatedRequest_ClientId" data-uid="GPHosting.Identity.Validation.ValidatedRequest.ClientId">ClientId</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the client ID that should be used for the current request (this is useful for token exchange scenarios)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ClientId { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><p>The client ID</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_Validation_ValidatedRequest_Confirmation.md&amp;value=---%0Auid%3A%20GPHosting.Identity.Validation.ValidatedRequest.Confirmation%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/Validation/Models/ValidatedRequest.cs/#L100">View Source</a>
+  </span>
+  <a id="GPHosting_Identity_Validation_ValidatedRequest_Confirmation_" data-uid="GPHosting.Identity.Validation.ValidatedRequest.Confirmation*"></a>
+  <h4 id="GPHosting_Identity_Validation_ValidatedRequest_Confirmation" data-uid="GPHosting.Identity.Validation.ValidatedRequest.Confirmation">Confirmation</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the value of the confirmation method (will become the cnf claim). Must be a JSON object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Confirmation { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><p>The confirmation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_Validation_ValidatedRequest_Options.md&amp;value=---%0Auid%3A%20GPHosting.Identity.Validation.ValidatedRequest.Options%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/Validation/Models/ValidatedRequest.cs/#L84">View Source</a>
+  </span>
+  <a id="GPHosting_Identity_Validation_ValidatedRequest_Options_" data-uid="GPHosting.Identity.Validation.ValidatedRequest.Options*"></a>
+  <h4 id="GPHosting_Identity_Validation_ValidatedRequest_Options" data-uid="GPHosting.Identity.Validation.ValidatedRequest.Options">Options</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the identity server options.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IdentityServerOptions Options { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="GPHosting.Identity.Configuration.IdentityServerOptions.html">IdentityServerOptions</a></td>
+        <td><p>The options.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_Validation_ValidatedRequest_Raw.md&amp;value=---%0Auid%3A%20GPHosting.Identity.Validation.ValidatedRequest.Raw%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/Validation/Models/ValidatedRequest.cs/#L26">View Source</a>
+  </span>
+  <a id="GPHosting_Identity_Validation_ValidatedRequest_Raw_" data-uid="GPHosting.Identity.Validation.ValidatedRequest.Raw*"></a>
+  <h4 id="GPHosting_Identity_Validation_ValidatedRequest_Raw" data-uid="GPHosting.Identity.Validation.ValidatedRequest.Raw">Raw</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the raw request data</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public NameValueCollection Raw { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.specialized.namevaluecollection">NameValueCollection</a></td>
+        <td><p>The raw.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_Validation_ValidatedRequest_Secret.md&amp;value=---%0Auid%3A%20GPHosting.Identity.Validation.ValidatedRequest.Secret%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/Validation/Models/ValidatedRequest.cs/#L42">View Source</a>
+  </span>
+  <a id="GPHosting_Identity_Validation_ValidatedRequest_Secret_" data-uid="GPHosting.Identity.Validation.ValidatedRequest.Secret*"></a>
+  <h4 id="GPHosting_Identity_Validation_ValidatedRequest_Secret" data-uid="GPHosting.Identity.Validation.ValidatedRequest.Secret">Secret</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the secret used to authenticate the client.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ParsedSecret Secret { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="GPHosting.Identity.Models.ParsedSecret.html">ParsedSecret</a></td>
+        <td><p>The parsed secret.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_Validation_ValidatedRequest_SessionId.md&amp;value=---%0Auid%3A%20GPHosting.Identity.Validation.ValidatedRequest.SessionId%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/Validation/Models/ValidatedRequest.cs/#L76">View Source</a>
+  </span>
+  <a id="GPHosting_Identity_Validation_ValidatedRequest_SessionId_" data-uid="GPHosting.Identity.Validation.ValidatedRequest.SessionId*"></a>
+  <h4 id="GPHosting_Identity_Validation_ValidatedRequest_SessionId" data-uid="GPHosting.Identity.Validation.ValidatedRequest.SessionId">SessionId</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the session identifier.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string SessionId { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><p>The session identifier.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_Validation_ValidatedRequest_Subject.md&amp;value=---%0Auid%3A%20GPHosting.Identity.Validation.ValidatedRequest.Subject%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/Validation/Models/ValidatedRequest.cs/#L68">View Source</a>
+  </span>
+  <a id="GPHosting_Identity_Validation_ValidatedRequest_Subject_" data-uid="GPHosting.Identity.Validation.ValidatedRequest.Subject*"></a>
+  <h4 id="GPHosting_Identity_Validation_ValidatedRequest_Subject" data-uid="GPHosting.Identity.Validation.ValidatedRequest.Subject">Subject</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the subject.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ClaimsPrincipal Subject { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.security.claims.claimsprincipal">ClaimsPrincipal</a></td>
+        <td><p>The subject.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_Validation_ValidatedRequest_ValidatedResources.md&amp;value=---%0Auid%3A%20GPHosting.Identity.Validation.ValidatedRequest.ValidatedResources%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/Validation/Models/ValidatedRequest.cs/#L92">View Source</a>
+  </span>
+  <a id="GPHosting_Identity_Validation_ValidatedRequest_ValidatedResources_" data-uid="GPHosting.Identity.Validation.ValidatedRequest.ValidatedResources*"></a>
+  <h4 id="GPHosting_Identity_Validation_ValidatedRequest_ValidatedResources" data-uid="GPHosting.Identity.Validation.ValidatedRequest.ValidatedResources">ValidatedResources</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the validated resources for the request.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ResourceValidationResult ValidatedResources { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="GPHosting.Identity.Validation.ResourceValidationResult.html">ResourceValidationResult</a></td>
+        <td><p>The validated resources.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_Validation_ValidatedRequest_SetClient_GPHosting_Identity_Models_Client_GPHosting_Identity_Models_ParsedSecret_System_String_.md&amp;value=---%0Auid%3A%20GPHosting.Identity.Validation.ValidatedRequest.SetClient(GPHosting.Identity.Models.Client%2CGPHosting.Identity.Models.ParsedSecret%2CSystem.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/Validation/Models/ValidatedRequest.cs/#L117">View Source</a>
+  </span>
+  <a id="GPHosting_Identity_Validation_ValidatedRequest_SetClient_" data-uid="GPHosting.Identity.Validation.ValidatedRequest.SetClient*"></a>
+  <h4 id="GPHosting_Identity_Validation_ValidatedRequest_SetClient_GPHosting_Identity_Models_Client_GPHosting_Identity_Models_ParsedSecret_System_String_" data-uid="GPHosting.Identity.Validation.ValidatedRequest.SetClient(GPHosting.Identity.Models.Client,GPHosting.Identity.Models.ParsedSecret,System.String)">SetClient(Client, ParsedSecret, string)</h4>
+  <div class="markdown level1 summary"><p>Sets the client and the appropriate request specific settings.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetClient(Client client, ParsedSecret secret = null, string confirmation = &quot;&quot;)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="GPHosting.Identity.Models.Client.html">Client</a></td>
+        <td><span class="parametername">client</span></td>
+        <td><p>The client.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="GPHosting.Identity.Models.ParsedSecret.html">ParsedSecret</a></td>
+        <td><span class="parametername">secret</span></td>
+        <td><p>The client secret (optional).</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">confirmation</span></td>
+        <td><p>The confirmation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></td>
+        <td><p>client</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/bpetersen1/GPHosting.Identity/new/main/apiSpec/new?filename=GPHosting_Identity_Validation_ValidatedRequest.md&amp;value=---%0Auid%3A%20GPHosting.Identity.Validation.ValidatedRequest%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/bpetersen1/GPHosting.Identity/blob/main/src/GPHosting.Identity/src/Validation/Models/ValidatedRequest.cs/#L18" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
