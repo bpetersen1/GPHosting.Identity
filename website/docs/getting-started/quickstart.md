@@ -6,7 +6,7 @@ sidebar_position: 2
 
 This gets a minimal token server running locally with an in-memory client and API scope — no
 database required. It's meant for exploring the library, not production (see
-[Signing Keys](/docs/fundamentals/signing-keys) — *coming soon* — and
+[Signing Keys](/docs/fundamentals/signing-keys) — and
 [Stores](/docs/fundamentals/stores) — *coming soon* — before deploying anywhere real).
 
 ## 1. Create a new ASP.NET Core project
@@ -46,8 +46,7 @@ app.Run();
 
 That's it — 15 lines of actual configuration. `AddDeveloperSigningCredential()` generates a
 throwaway RSA key on startup, which is fine for local exploration but must be replaced with a
-persisted key before you deploy anywhere (see [Signing Keys](/docs/fundamentals/signing-keys) —
-*coming soon*).
+persisted key before you deploy anywhere (see [Signing Keys](/docs/fundamentals/signing-keys)).
 
 ## 3. Run it
 

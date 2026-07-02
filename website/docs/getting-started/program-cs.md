@@ -53,7 +53,7 @@ Generates (and caches to disk, by default in `tempkey.jwk` next to your project)
 RSA signing key at startup, so tokens are actually signed and validated correctly during local
 development. **This is not suitable for production** — the key isn't shared across instances
 and isn't backed by any secure storage. Before deploying, replace it with a real certificate or
-key management service — see [Signing Keys](/docs/fundamentals/signing-keys) — *coming soon*.
+key management service — see [Signing Keys](/docs/fundamentals/signing-keys).
 
 ## `AddInMemoryApiScopes(...)` / `AddInMemoryClients(...)`
 
