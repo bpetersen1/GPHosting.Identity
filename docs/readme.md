@@ -2,8 +2,9 @@
 
 The folder contains the documentation for GPHosting.Identity.
 
-We are using [Read the docs](https://readthedocs.org/) to host the documentation and the rendered version
-can be found [here](https://GPHosting.Identity.readthedocs.io).
+These docs are intended to be hosted on [Read the Docs](https://readthedocs.org/), but a GPHosting.Identity
+Read the Docs project has not been set up yet — until then, browse the `.rst` files directly in this folder
+on GitHub.
 
 Doc pages are authored in ReStructuredText (RST) - you can find a primer [here](http://www.sphinx-doc.org/en/stable/rest.html).
 

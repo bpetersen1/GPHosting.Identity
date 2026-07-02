@@ -4,4 +4,4 @@ GPHosting.Identity.EntityFramework.Storage is a persistence layer for IdentitySe
 
 ## Issues
 
-For issues, use the [consolidated GPHosting.Identity issue tracker](https://github.com/IdentityServer/GPHosting.Identity/issues).
+For issues, use the [consolidated GPHosting.Identity issue tracker](https://github.com/bpetersen1/GPHosting.Identity/issues).

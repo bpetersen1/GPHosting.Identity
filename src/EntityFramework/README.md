@@ -4,4 +4,4 @@ GPHosting.Identity.EntityFramework is a package that provides the configuration 
 
 ## Issues
 
-For issues, use the [consolidated GPHosting.Identity issue tracker](https://github.com/IdentityServer/GPHosting.Identity/issues).
+For issues, use the [consolidated GPHosting.Identity issue tracker](https://github.com/bpetersen1/GPHosting.Identity/issues).

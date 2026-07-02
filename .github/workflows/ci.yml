@@ -1,0 +1,68 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+env:
+  DOTNET_NOLOGO: true
+
+jobs:
+  build-and-test:
+    name: Build & Test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup .NET 10
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+
+      - name: Build
+        run: |
+          dotnet build src/GPHosting.Identity/test/IdentityServer.UnitTests -c Release
+          dotnet build src/GPHosting.Identity/test/IdentityServer.IntegrationTests -c Release
+          dotnet build src/EntityFramework.Storage/test/UnitTests -c Release
+          dotnet build src/EntityFramework.Storage/test/IntegrationTests -c Release
+          dotnet build src/EntityFramework/test/GPHosting.Identity.EntityFramework.Tests -c Release
+          dotnet build src/AspNetIdentity/src/GPHosting.Identity.AspNetIdentity.csproj -c Release
+
+      - name: Test - Core (unit)
+        run: dotnet test src/GPHosting.Identity/test/IdentityServer.UnitTests -c Release --no-build --logger "trx" --results-directory TestResults
+
+      - name: Test - Core (integration)
+        run: dotnet test src/GPHosting.Identity/test/IdentityServer.IntegrationTests -c Release --no-build --logger "trx" --results-directory TestResults
+
+      - name: Test - EF Storage (unit)
+        run: dotnet test src/EntityFramework.Storage/test/UnitTests -c Release --no-build --logger "trx" --results-directory TestResults
+
+      - name: Test - EF Storage (integration)
+        run: dotnet test src/EntityFramework.Storage/test/IntegrationTests -c Release --no-build --logger "trx" --results-directory TestResults
+
+      - name: Test - EF
+        run: dotnet test src/EntityFramework/test/GPHosting.Identity.EntityFramework.Tests -c Release --no-build --logger "trx" --results-directory TestResults
+
+      - name: Upload test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results
+          path: TestResults/**/*.trx
+          retention-days: 7
+
+  semgrep:
+    name: Security Scan (Semgrep)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run Semgrep
+        uses: semgrep/semgrep-action@v1
+        with:
+          config: >-
+            p/csharp
+            p/owasp-top-ten
+            p/secrets

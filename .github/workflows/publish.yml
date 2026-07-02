@@ -1,0 +1,63 @@
+name: Publish
+
+on:
+  push:
+    tags: ['v*.*.*']
+
+env:
+  DOTNET_NOLOGO: true
+
+jobs:
+  publish:
+    name: Build, Test & Publish
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup .NET 10
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+
+      - name: Extract version from tag
+        id: version
+        run: echo "VERSION=${GITHUB_REF_NAME#v}" >> $GITHUB_OUTPUT
+
+      - name: Build
+        run: |
+          VERSION="${{ steps.version.outputs.VERSION }}"
+          dotnet build src/GPHosting.Identity/test/IdentityServer.UnitTests -c Release /p:Version=$VERSION
+          dotnet build src/GPHosting.Identity/test/IdentityServer.IntegrationTests -c Release /p:Version=$VERSION
+          dotnet build src/EntityFramework.Storage/test/UnitTests -c Release /p:Version=$VERSION
+          dotnet build src/EntityFramework.Storage/test/IntegrationTests -c Release /p:Version=$VERSION
+          dotnet build src/EntityFramework/test/GPHosting.Identity.EntityFramework.Tests -c Release /p:Version=$VERSION
+          dotnet build src/AspNetIdentity/src/GPHosting.Identity.AspNetIdentity.csproj -c Release /p:Version=$VERSION
+
+      - name: Test - Core (unit)
+        run: dotnet test src/GPHosting.Identity/test/IdentityServer.UnitTests -c Release --no-build --logger "trx" --results-directory TestResults
+
+      - name: Test - Core (integration)
+        run: dotnet test src/GPHosting.Identity/test/IdentityServer.IntegrationTests -c Release --no-build --logger "trx" --results-directory TestResults
+
+      - name: Test - EF Storage (unit)
+        run: dotnet test src/EntityFramework.Storage/test/UnitTests -c Release --no-build --logger "trx" --results-directory TestResults
+
+      - name: Test - EF Storage (integration)
+        run: dotnet test src/EntityFramework.Storage/test/IntegrationTests -c Release --no-build --logger "trx" --results-directory TestResults
+
+      - name: Test - EF
+        run: dotnet test src/EntityFramework/test/GPHosting.Identity.EntityFramework.Tests -c Release --no-build --logger "trx" --results-directory TestResults
+
+      - name: Pack
+        run: |
+          VERSION="${{ steps.version.outputs.VERSION }}"
+          dotnet pack src/Storage/src/GPHosting.Identity.Storage.csproj -c Release --no-build -o ./nupkg /p:Version=$VERSION
+          dotnet pack src/GPHosting.Identity/src/GPHosting.Identity.csproj -c Release --no-build -o ./nupkg /p:Version=$VERSION
+          dotnet pack src/EntityFramework.Storage/src/GPHosting.Identity.EntityFramework.Storage.csproj -c Release --no-build -o ./nupkg /p:Version=$VERSION
+          dotnet pack src/EntityFramework/src/GPHosting.Identity.EntityFramework.csproj -c Release --no-build -o ./nupkg /p:Version=$VERSION
+          dotnet pack src/AspNetIdentity/src/GPHosting.Identity.AspNetIdentity.csproj -c Release --no-build -o ./nupkg /p:Version=$VERSION
+
+      - name: Push to NuGet.org
+        run: dotnet nuget push ./nupkg/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json --skip-duplicate

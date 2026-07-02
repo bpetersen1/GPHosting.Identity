@@ -1,7 +1,9 @@
 # Reporting Security Issues
 
-If you discover a security issue in IdentityServer, please report it by sending an email to contact@identityserver.io
+If you discover a security issue in GPHosting.Identity, please report it privately using
+[GitHub's private vulnerability reporting](https://github.com/bpetersen1/GPHosting.Identity/security/advisories/new)
+(Security tab → Report a vulnerability) rather than opening a public issue.
 
-This will allow us to assess the risk, and make a fix available before we add a bug report to the GitHub repository.
+This allows us to assess the risk and make a fix available before any details are made public.
 
 Thanks!
