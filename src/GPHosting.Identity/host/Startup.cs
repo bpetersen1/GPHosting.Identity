@@ -7,11 +7,15 @@ using Microsoft.Extensions.Hosting;
 using IdentityServerHost.Configuration;
 using IdentityModel;
 using GPHosting.Identity;
+using GPHosting.Identity.Telemetry;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Logging;
 using Microsoft.IdentityModel.Tokens;
+using OpenTelemetry.Metrics;
+using OpenTelemetry.Resources;
+using OpenTelemetry.Trace;
 using Serilog;
 using System.Linq;
 using System.Security.Claims;
@@ -69,7 +73,23 @@ namespace IdentityServerHost
                 .AddProfileService<HostProfileService>()
                 .AddCustomTokenRequestValidator<ParameterizedScopeTokenRequestValidator>()
                 .AddScopeParser<ParameterizedScopeParser>()
-                .AddMutualTlsSecretValidators();
+                .AddMutualTlsSecretValidators()
+                .AddIdentityServerHealthChecks();
+
+            services.AddOpenTelemetry()
+                .ConfigureResource(resource => resource.AddService("GPHosting.Identity.Host"))
+                .WithTracing(tracing => tracing
+                    .AddSource(IdentityServerActivitySource.Name)
+                    .AddAspNetCoreInstrumentation()
+                    .AddHttpClientInstrumentation()
+                    .AddConsoleExporter()
+                    .AddOtlpExporter())
+                .WithMetrics(metrics => metrics
+                    .AddMeter(IdentityServerMetrics.MeterName)
+                    .AddAspNetCoreInstrumentation()
+                    .AddHttpClientInstrumentation()
+                    .AddConsoleExporter()
+                    .AddOtlpExporter());
 
             // use this for persisted grants store
             // var migrationsAssembly = typeof(Startup).GetTypeInfo().Assembly.GetName().Name;
@@ -129,6 +149,12 @@ namespace IdentityServerHost
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapDefaultControllerRoute();
+
+                endpoints.MapHealthChecks("/health/live");
+                endpoints.MapHealthChecks("/health/ready", new Microsoft.AspNetCore.Diagnostics.HealthChecks.HealthCheckOptions
+                {
+                    Predicate = check => check.Tags.Contains("ready")
+                });
             });
         }
     }

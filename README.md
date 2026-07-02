@@ -83,6 +83,42 @@ GPHosting.Identity implements current-generation OAuth 2.0 specifications that I
 - **JARM response modes**: `query.jwt`, `fragment.jwt`, and `form_post.jwt` response mode constants for JWT-secured authorization responses
 - **FAPI 2.0 profile flag**: Per-client `RequireFapi2` and `RequirePushedAuthorization` flags for financial-grade API enforcement
 
+**Observability**
+
+GPHosting.Identity emits OpenTelemetry-compatible tracing and metrics, using only BCL types (`System.Diagnostics.Activity` / `System.Diagnostics.Metrics`) — the core library takes **no dependency on the OpenTelemetry SDK**. Everything described here is **opt-in**: a host that does nothing gets no behavior change, no new packages, and no `/health` endpoints. There is no single `UseTelemetry()`/`AddObservability()` switch — it's three independent steps you wire yourself.
+
+- **Distributed tracing**: `GPHosting.Identity.Telemetry.IdentityServerActivitySource` (source name `GPHosting.Identity`) emits spans for the token endpoint and authorize endpoint, tagged with `identityserver.client_id`, `identityserver.grant_type`, and `identityserver.error`
+- **Metrics**: `GPHosting.Identity.Telemetry.IdentityServerMetrics` (meter name `GPHosting.Identity`) exposes `identityserver.tokens.issued`, `identityserver.token_requests.errors`, and `identityserver.authorize_requests` counters, tagged by client, grant type, and outcome
+- **Health checks**: `builder.AddIdentityServerHealthChecks()` registers a signing-credential availability check. The EF Core package adds `builder.AddConfigurationStoreHealthCheck()` and `builder.AddOperationalStoreHealthCheck()` for database connectivity, tagged `ready` so they can be filtered separately from liveness checks
+
+To actually enable tracing/metrics export and expose health check endpoints, a host wires them up like this (see `src/GPHosting.Identity/host/Startup.cs` for the full working example, including console and OTLP exporters):
+
+```csharp
+// 1. Register health checks (on the IIdentityServerBuilder returned by AddIdentityServer)
+builder.AddIdentityServerHealthChecks();
+// if using EF Core storage:
+// builder.AddConfigurationStoreHealthCheck();
+// builder.AddOperationalStoreHealthCheck();
+
+// 2. Wire the ActivitySource/Meter into an OpenTelemetry pipeline (requires the OpenTelemetry SDK packages)
+services.AddOpenTelemetry()
+    .WithTracing(tracing => tracing
+        .AddSource(IdentityServerActivitySource.Name)
+        .AddAspNetCoreInstrumentation()
+        .AddOtlpExporter())
+    .WithMetrics(metrics => metrics
+        .AddMeter(IdentityServerMetrics.MeterName)
+        .AddAspNetCoreInstrumentation()
+        .AddOtlpExporter());
+
+// 3. Map the health check endpoints (in Configure/UseEndpoints — plain ASP.NET Core, not library-provided)
+endpoints.MapHealthChecks("/health/live");
+endpoints.MapHealthChecks("/health/ready", new HealthCheckOptions
+{
+    Predicate = check => check.Tags.Contains("ready")
+});
+```
+
 ---
 
 ## NuGet Packages

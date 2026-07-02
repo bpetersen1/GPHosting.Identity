@@ -9,10 +9,13 @@ using GPHosting.Identity.Extensions;
 using GPHosting.Identity.Hosting;
 using GPHosting.Identity.ResponseHandling;
 using GPHosting.Identity.Services;
+using GPHosting.Identity.Telemetry;
 using GPHosting.Identity.Validation;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.Diagnostics.Metrics;
 using System.Linq;
 using System.Threading.Tasks;
 using GPHosting.Identity.Configuration;
@@ -68,6 +71,8 @@ internal class TokenEndpoint : IEndpointHandler
 
     private async Task<IEndpointResult> ProcessTokenRequestAsync(HttpContext context)
     {
+        using var activity = IdentityServerActivitySource.Source.StartActivity("TokenEndpoint.ProcessRequest", ActivityKind.Server);
+
         _logger.LogDebug("Start token request.");
 
         // validate client
@@ -75,18 +80,22 @@ internal class TokenEndpoint : IEndpointHandler
 
         if (clientResult.Client == null)
         {
-            return Error(OidcConstants.TokenErrors.InvalidClient);
+            return Error(OidcConstants.TokenErrors.InvalidClient, activity: activity);
         }
+
+        activity?.SetTag("identityserver.client_id", clientResult.Client.ClientId);
 
         // validate request
         var form = (await context.Request.ReadFormAsync()).AsNameValueCollection();
         _logger.LogTrace("Calling into token request validator: {type}", _requestValidator.GetType().FullName);
         var requestResult = await _requestValidator.ValidateRequestAsync(form, clientResult);
 
+        activity?.SetTag("identityserver.grant_type", requestResult.ValidatedRequest?.GrantType);
+
         if (requestResult.IsError)
         {
             await _events.RaiseAsync(new TokenIssuedFailureEvent(requestResult));
-            return Error(requestResult.Error, requestResult.ErrorDescription, requestResult.CustomResponse);
+            return Error(requestResult.Error, requestResult.ErrorDescription, requestResult.CustomResponse, clientResult.Client.ClientId, requestResult.ValidatedRequest?.GrantType, activity);
         }
 
         // validate DPoP proof if the client sent one
@@ -104,7 +113,7 @@ internal class TokenEndpoint : IEndpointHandler
             if (dPopResult.IsError)
             {
                 _logger.LogWarning("DPoP proof validation failed: {error} — {description}", dPopResult.Error, dPopResult.ErrorDescription);
-                return Error(dPopResult.Error, dPopResult.ErrorDescription);
+                return Error(dPopResult.Error, dPopResult.ErrorDescription, clientId: clientResult.Client.ClientId, grantType: requestResult.ValidatedRequest?.GrantType, activity: activity);
             }
 
             requestResult.ValidatedRequest.DPoPConfirmation = dPopResult.Confirmation;
@@ -117,13 +126,15 @@ internal class TokenEndpoint : IEndpointHandler
 
         await _events.RaiseAsync(new TokenIssuedSuccessEvent(response, requestResult));
         LogTokens(response, requestResult);
+        RecordTokensIssued(response, requestResult);
 
         // return result
         _logger.LogDebug("Token request success.");
+        activity?.SetStatus(ActivityStatusCode.Ok);
         return new TokenResult(response);
     }
 
-    private TokenErrorResult Error(string error, string errorDescription = null, Dictionary<string, object> custom = null)
+    private TokenErrorResult Error(string error, string errorDescription = null, Dictionary<string, object> custom = null, string clientId = null, string grantType = null, Activity activity = null)
     {
         var response = new TokenErrorResponse
         {
@@ -132,7 +143,37 @@ internal class TokenEndpoint : IEndpointHandler
             Custom = custom
         };
 
+        activity?.SetStatus(ActivityStatusCode.Error, error);
+        activity?.SetTag("identityserver.error", error);
+
+        var tags = new TagList
+        {
+            { "error", error },
+            { "client_id", clientId ?? "unknown" },
+            { "grant_type", grantType ?? "unknown" }
+        };
+        IdentityServerMetrics.TokenRequestErrors.Add(1, tags);
+
         return new TokenErrorResult(response);
+    }
+
+    private static void RecordTokensIssued(TokenResponse response, TokenRequestValidationResult requestResult)
+    {
+        var clientId = requestResult.ValidatedRequest.Client?.ClientId ?? "unknown";
+        var grantType = requestResult.ValidatedRequest.GrantType ?? "unknown";
+
+        if (response.IdentityToken != null)
+        {
+            IdentityServerMetrics.TokensIssued.Add(1, new TagList { { "client_id", clientId }, { "grant_type", grantType }, { "token_type", "identity_token" } });
+        }
+        if (response.RefreshToken != null)
+        {
+            IdentityServerMetrics.TokensIssued.Add(1, new TagList { { "client_id", clientId }, { "grant_type", grantType }, { "token_type", "refresh_token" } });
+        }
+        if (response.AccessToken != null)
+        {
+            IdentityServerMetrics.TokensIssued.Add(1, new TagList { { "client_id", clientId }, { "grant_type", grantType }, { "token_type", "access_token" } });
+        }
     }
 
     private void LogTokens(TokenResponse response, TokenRequestValidationResult requestResult)

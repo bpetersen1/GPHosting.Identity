@@ -30,6 +30,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="../../GPHosting.Identity/src/GPHosting.Identity.csproj" />
     <ProjectReference Include="../../EntityFramework.Storage/src/GPHosting.Identity.EntityFramework.Storage.csproj" />
 

@@ -3,6 +3,8 @@
 
 using System;
 using System.Collections.Specialized;
+using System.Diagnostics;
+using System.Diagnostics.Metrics;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using IdentityModel;
@@ -15,6 +17,7 @@ using GPHosting.Identity.Logging.Models;
 using GPHosting.Identity.Models;
 using GPHosting.Identity.ResponseHandling;
 using GPHosting.Identity.Services;
+using GPHosting.Identity.Telemetry;
 using GPHosting.Identity.Validation;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
@@ -57,6 +60,8 @@ internal abstract class AuthorizeEndpointBase : IEndpointHandler
 
     internal async Task<IEndpointResult> ProcessAuthorizeRequestAsync(NameValueCollection parameters, ClaimsPrincipal user, ConsentResponse consent)
     {
+        using var activity = IdentityServerActivitySource.Source.StartActivity("AuthorizeEndpoint.ProcessRequest", ActivityKind.Server);
+
         if (user != null)
         {
             Logger.LogDebug("User in authorize request: {subjectId}", user.GetSubjectId());
@@ -70,6 +75,7 @@ internal abstract class AuthorizeEndpointBase : IEndpointHandler
         var result = await _validator.ValidateAsync(parameters, user);
         if (result.IsError)
         {
+            RecordOutcome("error", result.ValidatedRequest?.ClientId, activity, result.Error);
             return await CreateErrorResultAsync(
                 "Request validation failed",
                 result.ValidatedRequest,
@@ -78,24 +84,29 @@ internal abstract class AuthorizeEndpointBase : IEndpointHandler
         }
 
         var request = result.ValidatedRequest;
+        activity?.SetTag("identityserver.client_id", request.ClientId);
         LogRequest(request);
 
         // determine user interaction
         var interactionResult = await _interactionGenerator.ProcessInteractionAsync(request, consent);
         if (interactionResult.IsError)
         {
+            RecordOutcome("error", request.ClientId, activity, interactionResult.Error);
             return await CreateErrorResultAsync("Interaction generator error", request, interactionResult.Error, interactionResult.ErrorDescription, false);
         }
         if (interactionResult.IsLogin)
         {
+            RecordOutcome("login", request.ClientId, activity);
             return new LoginPageResult(request);
         }
         if (interactionResult.IsConsent)
         {
+            RecordOutcome("consent", request.ClientId, activity);
             return new ConsentPageResult(request);
         }
         if (interactionResult.IsRedirect)
         {
+            RecordOutcome("redirect", request.ClientId, activity);
             return new CustomRedirectResult(request, interactionResult.RedirectUrl);
         }
 
@@ -104,8 +115,24 @@ internal abstract class AuthorizeEndpointBase : IEndpointHandler
         await RaiseResponseEventAsync(response);
 
         LogResponse(response);
+        RecordOutcome(response.IsError ? "error" : "success", request.ClientId, activity, response.Error);
 
         return new AuthorizeResult(response);
+    }
+
+    private static void RecordOutcome(string outcome, string clientId, Activity activity, string error = null)
+    {
+        if (error != null)
+        {
+            activity?.SetStatus(ActivityStatusCode.Error, error);
+            activity?.SetTag("identityserver.error", error);
+        }
+        else if (outcome == "success")
+        {
+            activity?.SetStatus(ActivityStatusCode.Ok);
+        }
+
+        IdentityServerMetrics.AuthorizeRequests.Add(1, new TagList { { "outcome", outcome }, { "client_id", clientId ?? "unknown" } });
     }
 
     protected async Task<IEndpointResult> CreateErrorResultAsync(
