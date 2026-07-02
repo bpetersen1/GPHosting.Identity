@@ -12,16 +12,14 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: write
 
 concurrency:
   group: pages
   cancel-in-progress: false
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -55,18 +53,13 @@ jobs:
       - name: Merge API reference into site output
         run: cp -r docfx/_site website/build/api-reference
 
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
+      # Pushes the built site straight to the gh-pages branch. Requires Settings > Pages >
+      # Source = "Deploy from a branch", branch gh-pages, folder / (root). Using this instead
+      # of the actions/deploy-pages API-based deploy, which was unreliable for this repo
+      # (intermittent "Timeout reached, aborting!" / "Deployment cancelled" failures with no
+      # diagnosable cause on our end across multiple commits and config fixes).
+      - name: Deploy to gh-pages branch
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          path: website/build
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./website/build
