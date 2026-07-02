@@ -1,0 +1,41 @@
+{
+  "metadata": [
+    {
+      "src": [
+        {
+          "files": [
+            "src/GPHosting.Identity/src/GPHosting.Identity.csproj",
+            "src/Storage/src/GPHosting.Identity.Storage.csproj",
+            "src/EntityFramework.Storage/src/GPHosting.Identity.EntityFramework.Storage.csproj",
+            "src/EntityFramework/src/GPHosting.Identity.EntityFramework.csproj",
+            "src/AspNetIdentity/src/GPHosting.Identity.AspNetIdentity.csproj"
+          ],
+          "src": "."
+        }
+      ],
+      "dest": "docfx/api",
+      "disableGitFeatures": false,
+      "disableDefaultFilter": false
+    }
+  ],
+  "build": {
+    "content": [
+      {
+        "files": ["api/**.yml", "api/index.md"],
+        "src": "docfx"
+      }
+    ],
+    "resource": [
+      {
+        "files": ["icon.jpg"]
+      }
+    ],
+    "dest": "docfx/_site",
+    "globalMetadata": {
+      "_appTitle": "GPHosting.Identity API Reference",
+      "_appFaviconPath": "icon.jpg",
+      "_appLogoPath": "icon.jpg",
+      "_enableSearch": true
+    }
+  }
+}

@@ -1,3 +1,8 @@
+# DocFX generated output (API reference metadata + built site)
+docfx/api/*.yml
+docfx/api/.manifest
+docfx/_site/
+
 # Rider
 .idea
 
