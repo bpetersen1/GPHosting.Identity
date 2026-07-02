@@ -263,3 +263,67 @@ rules:
       category: security
       cwe: CWE-502
       confidence: HIGH
+
+  # -----------------------------------------------------------------------
+  # DOCUMENTATION / MARKDOWN LINK SAFETY
+  #
+  # Docs are a soft target: a malicious or careless PR can slip a bad link into a
+  # guide page where readers implicitly trust it. These rules don't try to judge
+  # whether a destination is "good" (that needs a live reputation check, out of
+  # scope for static analysis) — they flag specific, well-known techniques used to
+  # disguise a link's real destination, which have no legitimate reason to appear
+  # in project documentation.
+  # -----------------------------------------------------------------------
+
+  - id: gphosting-docs-javascript-uri-link
+    pattern-regex: '\]\(\s*javascript:'
+    message: >
+      A `javascript:` URI in a markdown link. Some markdown renderers execute these
+      as script on click — this is a known XSS vector and has no legitimate use in
+      documentation. Remove it or replace with a real https:// destination.
+    languages: [generic]
+    severity: ERROR
+    paths:
+      include:
+        - "*.md"
+        - "*.mdx"
+    metadata:
+      category: security
+      cwe: CWE-79
+      confidence: HIGH
+
+  - id: gphosting-docs-url-shortener-link
+    pattern-regex: 'https?://(bit\.ly|tinyurl\.com|t\.co|goo\.gl|ow\.ly|is\.gd|buff\.ly|rebrand\.ly|shorturl\.at|cutt\.ly)/\S*'
+    message: >
+      Link to a URL-shortening service. Shorteners hide the real destination from
+      readers (and from anyone reviewing this PR's diff) and are a common way to
+      disguise a malicious link inside otherwise legitimate-looking documentation.
+      Link to the canonical, fully-qualified URL instead.
+    languages: [generic]
+    severity: WARNING
+    paths:
+      include:
+        - "*.md"
+        - "*.mdx"
+    metadata:
+      category: security
+      cwe: CWE-601
+      confidence: MEDIUM
+
+  - id: gphosting-docs-raw-ip-link
+    pattern-regex: '\]\(\s*https?://\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}'
+    message: >
+      Link points directly to a raw IP address instead of a domain name. Legitimate
+      documentation links (NuGet, GitHub, Microsoft docs, RFCs, etc.) always use a
+      named domain — a raw IP is a red flag for a link that was inserted to point
+      somewhere the author didn't want easily traced back.
+    languages: [generic]
+    severity: WARNING
+    paths:
+      include:
+        - "*.md"
+        - "*.mdx"
+    metadata:
+      category: security
+      cwe: CWE-601
+      confidence: MEDIUM
