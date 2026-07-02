@@ -67,7 +67,7 @@ jobs:
       # Findings are uploaded to the repo's Code Scanning dashboard (Security tab) for
       # triage over time, rather than hard-failing the pipeline on unreviewed backlog items.
       - name: Run Semgrep
-        run: semgrep scan --config p/csharp --config p/owasp-top-ten --config p/secrets --sarif --output semgrep.sarif
+        run: semgrep scan --config p/csharp --config p/owasp-top-ten --config p/secrets --config .semgrep/gphosting-identity.yml --sarif --output semgrep.sarif
         continue-on-error: true
 
       - name: Upload SARIF to Code Scanning
