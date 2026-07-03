@@ -22,8 +22,10 @@ const FeatureList: FeatureItem[] = [
     title: 'Modern OAuth standards',
     description: (
       <>
-        Pushed Authorization Requests (RFC 9126), DPoP (RFC 9449), JARM, and a path toward
-        FAPI 2.0 — protocol features the original IdentityServer4 never shipped.
+        Pushed Authorization Requests (RFC 9126), DPoP (RFC 9449), Rich Authorization Requests
+        (RFC 9396), JARM, and a composing FAPI 2.0 profile flag — all fully enforced, not just
+        declared. Protocol features the original IdentityServer4 never shipped. See{' '}
+        <a href="/docs/protocols/overview">Flows vs. security standards</a>.
       </>
     ),
   },
