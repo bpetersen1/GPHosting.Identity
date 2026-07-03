@@ -80,8 +80,8 @@ GPHosting.Identity implements current-generation OAuth 2.0 specifications that I
 - **Pushed Authorization Requests (PAR — RFC 9126)**: Clients push authorization parameters to the server before redirecting the user, receiving a `request_uri` token. This prevents parameter tampering in the browser, is required for FAPI 2.0, and is fully wired end-to-end: `POST /connect/par` stores the request, and the authorize endpoint resolves `request_uri` references, enforces one-time use, validates expiry, and rejects client_id mismatches. Per-client `RequirePushedAuthorization` flag enforces PAR for all requests from that client
 - **DPoP (RFC 9449)**: Demonstration of Proof-of-Possession is fully wired end-to-end. When a client sends a `DPoP` header on a token request, the proof JWT is validated (header type, embedded public key, `htm`/`htu` binding, `iat` replay window, `jti` presence, optional `exp`). On success the access token receives a `cnf` claim containing the JWK thumbprint and the response returns `token_type: DPoP` instead of `Bearer`, binding the token to the client's key pair
 - **Rich Authorization Requests groundwork (RFC 9396)**: Clients can declare allowed `authorization_details` types for fine-grained resource authorization
-- **JARM response modes**: `query.jwt`, `fragment.jwt`, and `form_post.jwt` response mode constants for JWT-secured authorization responses
-- **FAPI 2.0 profile flag**: Per-client `RequireFapi2` and `RequirePushedAuthorization` flags for financial-grade API enforcement
+- **JARM response modes (not yet enforced)**: `query.jwt`, `fragment.jwt`, and `form_post.jwt` response mode constants exist for JWT-secured authorization responses, but `AuthorizeRequestValidator` doesn't accept them yet — requesting one currently fails with `unsupported_response_type`. Groundwork only.
+- **FAPI 2.0 profile flag (not yet enforced)**: Per-client `RequireFapi2` is a persisted column (including in every EF migration), but nothing in the validation pipeline reads it yet. Setting it has no effect today.
 
 **Observability**
 

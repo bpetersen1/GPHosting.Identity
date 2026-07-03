@@ -1,0 +1,8 @@
+{
+  "label": "Advanced Protocols",
+  "position": 9,
+  "link": {
+    "type": "generated-index",
+    "description": "The OAuth 2.0 extensions GPHosting.Identity adds on top of the core flows — what's actually enforced today, not just declared."
+  }
+}

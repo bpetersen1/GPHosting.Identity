@@ -68,8 +68,8 @@ no longer wired into the container.
 These didn't exist in IdentityServer4 and require no migration action, but are worth being aware
 of since they may replace custom code you built to work around their absence:
 
-- **Pushed Authorization Requests (RFC 9126), DPoP (RFC 9449), JARM** — modern OAuth extensions
-  IdentityServer4 never shipped.
+- **Pushed Authorization Requests (RFC 9126) and DPoP (RFC 9449)** — modern, fully-enforced OAuth
+  extensions IdentityServer4 never shipped. See [PAR & DPoP](/docs/protocols/par-and-dpop).
 - **Built-in observability** — `System.Diagnostics` tracing/metrics and ASP.NET Core health
   checks, see [Observability](/docs/observability/opentelemetry). If you built your own logging
   around token issuance for monitoring purposes, this may now cover it natively.

@@ -18,8 +18,10 @@ industry-standard flows.
 
 - **.NET 10 / C# 13 native** — no legacy shims, no `netstandard2.0` compatibility baggage.
   Trim-and-AOT-ready, `System.Text.Json` throughout (no Newtonsoft.Json dependency).
-- **Modern OAuth standards** — Pushed Authorization Requests (RFC 9126), DPoP (RFC 9449),
-  JARM, and a path toward FAPI 2.0 — protocol features IdentityServer4 never shipped.
+- **Modern OAuth standards** — Pushed Authorization Requests (RFC 9126) and DPoP (RFC 9449),
+  fully enforced end-to-end — protocol features IdentityServer4 never shipped. (JARM response
+  modes and a FAPI 2.0 profile flag exist in the data model as groundwork for future work, but
+  aren't enforced yet — see [PAR & DPoP](/docs/protocols/par-and-dpop).)
 - **Security-tested, not just security-reviewed** — PKCE enforcement, redirect URI validation,
   and secret hashing all ship with tests that prove the attack actually fails, not just that
   the happy path works.
