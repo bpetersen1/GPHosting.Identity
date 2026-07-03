@@ -87,8 +87,10 @@ internal class AuthorizeRequestValidator : IAuthorizeRequestValidator
             return loadClientResult;
         }
 
-        // enforce RequirePushedAuthorization — client requires all authorize requests to arrive via PAR
-        if (request.Client.RequirePushedAuthorization && !request.IsPushedAuthorization)
+        // enforce RequirePushedAuthorization — client requires all authorize requests to arrive via PAR.
+        // FAPI 2.0 mandates PAR unconditionally, so RequireFapi2 implies this even if
+        // RequirePushedAuthorization wasn't also set explicitly.
+        if ((request.Client.RequirePushedAuthorization || request.Client.RequireFapi2) && !request.IsPushedAuthorization)
         {
             LogError("Client requires pushed authorization but request did not use PAR", request);
             return Invalid(request, OidcConstants.AuthorizeErrors.InvalidRequest, "Client requires pushed authorization requests");
@@ -438,6 +440,14 @@ internal class AuthorizeRequestValidator : IAuthorizeRequestValidator
             return Invalid(request, description: "Invalid response_type");
         }
 
+        // FAPI 2.0 baseline profile only permits the authorization code flow — implicit and
+        // hybrid responses put tokens in the front channel, which FAPI 2.0 disallows outright.
+        if (request.Client.RequireFapi2 && request.ResponseType != OidcConstants.ResponseTypes.Code)
+        {
+            LogError("Client requires FAPI 2.0 but response_type is not code", request.ResponseType, request);
+            return Invalid(request, description: "FAPI 2.0 requires response_type=code");
+        }
+
         //////////////////////////////////////////////////////////
         // check if PKCE is required and validate parameters
         //////////////////////////////////////////////////////////
@@ -453,6 +463,14 @@ internal class AuthorizeRequestValidator : IAuthorizeRequestValidator
             if (proofKeyResult.IsError)
             {
                 return proofKeyResult;
+            }
+
+            // FAPI 2.0 requires PKCE with S256 specifically — plain is never acceptable, and PKCE
+            // itself is mandatory even for confidential clients that wouldn't otherwise require it.
+            if (request.Client.RequireFapi2 && request.CodeChallengeMethod != OidcConstants.CodeChallengeMethods.Sha256)
+            {
+                LogError("Client requires FAPI 2.0 but code_challenge_method is not S256", request);
+                return Invalid(request, description: "FAPI 2.0 requires code_challenge_method=S256");
             }
         }
 
