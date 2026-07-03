@@ -74,16 +74,35 @@ internal static class Constants
                         
     public static readonly Dictionary<string, IEnumerable<string>> AllowedResponseModesForGrantType = new Dictionary<string, IEnumerable<string>>
     {
-        { GrantType.AuthorizationCode, new[] { OidcConstants.ResponseModes.Query, OidcConstants.ResponseModes.FormPost, OidcConstants.ResponseModes.Fragment } },
-        { GrantType.Hybrid, new[] { OidcConstants.ResponseModes.Fragment, OidcConstants.ResponseModes.FormPost }},
-        { GrantType.Implicit, new[] { OidcConstants.ResponseModes.Fragment, OidcConstants.ResponseModes.FormPost }}
+        { GrantType.AuthorizationCode, new[]
+            {
+                OidcConstants.ResponseModes.Query, OidcConstants.ResponseModes.FormPost, OidcConstants.ResponseModes.Fragment,
+                JarmResponseModes.Jwt, JarmResponseModes.QueryJwt, JarmResponseModes.FragmentJwt, JarmResponseModes.FormPostJwt
+            }
+        },
+        { GrantType.Hybrid, new[]
+            {
+                OidcConstants.ResponseModes.Fragment, OidcConstants.ResponseModes.FormPost,
+                JarmResponseModes.Jwt, JarmResponseModes.FragmentJwt, JarmResponseModes.FormPostJwt
+            }
+        },
+        { GrantType.Implicit, new[]
+            {
+                OidcConstants.ResponseModes.Fragment, OidcConstants.ResponseModes.FormPost,
+                JarmResponseModes.Jwt, JarmResponseModes.FragmentJwt, JarmResponseModes.FormPostJwt
+            }
+        }
     };
 
     public static readonly List<string> SupportedResponseModes = new List<string>
     {
         OidcConstants.ResponseModes.FormPost,
         OidcConstants.ResponseModes.Query,
-        OidcConstants.ResponseModes.Fragment
+        OidcConstants.ResponseModes.Fragment,
+        JarmResponseModes.Jwt,
+        JarmResponseModes.QueryJwt,
+        JarmResponseModes.FragmentJwt,
+        JarmResponseModes.FormPostJwt
     };
 
     public static string[] SupportedSubjectTypes =
@@ -328,6 +347,8 @@ internal static class Constants
         public const string QueryJwt = "query.jwt";
         public const string FragmentJwt = "fragment.jwt";
         public const string FormPostJwt = "form_post.jwt";
+
+        public static readonly IReadOnlyCollection<string> All = new[] { Jwt, QueryJwt, FragmentJwt, FormPostJwt };
     }
 
     public static class WsFedSignOut

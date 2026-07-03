@@ -16,10 +16,17 @@ using GPHosting.Identity.Stores;
 using GPHosting.Identity.ResponseHandling;
 using Microsoft.AspNetCore.Authentication;
 using System.Text.Encodings.Web;
+using System.Collections.Generic;
+using System.Collections.Specialized;
+using System.IdentityModel.Tokens.Jwt;
+using System.Linq;
+using System.Security.Claims;
 
 namespace GPHosting.Identity.Endpoints.Results;
 internal class AuthorizeResult : IEndpointResult
 {
+    private const int JarmResponseLifetimeSeconds = 60;
+
     public AuthorizeResponse Response { get; }
 
     public AuthorizeResult(AuthorizeResponse response)
@@ -106,23 +113,95 @@ internal class AuthorizeResult : IEndpointResult
 
     private async Task RenderAuthorizeResponseAsync(HttpContext context)
     {
-        if (Response.Request.ResponseMode == OidcConstants.ResponseModes.Query ||
-            Response.Request.ResponseMode == OidcConstants.ResponseModes.Fragment)
+        var responseMode = Response.Request.ResponseMode;
+        NameValueCollection nvc;
+        string deliveryMode;
+
+        if (Constants.JarmResponseModes.All.Contains(responseMode))
+        {
+            var jwt = await CreateJarmResponseAsync(context);
+            nvc = new NameValueCollection { { "response", jwt } };
+            deliveryMode = ResolveJarmDeliveryMode(responseMode);
+        }
+        else
+        {
+            nvc = Response.ToNameValueCollection();
+            deliveryMode = responseMode;
+        }
+
+        if (deliveryMode == OidcConstants.ResponseModes.Query ||
+            deliveryMode == OidcConstants.ResponseModes.Fragment)
         {
             context.Response.SetNoCache();
-            context.Response.Redirect(BuildRedirectUri());
+            context.Response.Redirect(BuildRedirectUri(nvc, deliveryMode));
         }
-        else if (Response.Request.ResponseMode == OidcConstants.ResponseModes.FormPost)
+        else if (deliveryMode == OidcConstants.ResponseModes.FormPost)
         {
             context.Response.SetNoCache();
             AddSecurityHeaders(context);
-            await context.Response.WriteHtmlAsync(GetFormPostHtml());
+            await context.Response.WriteHtmlAsync(GetFormPostHtml(nvc));
         }
         else
         {
             //_logger.LogError("Unsupported response mode.");
             throw new InvalidOperationException("Unsupported response mode");
         }
+    }
+
+    /// <summary>
+    /// The response mode a bare "jwt" resolves to per response_type, when the client didn't pick
+    /// one of the explicit query.jwt/fragment.jwt/form_post.jwt variants (JARM).
+    /// </summary>
+    private string ResolveJarmDeliveryMode(string responseMode)
+    {
+        if (responseMode == Constants.JarmResponseModes.QueryJwt) return OidcConstants.ResponseModes.Query;
+        if (responseMode == Constants.JarmResponseModes.FragmentJwt) return OidcConstants.ResponseModes.Fragment;
+        if (responseMode == Constants.JarmResponseModes.FormPostJwt) return OidcConstants.ResponseModes.FormPost;
+
+        // bare "jwt": code flow defaults to query, anything carrying a token/id_token in the
+        // response (implicit, hybrid) defaults to fragment, matching the plain (non-JARM) defaults.
+        return Response.Request.ResponseType == OidcConstants.ResponseTypes.Code
+            ? OidcConstants.ResponseModes.Query
+            : OidcConstants.ResponseModes.Fragment;
+    }
+
+    /// <summary>
+    /// Wraps the authorize response parameters in a signed JWT (JARM — JWT Secured Authorization
+    /// Response Mode), so the client can verify the response actually came from this server and
+    /// wasn't tampered with or injected in transit.
+    /// </summary>
+    private async Task<string> CreateJarmResponseAsync(HttpContext context)
+    {
+        var keys = context.RequestServices.GetRequiredService<IKeyMaterialService>();
+        var credential = await keys.GetSigningCredentialsAsync();
+        if (credential == null)
+        {
+            throw new InvalidOperationException("No signing credential is configured. Can't create a JARM response.");
+        }
+
+        var now = _clock.GetUtcNow().UtcDateTime;
+        var claims = new List<Claim>
+        {
+            new Claim(JwtClaimTypes.Issuer, context.GetIdentityServerIssuerUri()),
+            new Claim(JwtClaimTypes.Audience, Response.Request.ClientId)
+        };
+
+        var responseParameters = Response.ToNameValueCollection();
+        foreach (var key in responseParameters.AllKeys)
+        {
+            if (key != null)
+            {
+                claims.Add(new Claim(key, responseParameters[key]));
+            }
+        }
+
+        var jwt = new JwtSecurityToken(
+            signingCredentials: credential,
+            claims: claims,
+            notBefore: now,
+            expires: now.AddSeconds(JarmResponseLifetimeSeconds));
+
+        return new JwtSecurityTokenHandler().WriteToken(jwt);
     }
 
     private void AddSecurityHeaders(HttpContext context)
@@ -140,12 +219,14 @@ internal class AuthorizeResult : IEndpointResult
         }
     }
 
-    private string BuildRedirectUri()
+    private string BuildRedirectUri() => BuildRedirectUri(Response.ToNameValueCollection(), Response.Request.ResponseMode);
+
+    private string BuildRedirectUri(NameValueCollection nvc, string deliveryMode)
     {
         var uri = Response.RedirectUri;
-        var query = Response.ToNameValueCollection().ToQueryString();
+        var query = nvc.ToQueryString();
 
-        if (Response.Request.ResponseMode == OidcConstants.ResponseModes.Query)
+        if (deliveryMode == OidcConstants.ResponseModes.Query)
         {
             uri = uri.AddQueryString(query);
         }
@@ -165,14 +246,14 @@ internal class AuthorizeResult : IEndpointResult
 
     private const string FormPostHtml = "<html><head><meta http-equiv='X-UA-Compatible' content='IE=edge' /><base target='_self'/></head><body><form method='post' action='{uri}'>{body}<noscript><button>Click to continue</button></noscript></form><script>window.addEventListener('load', function(){document.forms[0].submit();});</script></body></html>";
 
-    private string GetFormPostHtml()
+    private string GetFormPostHtml(NameValueCollection nvc)
     {
         var html = FormPostHtml;
 
         var url = Response.Request.RedirectUri;
         url = HtmlEncoder.Default.Encode(url);
         html = html.Replace("{uri}", url);
-        html = html.Replace("{body}", Response.ToNameValueCollection().ToFormPost());
+        html = html.Replace("{body}", nvc.ToFormPost());
 
         return html;
     }
