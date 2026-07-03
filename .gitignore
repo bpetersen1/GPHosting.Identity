@@ -223,3 +223,8 @@ key.snk
 
 # Semgrep output
 semgrep-results.json
+
+# EF Core migrations helper projects use the Web SDK for tooling reasons, which makes
+# Visual Studio/dotnet auto-scaffold a launchSettings.json with a random debug port the
+# first time each is opened/built — these projects are never actually launched as a server.
+src/EntityFramework*/migrations/*/Properties/launchSettings.json
