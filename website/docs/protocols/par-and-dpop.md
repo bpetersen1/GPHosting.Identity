@@ -4,10 +4,10 @@ sidebar_position: 1
 
 # PAR & DPoP
 
-Two of the four OAuth 2.0 extensions IdentityServer4 never shipped, enforced end-to-end in
+Two of the OAuth 2.0 extensions IdentityServer4 never shipped, enforced end-to-end in
 GPHosting.Identity — verified against the validators and endpoint handlers directly, not just
-declared in a spec list. The other two, [RAR](./rar) and [JARM](./jarm), get their own pages;
-only the FAPI 2.0 profile flag remains unenforced (see the note at the bottom).
+declared in a spec list. [RAR](./rar) and [JARM](./jarm) get their own pages; [FAPI 2.0](./fapi2)
+composes all four together into one flag.
 
 ## Pushed Authorization Requests (PAR, RFC 9126)
 
@@ -114,17 +114,11 @@ The resulting access token is now bound to the key pair that signed the proof. C
 DPoP-aware API requires generating a **new** proof JWT per API call (with `htm`/`htu` matching
 that specific request) — the token alone isn't enough, exactly like the design intends.
 
-## What's not enforced yet
-
-`Client.RequireFapi2` is a real, persisted flag (present in every EF migration across all four
-database providers) that nothing in the validation pipeline reads yet — setting it currently has
-no effect. FAPI 2.0 composes PAR, DPoP, RAR, and JARM into one enforced profile, so it's the last
-of the four to land now that the other three are done.
-
 ## Next steps
 
 - [RAR](./rar) — fine-grained `authorization_details` on the authorize request
 - [JARM](./jarm) — a cryptographically verifiable authorize response
+- [FAPI 2.0](./fapi2) — composing PAR, DPoP, and PKCE into one enforced profile flag
 - [Flows](/docs/fundamentals/flows) — how these layer on top of the core grant types
 - [Security](/docs/security/pkce) — PKCE and redirect URI validation, the other enforced
   protections on the authorization code flow

@@ -120,6 +120,14 @@ internal class TokenEndpoint : IEndpointHandler
             _logger.LogDebug("DPoP proof validated. cnf={confirmation}", dPopResult.Confirmation);
         }
 
+        // FAPI 2.0 requires sender-constrained access tokens — reject issuing a plain bearer
+        // token to a client configured for FAPI 2.0 if no DPoP proof was presented.
+        if (requestResult.ValidatedRequest.Client.RequireFapi2 && requestResult.ValidatedRequest.DPoPConfirmation == null)
+        {
+            _logger.LogWarning("Client requires FAPI 2.0 but no DPoP proof was presented");
+            return Error(OidcConstants.TokenErrors.InvalidRequest, "FAPI 2.0 requires a sender-constrained access token (DPoP)", clientId: clientResult.Client.ClientId, grantType: requestResult.ValidatedRequest?.GrantType, activity: activity);
+        }
+
         // create response
         _logger.LogTrace("Calling into token request response generator: {type}", _responseGenerator.GetType().FullName);
         var response = await _responseGenerator.ProcessAsync(requestResult);
