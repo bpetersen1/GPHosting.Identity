@@ -1,0 +1,16 @@
+# samples/ is unmigrated legacy code from the original IdentityServer4 archive - still targets
+# netcoreapp3.1 (EOL), references old NuGet package versions rather than this repo's own net10.0
+# code, and does not build against the current codebase. Scanning it puts findings from
+# known-legacy, non-representative code on the same dashboard as the actual library - excluded
+# until the samples are migrated to net10.0 as their own tracked effort, at which point real
+# findings there should be fixed properly rather than suppressed.
+samples/
+
+# Test project fixtures deliberately construct "insecure" configurations (disabled PKCE,
+# unhashed secrets, implicit-flow clients) specifically to prove the system rejects or handles
+# them correctly - e.g. PkceEnforcementTests.cs needs a RequirePkce=false client to test that
+# public clients are still forced into PKCE. Flagging these as findings is the false-positive
+# case the security rules exist to avoid: the test passing IS the security property holding.
+**/test/**
+**/Test/**
+**/Tests/**

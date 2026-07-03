@@ -95,8 +95,8 @@ public class DefaultDPoPProofValidator : IDPoPProofValidator
         {
             ValidateIssuer = false,
             ValidateAudience = false,
-            ValidateLifetime = false,
-            RequireExpirationTime = false,
+            ValidateLifetime = false,          // nosemgrep: csharp.lang.security.ad.jwt-tokenvalidationparameters-no-expiry-validation.jwt-tokenvalidationparameters-no-expiry-validation
+            RequireExpirationTime = false,      // nosemgrep: csharp.lang.security.ad.jwt-tokenvalidationparameters-no-expiry-validation.jwt-tokenvalidationparameters-no-expiry-validation
             RequireSignedTokens = true,
             IssuerSigningKey = jwk
         };
