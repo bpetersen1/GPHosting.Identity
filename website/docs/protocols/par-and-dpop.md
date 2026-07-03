@@ -4,11 +4,10 @@ sidebar_position: 1
 
 # PAR & DPoP
 
-These are the two OAuth 2.0 extensions IdentityServer4 never shipped that are actually enforced
-end-to-end in GPHosting.Identity today — verified against the validators and endpoint handlers
-directly, not just declared in a spec list. (Two related features, JARM response modes and a
-FAPI 2.0 profile flag, exist in the data model as groundwork but aren't enforced yet — see the
-note at the bottom.)
+Two of the four OAuth 2.0 extensions IdentityServer4 never shipped, enforced end-to-end in
+GPHosting.Identity — verified against the validators and endpoint handlers directly, not just
+declared in a spec list. The other two, [RAR](./rar) and [JARM](./jarm), get their own pages;
+only the FAPI 2.0 profile flag remains unenforced (see the note at the bottom).
 
 ## Pushed Authorization Requests (PAR, RFC 9126)
 
@@ -117,15 +116,15 @@ that specific request) — the token alone isn't enough, exactly like the design
 
 ## What's not enforced yet
 
-`JarmResponseModes` (`jwt`, `query.jwt`, `fragment.jwt`, `form_post.jwt`) exist as constants, but
-`AuthorizeRequestValidator` doesn't currently accept them — requesting one of these `response_mode`
-values fails with `unsupported_response_type`. Similarly, `Client.RequireFapi2` is a real,
-persisted flag (present in every EF migration across all four database providers) that nothing in
-the validation pipeline reads yet — setting it currently has no effect. Both are groundwork for
-future work, not features to configure a client against today.
+`Client.RequireFapi2` is a real, persisted flag (present in every EF migration across all four
+database providers) that nothing in the validation pipeline reads yet — setting it currently has
+no effect. FAPI 2.0 composes PAR, DPoP, RAR, and JARM into one enforced profile, so it's the last
+of the four to land now that the other three are done.
 
 ## Next steps
 
-- [Flows](/docs/fundamentals/flows) — how PAR and DPoP layer on top of the core grant types
+- [RAR](./rar) — fine-grained `authorization_details` on the authorize request
+- [JARM](./jarm) — a cryptographically verifiable authorize response
+- [Flows](/docs/fundamentals/flows) — how these layer on top of the core grant types
 - [Security](/docs/security/pkce) — PKCE and redirect URI validation, the other enforced
   protections on the authorization code flow
