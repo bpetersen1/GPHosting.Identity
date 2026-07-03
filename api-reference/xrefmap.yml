@@ -10809,6 +10809,19 @@ references:
   commentId: T:GPHosting.Identity.Models.AuthorizationCode
   fullName: GPHosting.Identity.Models.AuthorizationCode
   nameWithType: AuthorizationCode
+- uid: GPHosting.Identity.Models.AuthorizationCode.AuthorizationDetails
+  name: AuthorizationDetails
+  href: api/GPHosting.Identity.Models.AuthorizationCode.html#GPHosting_Identity_Models_AuthorizationCode_AuthorizationDetails
+  commentId: P:GPHosting.Identity.Models.AuthorizationCode.AuthorizationDetails
+  fullName: GPHosting.Identity.Models.AuthorizationCode.AuthorizationDetails
+  nameWithType: AuthorizationCode.AuthorizationDetails
+- uid: GPHosting.Identity.Models.AuthorizationCode.AuthorizationDetails*
+  name: AuthorizationDetails
+  href: api/GPHosting.Identity.Models.AuthorizationCode.html#GPHosting_Identity_Models_AuthorizationCode_AuthorizationDetails_
+  commentId: Overload:GPHosting.Identity.Models.AuthorizationCode.AuthorizationDetails
+  isSpec: "True"
+  fullName: GPHosting.Identity.Models.AuthorizationCode.AuthorizationDetails
+  nameWithType: AuthorizationCode.AuthorizationDetails
 - uid: GPHosting.Identity.Models.AuthorizationCode.ClientId
   name: ClientId
   href: api/GPHosting.Identity.Models.AuthorizationCode.html#GPHosting_Identity_Models_AuthorizationCode_ClientId
@@ -26826,6 +26839,19 @@ references:
   isSpec: "True"
   fullName: GPHosting.Identity.Validation.ValidatedAuthorizeRequest.PromptModes
   nameWithType: ValidatedAuthorizeRequest.PromptModes
+- uid: GPHosting.Identity.Validation.ValidatedAuthorizeRequest.RawAuthorizationDetails
+  name: RawAuthorizationDetails
+  href: api/GPHosting.Identity.Validation.ValidatedAuthorizeRequest.html#GPHosting_Identity_Validation_ValidatedAuthorizeRequest_RawAuthorizationDetails
+  commentId: P:GPHosting.Identity.Validation.ValidatedAuthorizeRequest.RawAuthorizationDetails
+  fullName: GPHosting.Identity.Validation.ValidatedAuthorizeRequest.RawAuthorizationDetails
+  nameWithType: ValidatedAuthorizeRequest.RawAuthorizationDetails
+- uid: GPHosting.Identity.Validation.ValidatedAuthorizeRequest.RawAuthorizationDetails*
+  name: RawAuthorizationDetails
+  href: api/GPHosting.Identity.Validation.ValidatedAuthorizeRequest.html#GPHosting_Identity_Validation_ValidatedAuthorizeRequest_RawAuthorizationDetails_
+  commentId: Overload:GPHosting.Identity.Validation.ValidatedAuthorizeRequest.RawAuthorizationDetails
+  isSpec: "True"
+  fullName: GPHosting.Identity.Validation.ValidatedAuthorizeRequest.RawAuthorizationDetails
+  nameWithType: ValidatedAuthorizeRequest.RawAuthorizationDetails
 - uid: GPHosting.Identity.Validation.ValidatedAuthorizeRequest.RedirectUri
   name: RedirectUri
   href: api/GPHosting.Identity.Validation.ValidatedAuthorizeRequest.html#GPHosting_Identity_Validation_ValidatedAuthorizeRequest_RedirectUri
