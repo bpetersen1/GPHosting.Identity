@@ -35,6 +35,8 @@ industry-standard flows.
 
 - New to the project? Head to [Installation](/docs/getting-started/installation) and
   [Quickstart](/docs/getting-started/quickstart) — a working token server in about 15 lines.
+- Not sure which OAuth flow applies to what you're building? Start with
+  [Which flow do I need?](/docs/quick-setups/which-flow)
 - Migrating from IdentityServer4? See the
   [migration guide](/docs/migration/from-identityserver4).
 - Looking for the raw API surface? See the [API Reference](/docs/api).
