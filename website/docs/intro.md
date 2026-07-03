@@ -25,14 +25,15 @@ industry-standard flows.
   the happy path works.
 - **Observable by default** — built-in `System.Diagnostics.Activity` tracing and
   `System.Diagnostics.Metrics` counters, with zero required dependency on any specific
-  telemetry vendor. See [Observability](/docs/observability/opentelemetry) — *coming soon*.
+  telemetry vendor. See [Observability](/docs/observability/opentelemetry).
 - **Free and open source** — Apache 2.0 licensed, no commercial tier, no revenue threshold.
 
 ## Where to start
 
 - New to the project? Head to [Installation](/docs/getting-started/installation) and
   [Quickstart](/docs/getting-started/quickstart) — a working token server in about 15 lines.
-- Migrating from IdentityServer4? See the migration guide — *coming soon*.
+- Migrating from IdentityServer4? See the
+  [migration guide](/docs/migration/from-identityserver4).
 - Looking for the raw API surface? See the [API Reference](/docs/api).
 
 ## Packages

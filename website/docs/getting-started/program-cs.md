@@ -44,8 +44,7 @@ builder.Services.AddIdentityServer(options =>
 });
 ```
 
-See [IdentityServerOptions reference](/docs/configuration/options) — *coming soon* — for the
-full list of options.
+See [IdentityServerOptions reference](/docs/configuration/options) for the full list of options.
 
 ## `AddDeveloperSigningCredential()`
 
@@ -61,8 +60,7 @@ Registers a fixed, in-memory list of API scopes and clients — no database invo
 great for getting started and for tests, but a static list baked into `Program.cs` doesn't
 scale to managing real clients in production. When you're ready, swap these for
 `AddConfigurationStore()` from the `GPHosting.Identity.EntityFramework` package, which reads
-clients/scopes from a database instead — see [Stores](/docs/fundamentals/stores) —
-*coming soon*.
+clients/scopes from a database instead — see [Stores](/docs/fundamentals/stores).
 
 ## `app.UseIdentityServer()`
 
