@@ -7,7 +7,8 @@ sidebar_position: 4
 The [Quickstart](./quickstart) used a `client_credentials` client — a machine-to-machine
 client with no user involved. Most real applications need an **interactive** client instead:
 a user logs in through a browser, and the client receives tokens on their behalf via the
-Authorization Code flow with PKCE.
+Authorization Code flow with PKCE. (Not sure this is the right flow for what you're building?
+See [Which flow do I need?](/docs/quick-setups/which-flow).)
 
 ## A code + PKCE client
 
