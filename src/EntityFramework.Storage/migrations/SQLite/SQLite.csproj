@@ -3,6 +3,8 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.2" PrivateAssets="All" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="10.0.2" />
+    <!-- Override transitive SQLitePCLRaw 2.1.11 pulled in by Microsoft.EntityFrameworkCore.Sqlite 10.0.2 - GHSA-2m69-gcr7-jv3q -->
+    <PackageReference Include="SQLitePCLRaw.bundle_e_sqlite3" Version="3.0.3" />
     <ProjectReference Include="..\..\src\GPHosting.Identity.EntityFramework.Storage.csproj" />
   </ItemGroup>
 
