@@ -103,9 +103,9 @@ implicit entirely in favor of authorization code + PKCE, which works for SPAs to
 strictly safer (tokens never appear in a URL fragment).
 
 For the advanced OAuth extensions GPHosting.Identity adds on top of these core flows — Pushed
-Authorization Requests and DPoP sender-constrained tokens — see
-[PAR & DPoP](/docs/protocols/par-and-dpop); these layer on top of the flows above rather than
-replacing them.
+Authorization Requests, DPoP sender-constrained tokens, Rich Authorization Requests, and JARM —
+see [Advanced Protocols](/docs/protocols/par-and-dpop); these layer on top of the flows above
+rather than replacing them.
 
 ## Next steps
 
