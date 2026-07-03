@@ -1,6 +1,6 @@
 {
   "label": "Fundamentals",
-  "position": 3,
+  "position": 4,
   "link": {
     "type": "generated-index",
     "description": "The core concepts behind GPHosting.Identity: how clients, resources, and grants fit together, and what you need to change before deploying anywhere real."

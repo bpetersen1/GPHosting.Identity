@@ -1,6 +1,6 @@
 {
   "label": "Configuration",
-  "position": 4,
+  "position": 5,
   "link": {
     "type": "generated-index",
     "description": "Server-wide options for GPHosting.Identity, configured via the AddIdentityServer(options => ...) delegate."

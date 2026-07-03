@@ -1,15 +1,16 @@
-﻿# GPHosting.Identity documentation
+# GPHosting.Identity documentation (legacy)
 
-The folder contains the documentation for GPHosting.Identity.
+**The live documentation site is at
+[the GPHosting.Identity docs site](https://bpetersen1.github.io/GPHosting.Identity/) — start
+there.** It's built with Docusaurus, covers installation through production deployment, and is
+what's actually maintained going forward.
 
-These docs are intended to be hosted on [Read the Docs](https://readthedocs.org/), but a GPHosting.Identity
-Read the Docs project has not been set up yet — until then, browse the `.rst` files directly in this folder
-on GitHub.
+This folder is the original ReStructuredText documentation inherited from the archived
+IdentityServer4 project. It's kept for historical reference and because a few pages describe
+protocol behavior that's still accurate (much of this content correctly cites the real, original
+IdentityServer4/OIDC ecosystem it was written about, rather than being a broken self-reference).
+It was never published to Read the Docs and isn't part of any build — treat anything here as
+possibly outdated until cross-checked against the live site.
 
-Doc pages are authored in ReStructuredText (RST) - you can find a primer [here](http://www.sphinx-doc.org/en/stable/rest.html).
-
-You can find more information about RTD and Sphinx under the following links:
-
-* [Read the Docs documentation](https://docs.readthedocs.io/en/latest/index.html)
-* [Sphinx](http://www.sphinx-doc.org/)
-* [Getting started Screencast](https://www.youtube.com/watch?feature=player_embedded&v=oJsUvBQyHBs)
+Doc pages here are authored in ReStructuredText (RST) - you can find a primer
+[here](http://www.sphinx-doc.org/en/stable/rest.html), if you want to browse them anyway.
