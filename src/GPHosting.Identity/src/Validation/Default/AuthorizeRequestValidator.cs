@@ -136,6 +136,13 @@ internal class AuthorizeRequestValidator : IAuthorizeRequestValidator
             return optionalResult;
         }
 
+        // authorization_details (RFC 9396 — Rich Authorization Requests)
+        var rarResult = ValidateAuthorizationDetails(request);
+        if (rarResult.IsError)
+        {
+            return rarResult;
+        }
+
         // custom validator
         _logger.LogDebug("Calling into custom validator: {type}", _customValidator.GetType().FullName);
         var context = new CustomAuthorizeRequestValidationContext
@@ -909,6 +916,63 @@ internal class AuthorizeRequestValidator : IAuthorizeRequestValidator
         request.IsPushedAuthorization = true;
 
         _logger.LogDebug("PAR request_uri resolved successfully. handle={handle}", handle);
+        return Valid(request);
+    }
+
+    /// <summary>
+    /// Validates the authorization_details parameter (RFC 9396 — Rich Authorization Requests).
+    /// Optional: a request with no authorization_details parameter is valid and unaffected. When
+    /// present, every requested "type" must be present in the client's AllowedAuthorizationDetailsTypes
+    /// allowlist — a client with no configured types therefore cannot use RAR at all, consistent with
+    /// how scopes and redirect URIs are allowlisted elsewhere rather than accepted by default.
+    /// </summary>
+    private AuthorizeRequestValidationResult ValidateAuthorizationDetails(ValidatedAuthorizeRequest request)
+    {
+        var raw = request.Raw.Get(Constants.RichAuthorizationRequests.AuthorizationDetails);
+        if (raw.IsMissing())
+        {
+            return Valid(request);
+        }
+
+        JsonElement parsed;
+        try
+        {
+            parsed = JsonSerializer.Deserialize<JsonElement>(raw);
+        }
+        catch (JsonException)
+        {
+            LogError("authorization_details is not valid JSON", request);
+            return Invalid(request, Constants.RichAuthorizationRequests.InvalidAuthorizationDetails, "authorization_details must be a JSON array");
+        }
+
+        if (parsed.ValueKind != JsonValueKind.Array)
+        {
+            LogError("authorization_details is not a JSON array", request);
+            return Invalid(request, Constants.RichAuthorizationRequests.InvalidAuthorizationDetails, "authorization_details must be a JSON array");
+        }
+
+        var allowedTypes = request.Client.AllowedAuthorizationDetailsTypes;
+
+        foreach (var entry in parsed.EnumerateArray())
+        {
+            if (entry.ValueKind != JsonValueKind.Object ||
+                !entry.TryGetProperty(Constants.RichAuthorizationRequests.TypeField, out var typeElement) ||
+                typeElement.ValueKind != JsonValueKind.String ||
+                typeElement.GetString().IsMissing())
+            {
+                LogError("authorization_details entry is missing a valid type", request);
+                return Invalid(request, Constants.RichAuthorizationRequests.InvalidAuthorizationDetails, "every authorization_details entry requires a non-empty type");
+            }
+
+            var type = typeElement.GetString();
+            if (!allowedTypes.Contains(type))
+            {
+                LogError("authorization_details type not allowed for client", type, request);
+                return Invalid(request, Constants.RichAuthorizationRequests.InvalidAuthorizationDetails, $"authorization_details type '{type}' is not allowed for this client");
+            }
+        }
+
+        request.RawAuthorizationDetails = parsed.GetRawText();
         return Valid(request);
     }
 

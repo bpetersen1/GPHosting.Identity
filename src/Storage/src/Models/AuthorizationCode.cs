@@ -132,4 +132,10 @@ public class AuthorizationCode
     /// The properties
     /// </value>
     public IDictionary<string, string> Properties { get; set; } = new Dictionary<string, string>();
+
+    /// <summary>
+    /// Gets or sets the validated authorization_details (RFC 9396), as a compact JSON array, if the
+    /// authorize request included one. Null if the request didn't use Rich Authorization Requests.
+    /// </summary>
+    public string AuthorizationDetails { get; set; }
 }

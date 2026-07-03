@@ -185,7 +185,14 @@ public class ValidatedAuthorizeRequest : ValidatedRequest
     /// True when the request was received via a Pushed Authorization Request (RFC 9126) request_uri reference.
     /// </summary>
     public bool IsPushedAuthorization { get; set; }
-    
+
+    /// <summary>
+    /// Gets or sets the validated authorization_details (RFC 9396), as a compact JSON array, once every
+    /// requested type has been confirmed against the client's AllowedAuthorizationDetailsTypes. Null if
+    /// the request didn't include authorization_details.
+    /// </summary>
+    public string RawAuthorizationDetails { get; set; }
+
     /// <summary>
     /// Gets a value indicating whether an access token was requested.
     /// </summary>

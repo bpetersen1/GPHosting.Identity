@@ -11,6 +11,7 @@ using GPHosting.Identity.Validation;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Linq;
+using System.Text.Json;
 using System.Threading.Tasks;
 namespace GPHosting.Identity.ResponseHandling;
 /// <summary>
@@ -107,6 +108,14 @@ public class TokenResponseGenerator : ITokenResponseGenerator
 
         if (request.ValidatedRequest.DPoPConfirmation != null)
             response.TokenType = IdentityServerConstants.DPoP.TokenType;
+
+        // echo authorization_details (RFC 9396) back on the token response when the authorization
+        // code carried a validated one
+        if (request.ValidatedRequest.AuthorizationCode?.AuthorizationDetails != null)
+        {
+            response.Custom[Constants.RichAuthorizationRequests.AuthorizationDetails] =
+                JsonSerializer.Deserialize<JsonElement>(request.ValidatedRequest.AuthorizationCode.AuthorizationDetails);
+        }
 
         return response;
     }

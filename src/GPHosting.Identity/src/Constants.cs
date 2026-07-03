@@ -330,6 +330,13 @@ internal static class Constants
         public const string FormPostJwt = "form_post.jwt";
     }
 
+    public static class RichAuthorizationRequests
+    {
+        public const string AuthorizationDetails = "authorization_details";
+        public const string TypeField = "type";
+        public const string InvalidAuthorizationDetails = "invalid_authorization_details";
+    }
+
     public static class WsFedSignOut
     {
         public const string LogoutUriParameterName = "wa";
