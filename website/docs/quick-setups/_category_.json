@@ -1,0 +1,8 @@
+{
+  "label": "5-Minute Setups",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "description": "The minimal server-side and client-side configuration needed to get each flow working end to end — no explanation, just what to paste in."
+  }
+}

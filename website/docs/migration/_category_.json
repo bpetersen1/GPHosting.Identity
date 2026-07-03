@@ -1,6 +1,6 @@
 {
   "label": "Migrating from IdentityServer4",
-  "position": 8,
+  "position": 11,
   "link": {
     "type": "generated-index",
     "description": "Namespace, package, and API changes if you're upgrading an existing IdentityServer4 deployment."

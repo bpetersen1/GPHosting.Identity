@@ -58,6 +58,8 @@ client. See the [samples](/docs/samples/overview) for a complete working MVC cli
 
 ## Next steps
 
+- [Login and consent UI](./login-and-consent) — building the pages this flow redirects to, since
+  GPHosting.Identity doesn't ship them
 - [Architecture](/docs/fundamentals/architecture) — how clients, resources, scopes, and grants
   fit together
 - [Flows](/docs/fundamentals/flows) — authorization code, client credentials, device flow, and
