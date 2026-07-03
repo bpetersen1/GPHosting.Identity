@@ -253,7 +253,8 @@ public class AuthorizeResponseGenerator : IAuthorizeResponseGenerator
             Nonce = request.Nonce,
             StateHash = stateHash,
 
-            WasConsentShown = request.WasConsentShown
+            WasConsentShown = request.WasConsentShown,
+            AuthorizationDetails = request.RawAuthorizationDetails
         };
 
         return code;
