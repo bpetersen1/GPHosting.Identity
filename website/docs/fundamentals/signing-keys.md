@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+sidebar_position: 5
 ---
 
 # Signing Keys
@@ -70,5 +70,5 @@ token lifetime, then promote it to the signing credential and drop the old key f
 
 - [Discovery](/docs/fundamentals/discovery) — *coming soon* — how signing keys are published via
   the discovery document's JWKS endpoint
-- [Stores](/docs/fundamentals/stores) — *coming soon* — in-memory vs. database-backed
-  configuration, the other piece of moving from local dev to production
+- [Stores](/docs/fundamentals/stores) — in-memory vs. database-backed configuration, the other
+  piece of moving from local dev to production

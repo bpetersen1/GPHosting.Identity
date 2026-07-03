@@ -7,7 +7,7 @@ sidebar_position: 2
 This gets a minimal token server running locally with an in-memory client and API scope — no
 database required. It's meant for exploring the library, not production (see
 [Signing Keys](/docs/fundamentals/signing-keys) — and
-[Stores](/docs/fundamentals/stores) — *coming soon* — before deploying anywhere real).
+[Stores](/docs/fundamentals/stores) — before deploying anywhere real).
 
 ## 1. Create a new ASP.NET Core project
 

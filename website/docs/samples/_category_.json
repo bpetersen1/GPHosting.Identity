@@ -1,0 +1,8 @@
+{
+  "label": "Samples",
+  "position": 7,
+  "link": {
+    "type": "generated-index",
+    "description": "Complete, runnable projects in the repo demonstrating each flow and integration."
+  }
+}
