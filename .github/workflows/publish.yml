@@ -14,12 +14,12 @@ jobs:
     permissions:
       id-token: write  # required for NuGet Trusted Publishing (OIDC token exchange)
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
         with:
           fetch-depth: 0
 
       - name: Setup .NET 10
-        uses: actions/setup-dotnet@v4
+        uses: actions/setup-dotnet@67a3573c9a986a3f9c594539f4ab511d57bb3ce9 # v4
         with:
           dotnet-version: '10.0.x'
 
@@ -62,7 +62,7 @@ jobs:
           dotnet pack src/AspNetIdentity/src/GPHosting.Identity.AspNetIdentity.csproj -c Release --no-build -o ./nupkg /p:Version=$VERSION
 
       - name: NuGet login (OIDC → short-lived API key)
-        uses: NuGet/login@v1
+        uses: NuGet/login@8d196754b4036150537f80ac539e15c2f1028841 # v1
         id: nuget-login
         with:
           user: ${{ secrets.NUGET_USER }}

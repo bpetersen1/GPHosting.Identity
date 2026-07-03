@@ -88,12 +88,15 @@ public class DefaultDPoPProofValidator : IDPoPProofValidator
         // iat window check below. ValidateLifetime/RequireExpirationTime are therefore false;
         // however if exp IS present we validate it explicitly after this block.
         var handler = new JsonWebTokenHandler();
-        var validationParams = new TokenValidationParameters
+        // DPoP proofs (RFC 9449) are self-signed by the client's own embedded jwk, not issued by any
+        // authority — there is no issuer/audience to validate. They use iat, not exp, for recency
+        // (checked explicitly above); the iat window enforces recency without RequireExpirationTime.
+        var validationParams = new TokenValidationParameters // nosemgrep: gphosting-jwt-issuer-not-validated,gphosting-jwt-lifetime-not-validated,jwt-tokenvalidationparameters-no-expiry-validation
         {
             ValidateIssuer = false,
             ValidateAudience = false,
-            ValidateLifetime = false,          // nosemgrep: jwt-tokenvalidationparameters-no-expiry-validation — DPoP proofs (RFC 9449 §4.2) use iat not exp; exp is checked explicitly above if present
-            RequireExpirationTime = false,      // nosemgrep: jwt-tokenvalidationparameters-no-expiry-validation — DPoP proofs do not require exp; iat window enforces recency
+            ValidateLifetime = false,
+            RequireExpirationTime = false,
             RequireSignedTokens = true,
             IssuerSigningKey = jwk
         };
